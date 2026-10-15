@@ -7,7 +7,6 @@
 # Local release output / packages
 *.zip
 *.sha256
-release/tools/
 
 # IDE / OS
 .vs/

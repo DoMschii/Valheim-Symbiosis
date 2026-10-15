@@ -1,5 +1,12 @@
 # Changelog
 
+## Repository architecture split
+
+- Gameplay source is now isolated from the updater and release/GitHub automation.
+- Updater uses independent versioning.
+- Release tools are no longer part of the gameplay repository or player source package.
+- No gameplay changes.
+
 ## 4.5.1 - Repository cleanup / release tooling
 
 - Clean repository structure (`src`, `release`, `docs`).
