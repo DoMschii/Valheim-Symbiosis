@@ -130,6 +130,7 @@ namespace Valheim_Workers
         private static readonly Dictionary<int, bool> AirPresentationVisibility = new Dictionary<int, bool>();
         private static readonly List<int> StaleAirHaulerKeys = new List<int>();
         private static readonly List<int> AirHaulerTickKeys = new List<int>();
+        private static bool AirHaulerTickKeysDirty = true;
         private static readonly Dictionary<int, float> StaticHoldNextEnforce = new Dictionary<int, float>();
         private const float StaticHoldReflectionSeconds = 0.25f;
 
@@ -138,7 +139,19 @@ namespace Valheim_Workers
         internal static void TrackAirHauler(Character worker)
         {
             if (!IsAirHauler(worker)) return;
-            TrackedAirHaulers[worker.GetInstanceID()] = worker;
+
+            int key = worker.GetInstanceID();
+            if (!TrackedAirHaulers.TryGetValue(key, out Character existing))
+            {
+                TrackedAirHaulers[key] = worker;
+                AirHaulerTickKeysDirty = true;
+                return;
+            }
+
+            // Normally the exact same Character stays registered. Only update the reference if
+            // Unity recycled/recreated it; rebuilding the key snapshot is unnecessary in that case.
+            if (!ReferenceEquals(existing, worker))
+                TrackedAirHaulers[key] = worker;
         }
 
         /// <summary>
@@ -155,12 +168,16 @@ namespace Valheim_Workers
         {
             if (TrackedAirHaulers.Count == 0) return;
 
-            // Work on a stable key snapshot. TryApplyAfterVanilla can call TrackAirHauler(), and
-            // touching TrackedAirHaulers while enumerating the dictionary invalidates its enumerator.
-            // A key snapshot keeps registration/removal safe without changing navigation behaviour.
-            AirHaulerTickKeys.Clear();
-            foreach (int key in TrackedAirHaulers.Keys)
-                AirHaulerTickKeys.Add(key);
+            // Rebuild the stable key snapshot only when membership actually changed. TrackAirHauler
+            // is called very frequently by native Drake AI, so recreating this same key list every
+            // rendered frame was measurable continuous overhead in large bases.
+            if (AirHaulerTickKeysDirty)
+            {
+                AirHaulerTickKeys.Clear();
+                foreach (int key in TrackedAirHaulers.Keys)
+                    AirHaulerTickKeys.Add(key);
+                AirHaulerTickKeysDirty = false;
+            }
 
             StaleAirHaulerKeys.Clear();
             for (int i = 0; i < AirHaulerTickKeys.Count; i++)
@@ -174,6 +191,12 @@ namespace Valheim_Workers
                     StaleAirHaulerKeys.Add(key);
                     continue;
                 }
+
+                // Native MonsterAI already ran Workers navigation for this Drake in the same frame.
+                // Bail out before GetComponent/authority/transport checks; TryApplyAfterVanilla has
+                // already performed those exact checks and stamped AirNavigationFrame.
+                if (AirNavigationFrame.TryGetValue(key, out int nativeFrame) && nativeFrame == Time.frameCount)
+                    continue;
 
                 ZNetView nview = worker.GetComponent<ZNetView>();
                 if (nview == null || !nview.IsValid() || !nview.IsOwner()) continue;
@@ -213,8 +236,6 @@ namespace Valheim_Workers
                 }
 
                 SetAirHaulerPhysicalPresentation(worker, true);
-                if (AirNavigationFrame.TryGetValue(key, out int frame) && frame == Time.frameCount)
-                    continue;
 
                 MonsterAI ai = worker.GetComponent<MonsterAI>();
                 if (ai == null) continue;
@@ -224,13 +245,13 @@ namespace Valheim_Workers
             for (int i = 0; i < StaleAirHaulerKeys.Count; i++)
             {
                 int key = StaleAirHaulerKeys[i];
-                TrackedAirHaulers.Remove(key);
+                if (TrackedAirHaulers.Remove(key))
+                    AirHaulerTickKeysDirty = true;
                 AirNavigationFrame.Remove(key);
                 AirPresentationVisibility.Remove(key);
                 Progress.Remove(key);
             }
             StaleAirHaulerKeys.Clear();
-            AirHaulerTickKeys.Clear();
         }
 
         internal static bool ShouldRunNativeMonsterAi(MonsterAI ai)
@@ -327,6 +348,7 @@ namespace Valheim_Workers
             AirPresentationVisibility.Clear();
             StaleAirHaulerKeys.Clear();
             AirHaulerTickKeys.Clear();
+            AirHaulerTickKeysDirty = true;
             StaticHoldNextEnforce.Clear();
             WorkerNativeRoutePlanner.ResetDiagnostics();
             _nextGlobalRoutePlanAt = 0f;

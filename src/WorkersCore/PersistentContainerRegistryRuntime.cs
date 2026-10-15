@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
@@ -196,6 +196,31 @@ namespace Valheim_Workers
             if (now < _nextExplicitRescanAllowedRealtime) return;
             _nextExplicitRescanAllowedRealtime = now + ExplicitRescanCooldownSeconds;
             _nextPersistentScanRealtime = Mathf.Min(_nextPersistentScanRealtime <= 0f ? now + 0.25f : _nextPersistentScanRealtime, now + 0.25f);
+        }
+
+        /// <summary>
+        /// RC1 startup path: BackgroundWorkerScheduler is already walking every persistent ZDO to
+        /// discover Workers. Feed logistics endpoints into this registry during that same pass so
+        /// provisioning does not perform a second reflected ZDOMan-wide scan a frame later.
+        /// </summary>
+        internal static void ObserveCombinedBootstrapZdo(ZDO zdo)
+        {
+            if (zdo == null) return;
+            int role = zdo.GetInt(WorkerContainerRoleRuntime.RoleKey, 0);
+            bool endpoint =
+                (role >= (int)WorkerContainerRole.FieldDepot && role <= (int)WorkerContainerRole.Export) ||
+                zdo.GetBool(ContainerLedgerRuntime.SorterTrackedKey, false);
+            if (!endpoint) return;
+            Remember(zdo);
+        }
+
+        internal static void CompleteCombinedBootstrapFromWorkerScan()
+        {
+            float now = Time.realtimeSinceStartup;
+            _bootstrapped = true;
+            _persistentScanInProgress = false;
+            _nextPersistentScanRealtime = now + PersistentMaintenanceScanSeconds;
+            _nextLoadedIndexSyncRealtime = now + LoadedIndexSyncSeconds;
         }
 
         private static void EnsureBootstrapped()

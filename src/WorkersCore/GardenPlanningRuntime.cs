@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
 using HarmonyLib;
@@ -19,7 +19,7 @@ namespace Valheim_Workers
         private const float ArrowRepeatDelay = 0.35f;
         private const float ArrowRepeatInterval = 0.08f;
         private const float PersistentGhostRefreshActiveInterval = 0.25f;
-        private const float PersistentGhostRefreshIdleInterval = 1.25f;
+        private const float PersistentGhostRefreshIdleInterval = 2.0f;
         private const int MaxVisiblePersistentGhosts = 512;
         private const float TerrainPreviewRefreshInterval = 0.08f;
 

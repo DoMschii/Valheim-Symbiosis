@@ -194,7 +194,7 @@ internal static class BackgroundWorkerScheduler
 	private static int _backgroundTickCursor;
 	private const float BackgroundSliceSeconds = 0.10f;
 	private const float BackgroundKeyRefreshSeconds = 2f;
-	private const int BackgroundWorkersPerSlice = 2;
+	private const int BackgroundWorkersPerSlice = 1;
 
 	// Player-proximity checks are hit from several background-worker branches in the same
 	// scheduler slice. Cache the tiny player set once per second instead of walking every
@@ -204,6 +204,8 @@ internal static class BackgroundWorkerScheduler
 	private const float PlayerProximityCacheSeconds = 1f;
 
 	private static bool _persistentProductionBootstrapComplete;
+
+	private static bool _persistentBootstrapHarvesting;
 
 	private static int _persistentProductionBootstrapPasses;
 
@@ -321,8 +323,19 @@ internal static class BackgroundWorkerScheduler
 		IL_0047:
 		value.Zdo = zdo;
 		value.LoadedCharacter = worker;
-		value.Species = SpeciesRoleRegistry.NormalizePrefabName(((Object)((Component)worker).gameObject).name);
-		zdo.Set("vw_worker_species", value.Species ?? string.Empty);
+
+		// Stable loaded-worker heartbeats revisit the same Character repeatedly. Species never changes
+		// for that Worker, so do not normalize the prefab name and write the same ZDO string every pass.
+		// Keep the persisted species field for new/recovered records and compatibility with background
+		// simulation, but treat the cached WorkerRecord value as authoritative afterwards.
+		if (string.IsNullOrEmpty(value.Species))
+		{
+			value.Species = SpeciesRoleRegistry.NormalizePrefabName(((Object)((Component)worker).gameObject).name);
+			string persistedSpecies = zdo.GetString("vw_worker_species", string.Empty);
+			if (!string.Equals(persistedSpecies, value.Species ?? string.Empty, StringComparison.Ordinal))
+				zdo.Set("vw_worker_species", value.Species ?? string.Empty);
+		}
+
 		if (num != 0)
 		{
 			value.LastPosition = zdo.GetPosition();
@@ -1672,22 +1685,40 @@ internal static class BackgroundWorkerScheduler
 					continue;
 				}
 
-				bool forcedCruise = TryForceDeterministicAirCruise(value);
-				bool returnTransit = IsAuthoritativeReturnHomeTransit(val);
-				bool cruiseClockReady = forcedCruise && EnsureDeterministicAirCruiseClock(value, ticks);
-				if (forcedCruise || returnTransit || !(now - value.LastSeenRealtime < UnloadedGraceSeconds))
+				long perfSingleBackgroundWorker = WorkersPerformanceProfiler.Begin();
+				try
 				{
-					// v0.5.357: static production zones are lazy. Nothing in the unloaded
-					// scene needs an AI tick; elapsed time is reconciled when the zone becomes
-					// physical again. Live transport/sorter routes remain continuously simulated.
-					if (!forcedCruise && !returnTransit && ShouldUseLazyBackgroundAccrual(val))
+					bool forcedCruise = TryForceDeterministicAirCruise(value);
+					bool returnTransit = IsAuthoritativeReturnHomeTransit(val);
+					bool cruiseClockReady = forcedCruise && EnsureDeterministicAirCruiseClock(value, ticks);
+					if (forcedCruise || returnTransit || !(now - value.LastSeenRealtime < UnloadedGraceSeconds))
 					{
-						EnsureLazyBackgroundAccrual(val, ticks);
-						continue;
-					}
+						// Static production zones are lazy. Live transport/sorter routes stay exact.
+						if (!forcedCruise && !returnTransit && ShouldUseLazyBackgroundAccrual(val))
+						{
+							EnsureLazyBackgroundAccrual(val, ticks);
+							continue;
+						}
 
-					TickBackgroundWorker(value, ticks);
-					if (forcedCruise && !cruiseClockReady) EnsureDeterministicAirCruiseClock(value, ticks);
+						TickBackgroundWorker(value, ticks);
+						if (forcedCruise && !cruiseClockReady) EnsureDeterministicAirCruiseClock(value, ticks);
+					}
+				}
+				finally
+				{
+					double singleBackgroundMs = WorkersPerformanceProfiler.ElapsedMilliseconds(perfSingleBackgroundWorker);
+					if (singleBackgroundMs >= 20.0)
+					{
+						try
+						{
+							string species = string.IsNullOrEmpty(value.Species) ? "unknown" : value.Species;
+							string area = WorkerZdo.ReadWorkAreaId(val);
+							string status = val.GetString(BackgroundStatus, string.Empty);
+							BackgroundMonitorRuntime.Note(
+								$"PERF BACKGROUND WORKER: {singleBackgroundMs:0.0}ms species={species} worker={id} area={area} status={status}");
+						}
+						catch { }
+					}
 				}
 			}
 		}
@@ -1710,10 +1741,19 @@ internal static class BackgroundWorkerScheduler
 		{
 			return;
 		}
+
+		bool firstBootstrap = !_persistentProductionBootstrapComplete;
 		long perfBootstrap = WorkersPerformanceProfiler.Begin();
 		try
 		{
 			int count = Records.Count;
+
+			// RC1 startup optimization:
+			// One reflected ZDOMan walk now seeds Workers, WorkFlags and persistent logistics
+			// endpoints together. Previously the Worker discovery could trigger additional
+			// full-world scans once per missing WorkFlag and provisioning performed another
+			// container scan immediately afterwards.
+			_persistentBootstrapHarvesting = true;
 			FieldInfo[] fields = typeof(ZDOMan).GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
 			for (int i = 0; i < fields.Length; i++)
 			{
@@ -1728,11 +1768,26 @@ internal static class BackgroundWorkerScheduler
 				}
 				HarvestPersistentProductionWorkers(value, 0);
 			}
+			_persistentBootstrapHarvesting = false;
+
+			PersistentContainerRegistryRuntime.CompleteCombinedBootstrapFromWorkerScan();
+
+			if (firstBootstrap)
+			{
+				// WorkFlag discovery is complete now, so registering remote economy zones can
+				// resolve the already-cached flag directly instead of performing a world scan
+				// for every distinct Workzone encountered during the Worker walk.
+				long remoteTicks = DateTime.UtcNow.Ticks;
+				foreach (WorkerRecord record in Records.Values)
+				{
+					ZDO zdo = record?.Zdo;
+					if (zdo == null || !WorkerZdo.IsWorker(zdo) || !ShouldUseLazyBackgroundAccrual(zdo)) continue;
+					WorkzoneEconomyBackgroundRuntime.RegisterRemoteWorker(zdo, remoteTicks);
+				}
+			}
+
 			if (!_persistentProductionBootstrapComplete)
 			{
-				// v0.5.357: one startup recovery pass is enough. Newly created Workers are
-				// registered by lifecycle hooks while their zone is loaded, so a second reflected
-				// ZDOMan sweep ten seconds later only creates an avoidable hitch.
 				_persistentProductionBootstrapPasses = 1;
 				_persistentProductionBootstrapComplete = true;
 				_nextPersistentBootstrapAttempt = realtimeSinceStartup + PersistentMaintenanceScanSeconds;
@@ -1741,10 +1796,19 @@ internal static class BackgroundWorkerScheduler
 			{
 				_nextPersistentBootstrapAttempt = realtimeSinceStartup + PersistentMaintenanceScanSeconds;
 			}
+
 			int num = Records.Count - count;
 			if (num > 0)
 			{
-				BackgroundMonitorRuntime.Note($"Persistent worker scan registered {num} worker(s); total={Records.Count}");
+				BackgroundMonitorRuntime.Note(
+					$"Persistent combined scan registered {num} worker(s); total={Records.Count}; logistics={PersistentContainerRegistryRuntime.RegisteredCount}");
+			}
+
+			// Spread the first remote-hauler simulation away from the bootstrap frame.
+			if (firstBootstrap)
+			{
+				_nextTick = Mathf.Max(_nextTick, realtimeSinceStartup + 0.20f);
+				_nextPersistentAirStagingTick = Mathf.Max(_nextPersistentAirStagingTick, realtimeSinceStartup + 0.35f);
 			}
 		}
 		catch
@@ -1752,6 +1816,7 @@ internal static class BackgroundWorkerScheduler
 		}
 		finally
 		{
+			_persistentBootstrapHarvesting = false;
 			WorkersPerformanceProfiler.End(WorkersPerfBucket.PersistentBootstrap, perfBootstrap);
 		}
 	}
@@ -1777,7 +1842,7 @@ internal static class BackgroundWorkerScheduler
 		ZDO val = (ZDO)((value is ZDO) ? value : null);
 		if (val != null)
 		{
-			RememberPersistentProductionWorker(val);
+			ObservePersistentBootstrapZdo(val);
 			return;
 		}
 		if (value is IDictionary dictionary)
@@ -1789,7 +1854,7 @@ internal static class BackgroundWorkerScheduler
 					ZDO val2 = (ZDO)((value2 is ZDO) ? value2 : null);
 					if (val2 != null)
 					{
-						RememberPersistentProductionWorker(val2);
+						ObservePersistentBootstrapZdo(val2);
 					}
 					else if (depth < 2)
 					{
@@ -1813,13 +1878,27 @@ internal static class BackgroundWorkerScheduler
 			ZDO val3 = (ZDO)((item2 is ZDO) ? item2 : null);
 			if (val3 != null)
 			{
-				RememberPersistentProductionWorker(val3);
+				ObservePersistentBootstrapZdo(val3);
 			}
 			else if (depth < 2)
 			{
 				HarvestPersistentProductionWorkers(item2, depth + 1);
 			}
 		}
+	}
+
+	private static void ObservePersistentBootstrapZdo(ZDO zdo)
+	{
+		if (zdo == null) return;
+
+		// Cheap filters for non-matching ZDOs. Folding all durable indexes into the same
+		// world walk avoids several independent reflection scans during world startup.
+		try { WorkFlagRegistry.RememberPersistent(zdo); }
+		catch { }
+		try { PersistentContainerRegistryRuntime.ObserveCombinedBootstrapZdo(zdo); }
+		catch { }
+
+		RememberPersistentProductionWorker(zdo);
 	}
 
 	private static void RememberPersistentProductionWorker(ZDO zdo, string speciesHint = null)
@@ -1866,7 +1945,10 @@ internal static class BackgroundWorkerScheduler
 				long remoteTicks = DateTime.UtcNow.Ticks;
 				zdo.Set(BackgroundMode, "background");
 				EnsureLazyBackgroundAccrual(zdo, remoteTicks);
-				WorkzoneEconomyBackgroundRuntime.RegisterRemoteWorker(zdo, remoteTicks);
+				if (!_persistentBootstrapHarvesting)
+				{
+					WorkzoneEconomyBackgroundRuntime.RegisterRemoteWorker(zdo, remoteTicks);
+				}
 			}
 		}
 	}

@@ -53,6 +53,8 @@ namespace Valheim_Workers
             new Dictionary<string, float>(StringComparer.Ordinal);
         private static readonly List<string> TickKeys = new List<string>(32);
         private static readonly List<string> FlushKeyScratch = new List<string>(32);
+        private static readonly Dictionary<string, int> WildGrowthSeedScratch =
+            new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
         private static int _tickCursor;
         private static float _nextTick;
 
@@ -238,42 +240,39 @@ namespace Valheim_Workers
 
             if (!BackgroundWorkerScheduler.IsWorkzoneFullyBackground(areaId)) return false;
 
-            Vector3 center = flagZdo.GetPosition();
-            float radius = WorkFlagZdo.ReadRadius(flagZdo, 30f);
-            WorkzoneEconomySnapshot snapshot;
-            try
-            {
-                // The handoff boundary is authoritative. Do not seed a multi-day background
-                // ledger from a UI snapshot that may still have up to 30 seconds of cache age.
-                WorkzoneEconomyRuntime.Invalidate(areaId);
-                snapshot = WorkzoneEconomyRuntime.GetSnapshot(areaId, center, radius);
-            }
-            catch { return false; }
-            if (snapshot == null) return false;
-
+            // Background economy currently simulates only deterministic WildGrowth + sustenance.
+            // Do not build the full UI economy snapshot during world startup. That snapshot also
+            // resolves stock/history/display rows and caused a multi-second load hitch on large saves.
             Dictionary<string, double> rates = new Dictionary<string, double>(StringComparer.OrdinalIgnoreCase);
             Dictionary<string, double> reserve = new Dictionary<string, double>(StringComparer.OrdinalIgnoreCase);
-            for (int i = 0; i < snapshot.Rows.Count; i++)
+            WildGrowthSeedScratch.Clear();
+            try
             {
-                WorkzoneEconomyResourceRow row = snapshot.Rows[i];
-                if (row == null || !row.HasProductionModel || row.ProductionPerDay <= 0.000001) continue;
-                string prefab = WorkerStorageRuntime.NormalizeObjectName(row.Prefab ?? string.Empty);
-                if (string.IsNullOrWhiteSpace(prefab)) continue;
-                rates[prefab] = Math.Max(0.0, row.ProductionPerDay);
-
-                // Keep one complete vanilla respawn cycle per physical plant out of the virtual
-                // ledger. When the zone loads, that last cycle remains represented by the actual
-                // Pickable instead of being duplicated once in the chest and once on the bush.
-                try
+                GardenReplantPlanRuntime.CollectCompletedWildGrowth(areaId, WildGrowthSeedScratch);
+                foreach (KeyValuePair<string, int> pair in WildGrowthSeedScratch)
                 {
-                    if (row.ProducerCount > 0 &&
-                        WorkersWildFloraRuntime.TryGetExpectedYieldPerValheimDay(prefab, out _, out int yieldPerCycle, out _))
-                    {
-                        reserve[prefab] = Math.Max(0.0, row.ProducerCount * Math.Max(1, yieldPerCycle));
-                    }
+                    if (pair.Value <= 0 || string.IsNullOrWhiteSpace(pair.Key)) continue;
+                    string prefab = WorkerStorageRuntime.NormalizeObjectName(pair.Key);
+                    if (string.IsNullOrWhiteSpace(prefab)) continue;
+
+                    if (!WorkersWildFloraRuntime.TryGetExpectedYieldPerValheimDay(
+                            prefab, out double perPlantPerDay, out int yieldPerCycle, out _))
+                        continue;
+
+                    double production = Math.Max(0.0, pair.Value * perPlantPerDay);
+                    if (production <= 0.000001) continue;
+
+                    rates[prefab] = production;
+                    reserve[prefab] = Math.Max(0.0, pair.Value * Math.Max(1, yieldPerCycle));
                 }
-                catch { }
             }
+            catch
+            {
+                WildGrowthSeedScratch.Clear();
+            }
+
+            // Keep UI snapshots demand-driven; invalidate only, never rebuild from this scheduler path.
+            WorkzoneEconomyRuntime.Invalidate(areaId);
 
             long nextFood;
             int sustenanceWorkers;
