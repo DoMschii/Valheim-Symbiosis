@@ -52,23 +52,9 @@ try {
     Write-Host 'Keine neuen Aenderungen zum Committen.' -ForegroundColor Yellow
   }
 
-  # Wenn bereits beim vorherigen Lauf committed, aber nicht gepusht wurde,
-  # darf ein zweiter Lauf nicht einfach abbrechen. Ahead/Upstream pruefen.
-  git fetch origin 2>$null | Out-Null
-  $upstream = (git rev-parse --abbrev-ref --symbolic-full-name '@{u}' 2>$null)
-  $ahead=0
-  if($LASTEXITCODE -eq 0 -and $upstream){
-    $aheadText=(git rev-list --count "$upstream..HEAD" 2>$null | Select-Object -First 1)
-    [void][int]::TryParse(($aheadText -as [string]), [ref]$ahead)
-  } else {
-    # Noch kein Upstream gesetzt: bei vorhandenem HEAD bieten wir Push ebenfalls an.
-    $ahead=1
-  }
-
-  if($ahead -le 0 -and -not $createdCommit){
-    Write-Host "Repository ist bereits aktuell auf GitHub." -ForegroundColor Green
-    exit 0
-  }
+  # Push darf jederzeit erneut versucht werden.
+  # Auch wenn bereits committed wurde oder GitHub schon aktuell ist,
+  # ist `git push -u origin HEAD` idempotent und meldet einfach "Everything up-to-date".
 
   $answer=(Read-Host 'Repository jetzt zu GitHub pushen? (J/JA)').Trim().ToUpperInvariant()
   if($answer -in @('J','JA','Y','YES')){
