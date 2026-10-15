@@ -6,7 +6,10 @@ $SourceRoot = $PSScriptRoot
 $ProjectFile = Join-Path $SourceRoot 'Valheim_Workers_Mount.csproj'
 $ProjectTarget = 'C:\App Dev\Projekte\Valheim_Workers_Mount'
 $DefaultValheim = 'C:\Program Files (x86)\Steam\steamapps\common\Valheim'
-$ThunderstoreRoot = Join-Path $env:APPDATA 'Thunderstore Mod Manager\DataFolder\Valheim\profiles'
+$ProfileRoots = @(
+    (Join-Path $env:APPDATA 'Thunderstore Mod Manager\DataFolder\Valheim\profiles'),
+    (Join-Path $env:APPDATA 'r2modmanPlus-local\Valheim\profiles')
+) | Select-Object -Unique
 
 function Write-Step([string]$Text) { Write-Host "`n==> $Text" -ForegroundColor Cyan }
 
@@ -22,16 +25,18 @@ function Resolve-ValheimPath {
 
 function Resolve-BepInExTargets {
     $targets = @()
-    if (Test-Path $ThunderstoreRoot) {
-        $targets = @(Get-ChildItem $ThunderstoreRoot -Directory -ErrorAction SilentlyContinue |
+    foreach ($root in $ProfileRoots) {
+        if (-not (Test-Path $root)) { continue }
+        $targets += @(Get-ChildItem $root -Directory -ErrorAction SilentlyContinue |
             ForEach-Object { Join-Path $_.FullName 'BepInEx' } |
             Where-Object {
                 (Test-Path (Join-Path $_ 'core\BepInEx.dll')) -and
                 (Test-Path (Join-Path $_ 'plugins\Valheim_Workers\Valheim_Workers.dll'))
             })
     }
-    if (-not $targets -or $targets.Count -eq 0) { throw 'Kein Thunderstore/BepInEx-Profil mit installiertem Valheim_Workers Core gefunden.' }
-    return @($targets)
+    $targets = @($targets | Select-Object -Unique)
+    if (-not $targets -or $targets.Count -eq 0) { throw 'Kein Thunderstore/r2modman BepInEx-Profil mit installiertem Valheim_Workers Core gefunden.' }
+    return $targets
 }
 
 Write-Host "Valheim Workers Mount v$Version - OneClick Setup" -ForegroundColor Green
@@ -54,6 +59,9 @@ if ($coreVersion -lt [Version]'0.5.118') { Write-Host "HINWEIS: Core $coreVersio
 if (-not (Test-Path $ProjectFile)) { throw "Projektdatei fehlt: $ProjectFile" }
 
 Write-Step "Baue Mount v$Version gegen Workers Core $coreVersion"
+# Force a real rebuild so BepInPlugin metadata cannot remain stale from an older bin/obj cache.
+Remove-Item (Join-Path $SourceRoot 'bin') -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item (Join-Path $SourceRoot 'obj') -Recurse -Force -ErrorAction SilentlyContinue
 & dotnet build $ProjectFile -c Release --nologo /p:BepInExPath="$BepInExPath" /p:ValheimManagedPath="$ManagedPath" /p:WorkersCorePath="$CoreDll"
 if ($LASTEXITCODE -ne 0) { throw "dotnet build fehlgeschlagen (ExitCode $LASTEXITCODE). Bestehende Installation bleibt unveraendert." }
 

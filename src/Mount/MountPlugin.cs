@@ -13,7 +13,7 @@ namespace Valheim_Workers
     {
         public const string PluginGuid = "germa.valheim.workers.mount";
         public const string PluginName = "Valheim_Workers_Mount";
-        public const string PluginVersion = "4.5.1";
+        public const string PluginVersion = "4.5.2";
 
         private Harmony _harmony;
         private ConfigEntry<float> _wingbeatIntensity;

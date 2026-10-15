@@ -1,0 +1,6 @@
+﻿Valheim Workers Mount v4.5.2
+
+- BepInPlugin metadata aligned to 4.5.2.
+- Setup now removes bin/obj before building to prevent stale plugin metadata.
+- Setup detects both Thunderstore Mod Manager and r2modmanPlus-local profiles.
+- No gameplay behavior change.
