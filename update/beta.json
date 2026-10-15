@@ -1,6 +1,6 @@
 ﻿{
-    "version":  "0.6.0",
+    "version":  "0.6.0.1",
     "channel":  "beta",
     "package_url":  "https://github.com/DoMschii/Valheim-Symbiosis/releases/download/v0.6.0-rc1/Valheim_Symbiosis_PreStart_Update_v0.6.0-rc1.zip",
-    "sha256":  "2a4521b4de382dc7a830c24c13fc5d7f6402940042e994bc0a2958fb29737980"
+    "sha256":  "aa0ee3d79170e9cd8afded32907b3df5cb4de231f48f0c822f2ccc75e251ca8f"
 }
