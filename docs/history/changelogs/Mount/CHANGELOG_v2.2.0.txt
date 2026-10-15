@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v2.2.0
+
+- Drake flight propulsion is now synchronized to the live wingbeat animation phase.
+- FlyForward gets a gentle speed pulse on the downstroke instead of perfectly constant translation.
+- Shift boost keeps the same stamina cost but receives a slightly stronger propulsion peak.
+- A high glide floor prevents stalling or jerky stop/start movement between beats.
+- IdleHover only receives a tiny pulse; unknown clips blend safely toward neutral speed.
+- Native Character movement, collisions, steering, camera, attacks, Ego tuning and all other forms remain unchanged.

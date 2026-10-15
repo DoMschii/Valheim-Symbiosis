@@ -1,0 +1,8 @@
+v3.1.0 test
+
+1. Enter Drake symbiosis.
+2. Hold Shift+W: HUD header should show STURZFLUG.
+3. Dive for at least ~0.45s, release Shift and pull up.
+4. HUD should show SCHWUNG ~2.0s counting down to 0.0s while free climb is available.
+5. Confirm normal climb after the timer again consumes stamina.
+6. Confirm flap animation, travel speed, head/camera controls and other forms are unchanged.

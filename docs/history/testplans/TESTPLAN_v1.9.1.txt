@@ -1,0 +1,8 @@
+v1.9.1 Serpent stamina regeneration
+
+1. Enter water and activate the Serpent necklace.
+2. Spend stamina with Shift boost or a Serpent special ability.
+3. Release Shift / stop spending stamina.
+4. Confirm stamina begins regenerating normally while still in Serpent form and still underwater.
+5. Confirm Shift boost still consumes stamina.
+6. Exit Serpent form and confirm normal human swimming behaviour is unchanged.

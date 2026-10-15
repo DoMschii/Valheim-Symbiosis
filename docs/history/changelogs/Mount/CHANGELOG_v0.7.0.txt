@@ -1,0 +1,13 @@
+v0.7.0 - Werewolf mobility + vision reliability
+
+- Werewolf normal land speed raised to a clear mobility-form envelope: walk >= 9.0, run >= 20.0.
+- Added normal locomotion jump on SPACE (8 stamina, 8.2 m/s vertical launch, grounded + cooldown guarded).
+- MMB remains the separate native Fenring jump ATTACK.
+- Ported the proven Valheim Ego facing rule into Werewolf possession:
+  body yaw follows camera/look, never movement direction; S stays true backwards movement.
+- In Werewolf Ego, the creature Visual-root baseline is reasserted after native locomotion, preventing hidden 180-degree model flips.
+- Werewolf facing is reasserted again in LateUpdate and final camera render callbacks.
+- Vision now supports both SRP Volume (URP/HDRP ColorAdjustments + ChannelMixer) and legacy PPv2.
+- Camera binding is reasserted at Camera.onPreCull, matching the reliable Valheim Ego final-pose strategy.
+- Added a light renderer-independent perception veil as a guaranteed visual fallback when the running pipeline silently ignores runtime volumes.
+- Existing Blood Hunt, native LMB claw, MMB jump attack, HUD and ObjectDB null guard are preserved.

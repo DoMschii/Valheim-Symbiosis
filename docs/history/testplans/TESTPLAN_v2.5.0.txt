@@ -1,0 +1,7 @@
+Sea Serpent body pitch test
+1. Enter Sea Serpent symbiosis in water.
+2. Ego: hold W and look down; body/nose should visibly pitch down while descending.
+3. Look up while holding W; body/nose should pitch up while climbing.
+4. Release movement; body should settle smoothly toward level.
+5. Tail S-wave must continue throughout.
+6. Verify Drake, Troll and Werewolf behavior unchanged.

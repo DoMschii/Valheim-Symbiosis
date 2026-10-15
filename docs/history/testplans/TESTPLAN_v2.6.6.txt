@@ -1,0 +1,7 @@
+Valheim Symbiosis v2.6.6 test
+1. Enter Drake symbiosis in Ego.
+2. Look straight ahead: Drake head/muzzle should keep its natural forward pose instead of pitching upward.
+3. Look up/down and left/right: head should follow the mouse from that neutral pose.
+4. Verify saved Ego XYZ fine-tune is unchanged.
+5. Verify normal flight and Shift Sturzflug are unchanged.
+6. Verify Serpent/Troll/Werewolf behavior is unchanged.

@@ -1,0 +1,7 @@
+Valheim_Workers_DrakeForm v0.1.11
+
+- Bound necklace activation now hands its saved creature profile to Mount instead of activating a generic level-1 Hatchling.
+- Passes the captured prefab name and saved Drake level to Mount v0.1.54+.
+- Falls back safely to the legacy Mount API when used with an older Mount build.
+- Updated necklace description to reflect native Drake attacks and bound-level restoration.
+- Binding/save schema remains compatible with v0.1.10 necklaces; no recapture is required.

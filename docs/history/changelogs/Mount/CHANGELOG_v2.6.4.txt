@@ -1,0 +1,6 @@
+v2.6.4 - Sea Serpent head-pitch axis correction
+
+- Fixes the Sea Serpent head being permanently pitched downward regardless of camera look direction.
+- Serpent no longer derives facial direction from Head -> m_eye; m_eye is only a positional sight point on this prefab.
+- Serpent camera/head look now uses the calibrated Ego anchor forward axis, which was initialized from the creature/root forward before parenting to Head.
+- Werewolf Head->Eye logic, Troll reverse-axis logic, Drake camera/head behavior, Surface-Lock and movement tuning remain unchanged.

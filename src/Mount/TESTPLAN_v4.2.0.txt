@@ -1,0 +1,8 @@
+v4.2.0 quick release-readiness test
+
+1. Enter/exit each of Drake, Troll, Serpent and Werewolf once.
+2. Open inventory/map/settings while transformed; close them and confirm no queued jump/attack fires unexpectedly.
+3. Direct-switch between two forms in Ego, then in Third Person.
+4. Die once in a form and confirm normal human respawn with no stale creature/camera.
+5. Logout/reload once in human form and once after exiting a form.
+6. Confirm Drake flight, Troll1/Troll2, Serpent surface movement and Werewolf Blood Hunt feel unchanged.

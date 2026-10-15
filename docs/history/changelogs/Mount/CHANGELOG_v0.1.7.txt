@@ -1,0 +1,5 @@
+Valheim Workers Mount v0.1.7
+- Third-person pitch is now free from -75 to +75 degrees.
+- Third-person camera rotation is controlled directly by mouse aim instead of constantly looking back at the Drake body.
+- Aim-to-fly remains intact: W/S movement continues along the same mouse-controlled 3D view axis.
+- Low-altitude chase-camera floor protection remains active without restricting view pitch.

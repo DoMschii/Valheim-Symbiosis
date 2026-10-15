@@ -1,0 +1,26 @@
+v0.8.0 QUICK TEST
+
+1) DRAKE THIRD
+- W fly forward, A/D strafe/turn as before.
+- Body should visibly lean/bank during A/D and return upright after release.
+- Physics/collider must not wobble.
+- Rebound Attack/Block should trigger native attack slots 1/2; MMB slot 3.
+
+2) TROLL THIRD
+- Camera can look freely.
+- W/A/S/D are camera-relative.
+- Troll turns into the direction it walks; S turns around and walks forward rather than moonwalking.
+
+3) TROLL EGO
+- W/S remain forward/backwards and A/D strafe while body follows view.
+
+4) SERPENT
+- Straight swimming should show a clearer travelling S-curve.
+- A/D should make the wave feel slightly more active.
+- Camera still follows head region and gameplay heading/collider remain stable.
+
+5) REGRESSION
+- Werewolf night/cave activation.
+- Eating/mead during symbiosis.
+- Hammer/build mode closes on transformation.
+- F6 Ego/Third and item-use transformation still work.

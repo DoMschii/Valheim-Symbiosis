@@ -1,0 +1,9 @@
+v3.8.0 Performance Pass 1 test
+
+1. Human form: play 2-3 minutes; no camera/input changes.
+2. Troll1: approach several fallen logs and pick one up with E; targeting/pickup must still work.
+3. Troll1 -> Troll2 body swap and back after durability depletion; movement/camera must remain unchanged.
+4. Werewolf: enter/exit form and verify vision still fades in/out normally.
+5. Drake: normal flight + dive; no flight-feel changes.
+6. Serpent: surface movement/combat unchanged.
+7. Logout/respawn regression from v3.7.0 still passes.

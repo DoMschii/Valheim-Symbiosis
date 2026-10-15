@@ -1,0 +1,6 @@
+Valheim_Workers_Mount v0.1.22
+
+- Fixed Drake whistle hotbar handling: Player.UseHotbarItem is now intercepted before vanilla item-use logic.
+- The whistle no longer enters Valheim's "apply/use on what?" targeting state.
+- Added same-frame de-duplication so the Harmony hotbar interception and runtime key fallback cannot toggle symbiosis twice.
+- Remote symbiosis from v0.1.21 remains unchanged: a persistent Mount assignment can create the temporary Drake flight avatar when the real Worker is not loaded.

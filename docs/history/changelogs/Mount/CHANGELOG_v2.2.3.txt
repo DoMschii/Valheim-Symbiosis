@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v2.2.3
+
+- Reverts the v2.2.2 Drake Ego yaw flip completely; Drake camera, flight and head-follow stay exactly on the previously working v2.2.1/v2.2.0 path.
+- Troll-only fix: the Troll Head/Eye authored forward axis is reversed 180 degrees for Ego camera face offset.
+- Troll-only fix: mouse-driven head follow uses the same reversed anatomical face axis, so the visible face follows the mouse instead of presenting the forehead/back of the head.
+- No yaw/control inversion is applied; Third Person and all other forms remain unchanged.
+- Existing per-form live XYZ fine-tune values are preserved.

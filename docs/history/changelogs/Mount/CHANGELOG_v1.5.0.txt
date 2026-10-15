@@ -1,0 +1,10 @@
+Valheim_Workers_Mount v1.5.0 - Cooldown integrity + transition hardening
+
+- Troll Bodenschlag/Schockgebruell cooldowns no longer reset when leaving the form.
+- Sea Serpent Bissstoss/Schwanzfeger cooldowns no longer reset on exit.
+- Direct form switching can no longer be used to bypass those cooldowns.
+- Cooldowns continue as normal real-time timers while another form or the human body is active.
+- Re-entering a form immediately restores the correct remaining timer in the unified HUD.
+- Drake frost cooldowns and Werewolf Blood Hunt already behaved persistently and remain unchanged.
+- Movement-only transient timers (jump/visual state) still reset on exit as intended.
+- No new per-frame scans, Physics queries or allocations were introduced.

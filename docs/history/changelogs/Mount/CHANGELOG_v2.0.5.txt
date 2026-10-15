@@ -1,0 +1,9 @@
+v2.0.5 - Deterministic Troll1/Troll2 weapon state
+
+- Troll symbiosis no longer accepts Valheim's random Troll weapon roll as its visible starting state.
+- Entry now explicitly forces the temporary Troll into the unarmed weapon state (Troll1).
+- The native/random Troll log weapon is captured before unequipping when available; reflected creature weapon candidates are also searched.
+- Pressing E on a valid fallen TreeLog switches to the native log-weapon state (Troll2) when available.
+- If the current Valheim prefab exposes no native log weapon item, the v2.0.2 held-world-log mesh remains the fallback.
+- While Troll1 is active, the runtime reasserts the unarmed state during the existing 0.10 s local log probe so the game's random equipment initialization cannot put the club back on.
+- When the held log breaks or pickup aborts, the Troll is explicitly returned to Troll1/unarmed.

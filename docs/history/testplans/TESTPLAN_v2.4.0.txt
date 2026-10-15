@@ -1,0 +1,8 @@
+v2.4.0 Werewolf aimed pounce test
+
+1. Enter Werewolf symbiosis at night/in a cave.
+2. Aim horizontally and press MMB: leap should move strongly toward the crosshair.
+3. Aim slightly upward/downward and repeat: leap height should follow conservatively without vertical launch/dive.
+4. Land against terrain/walls and confirm normal collision/gravity remain intact.
+5. Confirm LMB claw and RMB+LMB Blood Hunt still work.
+6. Confirm Drake/Troll/Serpent movement and Ego fine-tune remain unchanged.

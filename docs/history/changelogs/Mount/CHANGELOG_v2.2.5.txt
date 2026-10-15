@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v2.2.5
+
+- Live Ego fine-tune keys can now be held continuously.
+- Initial press and early repeats stay at 1 cm for precision.
+- Hold acceleration ramps to 2.5 cm, then 5 cm, then 10 cm per repeat tick.
+- Works for forward/back, left/right and vertical PageUp/PageDown (including Ctrl/Alt+Shift+Up/Down).
+- Existing per-form saved XYZ values and all v2.2.4 Troll/Drake behavior are preserved.

@@ -1,0 +1,8 @@
+Valheim Workers Mount v0.1.16
+
+- Removed synthetic Time-based ego wingbeat bobbing.
+- Ego bobbing now reads the real Drake Animator layer-0 state normalizedTime.
+- Camera pulse therefore follows the active animation clock and automatically tracks animation speed/transitions.
+- Active Drake animation clip/state is logged when it changes for precise phase tuning.
+- Third-person camera and stable v0.1.13 camera ownership remain unchanged.
+- Test whistle recipe remains 1 Wood.

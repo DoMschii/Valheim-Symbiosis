@@ -1,0 +1,6 @@
+Valheim Workers Mount v0.1.18
+
+- Adds a live Drake wingbeat camera intensity slider to the existing SmartCore Ego tab.
+- Range: 0% to 400%, default 100%.
+- Slider scales the real Animator-synchronised IdleHover/FlyForward camera motion only.
+- Third-person camera and flight controls remain unchanged.

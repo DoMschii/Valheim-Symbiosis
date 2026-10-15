@@ -1,0 +1,6 @@
+v2.4.1 Werewolf head-pose test
+1. Enter Werewolf symbiosis and switch to Ego.
+2. Look straight, fully down, fully up, left and right.
+3. Confirm the Fenring face/muzzle points with the camera rather than twisting sideways/backwards.
+4. Confirm saved Shift+Arrow / Shift+PageUp/PageDown camera fine-tune still applies.
+5. Confirm Drake and Troll remain unchanged.

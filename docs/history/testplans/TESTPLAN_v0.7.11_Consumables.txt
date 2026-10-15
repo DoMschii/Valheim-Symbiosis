@@ -1,0 +1,6 @@
+1. Enter any symbiosis form.
+2. Put normal food on the hotbar and use it: the Player food buff must be added/refreshed.
+3. Right-click/Use food from inventory while transformed: it must work.
+4. Use a mead/potion: it must work.
+5. Try a weapon/tool/equipment item: it must remain blocked.
+6. Use the active bound necklace again: symbiosis must end normally.

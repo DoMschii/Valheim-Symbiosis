@@ -1,0 +1,3 @@
+Valheim_Workers_Mount v4.5.1 - Repository cleanup / release tooling alignment
+- No gameplay changes.
+- Source/release repository reorganized for clean GitHub publishing.

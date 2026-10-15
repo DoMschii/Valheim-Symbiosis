@@ -1,0 +1,7 @@
+v1.8.0 quick test
+1. Start each form with 0/1/2-star bound creatures; HUD should show 0★/1★/2★.
+2. Drake: compare fallback frost damage across stars.
+3. Troll: compare Bodenschlag enemy/natural-object damage across stars.
+4. Serpent: compare Bissstoss and Schwanzfeger damage across stars.
+5. Werewolf: confirm existing stronger star scaling is unchanged.
+6. Native LMB attacks must still work normally.

@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v0.6.5
+
+BLOOD HUNT SPEED PASS
+- Blood Hunt hop interval reduced from 0.16s to 0.085s.
+- Final return delay reduced to 0.06s; a full five-target chain returns in ~0.40s.
+- Target chain is built from one Character snapshot per activation instead of repeated world scans per hop.
+- Existing v0.6.4 native LMB claw and MMB jump routing are preserved unchanged.
+- No balance changes to damage multipliers, stamina cost, cooldown or target limits.

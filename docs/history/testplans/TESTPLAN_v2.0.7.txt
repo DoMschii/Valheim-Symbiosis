@@ -1,0 +1,7 @@
+Valheim Symbiosis v2.0.7 test
+1. Transform into Troll several times. It must always start as Troll1/unarmed.
+2. Fell a tree and look at the fallen log; press E.
+3. Expect log: Troll avatar state switched: Troll1 -> Troll2/log.
+4. Troll2 should use native log swing attacks/animations, not troll_punch.
+5. Attack 12 times. On final use expect Troll2 -> Troll1/unarmed.
+6. Verify camera and player HP/stamina remain continuous through both swaps.

@@ -1,0 +1,4 @@
+Valheim_Workers_DrakeForm v0.6.9
+
+- Pending direct-form switches are cleared when the controller is disabled/destroyed or the player dies.
+- Prevents a queued necklace handoff from leaking across player/world lifecycle changes.

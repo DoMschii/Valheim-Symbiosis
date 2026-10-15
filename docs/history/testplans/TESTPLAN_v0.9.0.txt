@@ -1,0 +1,19 @@
+v0.9.0 QUICK TEST
+
+1) DRAKE FLIGHT
+- Fly W + curves/A-D in Third. Banking remains.
+- Body should show a subtle up/down + pitch impulse in sync with wingbeats.
+- Collider/path must stay steady; no physical bobbing.
+
+2) DRAKE COMBAT
+- LMB: native attack if available, otherwise existing 3-shot frost salvo.
+- RMB: native secondary if available; otherwise a fast single frost bolt.
+- MMB: additional native attack if available; otherwise a 5-shot frost fan.
+- Cooldown messages should appear if reused too quickly.
+
+3) REGRESSION
+- F6 Ego/Third.
+- Serpent camera/wave + Third controls.
+- Troll Third movement-facing.
+- Werewolf night/cave gate, food/mead and Blood Hunt.
+- Hammer build mode closes on transformation.

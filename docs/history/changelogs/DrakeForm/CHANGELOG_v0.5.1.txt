@@ -1,0 +1,5 @@
+Valheim_Workers_DrakeForm v0.5.1
+
+- Troll necklace text now communicates its actual tank/breacher niche: 35% less physical damage, strong stagger/knockback resistance, stamina-paid sprint.
+- Symbiosis catalog now explicitly follows a curated-form rule: not every Valheim creature receives a transformation necklace; each form must add a unique gameplay niche.
+- Binding metadata and v0.5.0 Troll necklaces remain compatible; no recapture is required.

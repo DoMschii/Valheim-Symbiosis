@@ -1,0 +1,5 @@
+Werewolf night-only test
+1. Daytime: use a bound Werewolf necklace -> no transformation; center message says darkness is required.
+2. Night: use the same necklace -> Werewolf transformation starts normally.
+3. While transformed, use necklace again during night/day -> exit remains allowed.
+4. Drake, Serpent and Troll necklaces remain usable at any time.

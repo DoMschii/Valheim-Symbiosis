@@ -1,0 +1,6 @@
+1. Start Valheim and confirm log says Loading [Valheim_Workers_Mount 2.0.5].
+2. Enter Troll symbiosis 5-10 times. Every entry must be visually unarmed regardless of vanilla random Troll variant.
+3. Fell a tree and look at the fallen TreeLog. [E] Baumstamm aufnehmen must appear.
+4. Press E. The Troll must switch to a visible log-club state; log should contain Troll2/native-log state equipped when native weapon exists, otherwise visibleWeapon=True via mesh fallback.
+5. Use 12 attacks. The log breaks and Troll returns to unarmed.
+6. Pick up another log and leave symbiosis before it breaks. The held log is dropped back into the world.

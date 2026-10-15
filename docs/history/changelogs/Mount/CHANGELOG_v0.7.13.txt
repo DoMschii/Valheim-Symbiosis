@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v0.7.13
+
+- Sea Serpent third-person chase focus now prefers the actual head transform instead of renderer center.
+- Camera is slightly closer/lower for a more normal Valheim swimming view.
+- Added articulated render-only S-wave across detected spine/tail/neck bones.
+- Wave amplitude grows toward the tail and scales with swim activity/speed.
+- Gameplay transform, collider, heading and controls remain unchanged.
+- Falls back to the previous safe whole-visual sway if no useful skeleton chain is found.

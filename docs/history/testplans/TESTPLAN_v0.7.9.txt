@@ -1,0 +1,5 @@
+1. Serpent Third Person: verify camera sits behind/above the head area, not centered far back on the long body.
+2. Swim forward and turn: controls should remain identical to v0.7.8.
+3. Watch the visible Serpent: it should sway left/right more strongly while moving and calm down near idle.
+4. Exit/re-enter Serpent: visual rotation must reset cleanly.
+5. Werewolf + Ego: unchanged.

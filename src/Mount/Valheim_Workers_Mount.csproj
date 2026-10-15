@@ -1,0 +1,85 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyName>Valheim_Workers_Mount</AssemblyName>
+    <RootNamespace>Valheim_Workers</RootNamespace>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Version>4.5.1</Version>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <BepInExPath Condition="'$(BepInExPath)' == ''">$(VALHEIM_BEPINEX)</BepInExPath>
+    <ValheimManagedPath Condition="'$(ValheimManagedPath)' == ''">$(VALHEIM_MANAGED)</ValheimManagedPath>
+    <WorkersCorePath Condition="'$(WorkersCorePath)' == ''">$(VALHEIM_WORKERS_CORE)</WorkersCorePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Valheim_Workers">
+      <HintPath>$(WorkersCorePath)</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>$(BepInExPath)\core\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(BepInExPath)\core\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="assembly_valheim">
+      <HintPath>$(ValheimManagedPath)\assembly_valheim.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="assembly_utils">
+      <HintPath>$(ValheimManagedPath)\assembly_utils.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.AnimationModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.AudioModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+
+  <Target Name="ValidateValheimReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(WorkersCorePath)')" Text="Valheim_Workers.dll v0.5.436+ not found. Install the Workers core first." />
+    <Error Condition="!Exists('$(BepInExPath)\core\BepInEx.dll')" Text="BepInEx.dll not found." />
+    <Error Condition="!Exists('$(BepInExPath)\core\0Harmony.dll')" Text="0Harmony.dll not found." />
+    <Error Condition="!Exists('$(ValheimManagedPath)\assembly_valheim.dll')" Text="assembly_valheim.dll not found." />
+  </Target>
+</Project>

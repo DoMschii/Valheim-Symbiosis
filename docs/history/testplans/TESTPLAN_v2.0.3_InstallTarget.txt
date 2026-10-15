@@ -1,0 +1,7 @@
+v2.0.3 install target verification
+
+1. Run root Setup.ps1 with Valheim closed.
+2. Setup must print every Thunderstore profile that received Mount 2.0.3.
+3. Start Valheim and check BepInEx log: Loading [Valheim_Workers_Mount 2.0.3].
+4. Transform to Troll, pick a fallen beech log with E.
+5. Log should contain visibleWeapon=True and the Troll should visibly hold the cloned trunk.

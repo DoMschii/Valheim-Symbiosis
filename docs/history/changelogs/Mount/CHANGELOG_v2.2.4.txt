@@ -1,0 +1,6 @@
+Valheim_Workers_Mount v2.2.4
+
+- Drake-only rollback: removed the v2.2.1 Head->Eye anatomical-axis calibration.
+- Drake Ego camera/head mouse-follow now uses the original generic Head.forward path again.
+- Troll1/Troll2 180-degree face-axis correction from v2.2.3 is preserved unchanged.
+- Wingbeat propulsion, saved per-form XYZ fine-tune, combat, stamina, and all other forms are unchanged.

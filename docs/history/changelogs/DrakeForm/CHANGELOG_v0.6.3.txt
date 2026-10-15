@@ -1,0 +1,6 @@
+v0.6.3 - Werewolf darkness gate
+
+- Werewolf symbiosis can start at night OR inside an instanced Valheim cave/dungeon.
+- Daytime overworld buildings/shelters do not count as caves.
+- Existing active-form exit remains unrestricted.
+- Drake, Sea Serpent and Troll activation remain unchanged.

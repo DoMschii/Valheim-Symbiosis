@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v0.1.36
+
+- Drake whistle inventory/hotbar icon cleaned up.
+- Removed the baked-in UI/background completely.
+- Icon now contains only the whistle, leather cord and feather on transparent pixels.
+- Tight 128x128 crop for a larger, cleaner Valheim hotbar presentation.
+- No gameplay, flight, camera or attack logic changed from v0.1.35.

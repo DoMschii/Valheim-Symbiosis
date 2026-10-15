@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v0.1.40
+
+- Hardened player death while necklace/Drake symbiosis is active.
+- The hidden real Player is synced to the Drake body immediately before forwarded damage is resolved, so lethal hits use the current Drake position for normal Valheim death/tombstone handling.
+- A lethal forwarded hit now tears down symbiosis immediately without running the animated/safe-ground dismount path.
+- The temporary Drake avatar is destroyed and normal camera/player visibility ownership is restored as part of death cleanup.
+- Symbiosis transition damage-immunity time is cleared on death so it cannot leak into respawn.
+- Existing flight, camera, wingbeat, attack and player-health forwarding mechanics are otherwise unchanged.

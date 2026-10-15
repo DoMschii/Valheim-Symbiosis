@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v2.8.0 - Werewolf Blood Hunt Smart Chain
+
+- Blood Hunt no longer chooses every follow-up target purely by nearest distance.
+- Each hop prefers the densest reachable enemy cluster, making the five-target blink chain much more reliable in groups.
+- Follow-up hops require line of sight, so the Werewolf no longer teleports through walls/large solid obstacles to continue the chain.
+- Candidate characters are still snapshotted only once per activation; there is no new per-frame world scan.
+- Existing RMB+LMB activation, stamina/cooldown, return-to-origin behavior, native claw animation and star scaling are preserved.
+- Drake, Troll and Sea Serpent behavior is unchanged.

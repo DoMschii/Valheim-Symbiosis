@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v3.0.9 - Drake Dive Momentum Stamina
+
+- Drake Sturzflug (Shift+W) no longer costs stamina; it is treated as gravity-assisted diving.
+- A committed dive of at least 0.45s grants 2.0s of free upward flight after leaving the dive.
+- After the momentum window expires, upward flight costs 10 stamina/second.
+- Level flight and descending flight do not consume movement stamina.
+- If stamina runs out while climbing, positive lift is removed but horizontal flight remains controllable.
+- v3.0.8 native animation/travel assist, head, camera and all other forms are preserved.

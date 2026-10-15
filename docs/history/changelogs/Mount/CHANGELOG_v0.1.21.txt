@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v0.1.21
+- Personal Drake selection is now persisted locally per Valheim player ID, so the whistle still knows that a Mount exists after portals, long-distance travel and zone unloads.
+- The whistle remains only the Symbiosis hotkey; it does not recall or teleport the physical Worker.
+- If the assigned physical Drake is loaded, Symbiosis uses it as before.
+- If the assigned Drake is not loaded, Symbiosis creates a temporary Drake avatar at the player for flight while the real Worker remains at its original world location.
+- Temporary Symbiosis avatars are destroyed on dismount/shutdown.
+- Pressing the whistle hotbar key while already transformed now ends Symbiosis directly.

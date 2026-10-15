@@ -1,0 +1,6 @@
+v2.2.3 test
+1. Drake: verify Ego/Third, head look and flight are unchanged from the previously good state.
+2. Troll1 Ego: camera must sit on the face side, not behind/in front of the forehead.
+3. Look fully up/down/left/right: Troll head/face must follow the mouse naturally.
+4. Pick up a log -> Troll2: camera and head orientation must remain correct through the body swap.
+5. Confirm Shift+Arrow/PageUp/PageDown fine tune still works.

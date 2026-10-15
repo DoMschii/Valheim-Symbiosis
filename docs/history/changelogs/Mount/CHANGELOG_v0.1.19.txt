@@ -1,0 +1,8 @@
+Valheim Workers Mount v0.1.19
+
+- Re-scales the real animation-synchronised Drake wingbeat camera motion.
+- 100% is now 10x stronger than v0.1.18 and serves as the new realistic default.
+- Ego-tab slider range changed to 0-200%.
+- 0% disables wingbeat camera motion; 100% is the new default; 200% doubles that default.
+- Animation coupling itself is unchanged: IdleHover/FlyForward still follow the real Drake Animator blend tree.
+- Third-person camera and flight controls unchanged.

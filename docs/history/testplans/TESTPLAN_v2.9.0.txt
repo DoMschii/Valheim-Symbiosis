@@ -1,0 +1,8 @@
+Valheim Symbiosis v2.9.0 test
+
+1. Enter Troll form without a log: HUD header should show E: STAMM.
+2. Look at a fallen log and press E: Troll should swap to Troll2 and header should show STAMM 12/12.
+3. Swing LMB repeatedly: durability should count down in the header.
+4. At 3/12 or lower a warning ! should appear.
+5. On the final swing the log should break, Troll2 should return to Troll1, and HUD should return to E: STAMM.
+6. Verify Drake, Werewolf and Sea Serpent behavior is unchanged.

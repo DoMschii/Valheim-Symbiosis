@@ -1,0 +1,6 @@
+Valheim_Workers_Mount v2.2.2
+
+- Drake Ego now applies a paired 180 degree yaw correction when entering/leaving first person.
+- Camera, mouse-driven head follow and camera-relative flight therefore share the same outward-facing axis.
+- Fixes the camera looking back into the Drake forehead while preserving saved per-form XYZ fine tuning.
+- Troll, Werewolf, Serpent and Third Person are unchanged.

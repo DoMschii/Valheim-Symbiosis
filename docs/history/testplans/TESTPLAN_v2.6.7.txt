@@ -1,0 +1,7 @@
+Valheim Symbiosis v2.6.7 test
+
+1. Enter Drake symbiosis and hover without pressing WASD.
+2. Rotate the camera left/right: the whole Drake should smoothly turn to the camera yaw.
+3. Look strongly up/down while hovering: body should stay level; only head/camera pitch should change.
+4. Fly with W: existing flight steering remains camera-directed.
+5. Shift+W: Sturzflug remains fast/downward.

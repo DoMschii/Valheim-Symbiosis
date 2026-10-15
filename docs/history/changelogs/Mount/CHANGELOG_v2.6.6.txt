@@ -1,0 +1,5 @@
+Valheim Workers Mount v2.6.6
+- Drake Ego head-pose fix only: Drake mouse-driven head follow now uses the animated neutral eye-anchor forward axis instead of raw Head.forward.
+- This preserves the native neutral Drake head/muzzle pose when looking straight ahead and only applies the delta needed to follow mouse yaw/pitch.
+- Fixes the head being permanently pitched upward / horns dominating the Ego view.
+- Drake camera position, saved XYZ fine-tune, flight speed/Sturzflug, wingbeat propulsion, Serpent surface lock, Troll and Werewolf remain unchanged.

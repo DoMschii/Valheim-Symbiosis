@@ -1,0 +1,8 @@
+Valheim_Workers_DrakeForm v0.6.5 - Direct form switching
+
+- Using a different bound symbiosis necklace while already transformed now queues a safe direct form switch.
+- Current form performs the existing Mount exit animation first; the requested form starts only after Mount is fully inactive.
+- Using the necklace for the currently active form still toggles symbiosis off normally.
+- Werewolf darkness rules are validated both when the switch is requested and again when the queued Werewolf actually starts.
+- Switch requests time out safely after 8 seconds and never overlap temporary creature avatars/cameras.
+- Existing item-use activation, capture/binding metadata and all form mechanics remain unchanged.

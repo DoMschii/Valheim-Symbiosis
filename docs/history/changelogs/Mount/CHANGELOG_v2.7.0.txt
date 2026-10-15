@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v2.7.0 - Drake Flight Feel
+
+- Drake normal W flight follows camera pitch inside a natural flight cone instead of allowing accidental near-vertical movement.
+- Shift+W remains the dedicated Sturzflug and now commits to a slightly steeper minimum dive angle.
+- Drake turn authority is slightly increased so body steering keeps up better with camera yaw at the new flight speeds.
+- Control hint now says Shift+W Sturzflug instead of generic sprint.
+- Head pose/camera anchor from v2.6.6-v2.6.7, wingbeat propulsion, attacks and all other creature forms are unchanged.

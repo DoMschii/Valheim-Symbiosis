@@ -1,0 +1,7 @@
+v2.5.0 - Sea Serpent natural body pitch
+
+- Sea Serpent visible body now pitches with the actual climb/dive slope while swimming.
+- Pitch is visual-only; collider/physics authority remains unchanged.
+- Pitch is smoothly blended and clamped to +/-38 degrees.
+- Existing travelling S-wave/tail animation layers on top of the body pitch.
+- Ego pitch-depth swim, stamina regeneration, combat, per-form camera fine-tune/reset, Werewolf head fix, Troll1/Troll2 and Drake wingbeat propulsion remain preserved.

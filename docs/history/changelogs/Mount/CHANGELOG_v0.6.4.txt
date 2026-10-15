@@ -1,0 +1,10 @@
+Valheim_Workers_Mount v0.6.4
+
+HOTFIX: Werewolf native LMB animation path
+
+- LMB now starts the real Fenring claw through Humanoid.StartAttack, matching the proven native MMB jump path.
+- Existing outgoing-damage patch still applies the bound-star multiplier to native claw damage (0*=x1.5, 1*=x1.75, 2*=x2.5).
+- Synthetic claw hit remains only as a compatibility fallback if the real native attack cannot start.
+- Fallback/Combo visual triggers now prefer the creature ZSyncAnimation.SetTrigger path instead of writing directly to the raw Animator.
+- Added explicit log line: `Werewolf LMB native claw started -> ...` when the real native animation pipeline accepted the attack.
+- Drake / Serpent / Troll unchanged.

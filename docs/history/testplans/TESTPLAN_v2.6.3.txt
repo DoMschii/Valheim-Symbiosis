@@ -1,0 +1,5 @@
+1. Enter Sea Serpent symbiosis in Ego.
+2. Look left/right/up/down: visible head/snout should follow the view instead of twisting sideways/backwards.
+3. Reset only Serpent Ego XYZ in F8 if old manual offsets were compensating for the wrong axis.
+4. Confirm head remains above the water surface.
+5. Confirm Drake, Troll and Werewolf Ego behavior is unchanged.

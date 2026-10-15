@@ -1,0 +1,20 @@
+Valheim_Workers_Mount v0.3.0
+
+BIG BLOCK: Multi-form Symbiosis + Sea Serpent
+
+- Keeps the v0.2 Drake implementation intact as the first form.
+- API revision 3 adds TryMountBoundForm(Player, formId, prefab, level, out message).
+- Adds Sea Serpent possession inside the same proven lifecycle/body-handoff runtime instead of a second competing controller.
+- Serpent form can only start while the real Player is swimming.
+- Serpent movement uses water-depth control:
+  W/S swim forward/backward, A/D steering/strafe, Space toward surface, Ctrl/C deeper, Shift fast.
+- Serpent is constrained to the entry water surface and up to ~8 m depth; it cannot become a flying land mount.
+- Temporary Serpent movement stats are boosted without mutating the captured world creature.
+- Native creature attack discovery is reused for Serpent; no fake bite/projectile is invented.
+- Drake-only frost salvo remains a Drake-only fallback.
+- Serpent camera uses the existing stable root/head camera but disables Drake wingbeat bobbing.
+- Third-person chase distance adapts to the longer Serpent body.
+- Dismount from Serpent returns the Player to the water surface rather than raycasting to the sea floor.
+- Multiplayer player-body handoff publishes the active form (drake/serpent), revision 3.
+- Tagged temporary-avatar cleanup now applies to all symbiosis forms.
+- Existing Drake APIs remain for backward compatibility.

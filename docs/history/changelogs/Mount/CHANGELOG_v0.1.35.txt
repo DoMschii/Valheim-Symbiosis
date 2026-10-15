@@ -1,0 +1,6 @@
+Valheim_Workers_Mount v0.1.35
+
+- Replaced the procedural whistle placeholder icon with the generated bone-whistle artwork.
+- Icon is cropped for the Valheim inventory/hotbar and embedded directly into Valheim_Workers_Mount.dll.
+- Removed the generated hotbar number from the artwork; Valheim renders the slot number itself.
+- No changes to flight controls, symbiosis, camera, companion logic, or attacks.

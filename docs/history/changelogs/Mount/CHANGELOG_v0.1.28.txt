@@ -1,0 +1,9 @@
+Valheim_Workers_Mount v0.1.28
+
+- Added transformation impact FX on top of the v0.1.27 smooth body/camera hand-off.
+- Added a procedural frost/wind charge burst at transformation start and a stronger radial frost burst at the body swap.
+- Added a deterministic self-contained whoosh + crystalline hand-off sound; no external audio assets are required.
+- The hand-off now adds a short FOV kick plus a very small positional/roll impulse for more physical transformation weight.
+- If a safe client-only Valheim Drake/Frost VFX prefab is available, the Mount add-on borrows it as an extra layer; networked prefabs are explicitly skipped.
+- FX are local presentation only and do not alter Worker ZDOs, navigation, assignment, remote-avatar ownership, or the stable whistle flow.
+- Core remains unchanged and compatible with Workers v0.5.118.

@@ -1,0 +1,9 @@
+Valheim_Workers_Mount v0.9.0 - Drake flight/combat pass
+
+- Drake visible body now receives a small animation-synchronised lift + pitch pulse on real wingbeats.
+- Wingbeat motion is render-only: Rigidbody, collider and authoritative flight path remain untouched.
+- Existing v0.8.0 banking remains and blends with the wingbeat pulse.
+- If the live Drake prefab exposes no native RMB attack, RMB now fires one fast focused vanilla frost bolt.
+- If no native MMB attack exists, MMB fires a five-projectile frost fan.
+- Native creature attacks still take priority; fallback attacks only fill genuinely empty slots.
+- Werewolf, Troll, Serpent, darkness gate, consumables, build-mode release and item-use activation are unchanged.

@@ -1,0 +1,5 @@
+v0.6.7 - ObjectDB / PieceTable null guard
+- Added a conservative Harmony preflight before Player.UpdateKnownRecipesList and ObjectDB.GetAllBuildPieces.
+- Removes only Unity-null entries from ObjectDB.m_items / PieceTable.m_pieces and recipes with a null recipe/output.
+- Logs repaired list/table/index details instead of hiding the underlying problem.
+- Does not alter valid recipes, requirements, pieces or Symbiosis gameplay.

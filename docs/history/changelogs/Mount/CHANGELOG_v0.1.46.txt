@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v0.1.46
+
+- Fixed Valheim 1.0.17 startup Harmony failure: Player.UpdateAttack no longer exists as a patchable Player method in this build.
+- Removed the invalid Player.UpdateAttack Harmony target so PatchAll completes successfully.
+- The existing Humanoid.StartAttack lock now actually becomes active during symbiosis and blocks hidden-player weapon fire, including crossbow attacks.
+- Existing pre-armed attacks are still cancelled on transformation via AbortAttack/current-attack cleanup.
+- Drake flight, camera, attacks, AI suppression, persistence and cleanup remain unchanged.

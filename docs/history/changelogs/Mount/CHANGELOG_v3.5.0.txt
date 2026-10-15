@@ -1,0 +1,8 @@
+v3.5.0 - Troll core combat pass
+
+- MMB Schockgebruell is now a real crowd-control attack instead of push-only.
+- Adds 28 base blunt damage, strong 4.5 stagger multiplier and 36 push in the existing 9m radius.
+- Damage scales with the bound creature star multiplier.
+- Existing 18 stamina cost and 9s cooldown are preserved; failed stamina checks still do not consume cooldown.
+- Activation-only Character iteration: no new polling loop or background scan.
+- Drake, Werewolf and Sea Serpent behavior are unchanged.

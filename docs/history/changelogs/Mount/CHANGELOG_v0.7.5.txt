@@ -1,0 +1,8 @@
+v0.7.5 - Werewolf signed locomotion fix
+
+- Fixes v0.7.4 forward-glitch on S/A/D caused by using view-forward as native Character moveDir for every input.
+- Pure W remains on Fenring native locomotion because that path is confirmed working with animation.
+- S/A/D and diagonals now keep native moveDir at zero and translate exactly once per FixedUpdate with Rigidbody.MovePosition.
+- LateUpdate now reasserts facing/animation only and no longer applies a second translation step.
+- Adds one diagnostic line when the signed movement path is first used.
+- Canid vision, combat, Blood Hunt, HUD, movement jump and Workers Core remain unchanged.

@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v0.1.30
+
+- Fixed hotbar off-by-one trigger for the Drake whistle.
+- Player.UseHotbarItem is now treated as the confirmed 1..8 Valheim hotbar index.
+- Pressing slot 7 can no longer trigger a whistle placed in slot 8.
+- Empty hotbar slots never activate symbiosis through the vanilla hotbar interception path.
+- Existing transformation, remote avatar and mount assignment behavior is unchanged.

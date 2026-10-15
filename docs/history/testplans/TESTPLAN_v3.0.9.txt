@@ -1,0 +1,7 @@
+v3.0.9 test
+1. Fly level without Shift: stamina must not drain.
+2. Climb with W + camera up or Space: stamina should drain ~10/s.
+3. Shift+W dive for >0.45s: no stamina drain during dive.
+4. Release Shift and climb immediately: first ~2s should be free, then stamina drain starts.
+5. Empty stamina while climbing: Drake should keep horizontal control but stop gaining height.
+6. Verify wing-flap animation and v3.0.8 travel feel are unchanged.

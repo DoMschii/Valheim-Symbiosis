@@ -1,0 +1,8 @@
+Valheim Workers Mount v0.1.12
+
+- Based on v0.1.10 camera path (v0.1.11 render-pose experiment reverted).
+- Fixes camera ownership conflict with Valheim Ego during Drake symbiosis.
+- Mount now temporarily suspends Valheim Ego's internal FirstPersonEnabled and transition state, not just its F6 hotkey.
+- Restores the exact previous Valheim Ego state when symbiosis ends.
+- Third-person behavior from v0.1.10 is otherwise unchanged.
+- Ego still uses the stable root-relative eye offset from v0.1.10; intentional wingbeat bobbing is deferred until camera ownership is stable.

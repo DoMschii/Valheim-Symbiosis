@@ -1,0 +1,8 @@
+v1.4.0 QUICK TEST
+
+1. Drake: use LMB/RMB/MMB fallback frost attacks and confirm stamina decreases; low stamina must block without starting cooldown.
+2. Troll: RMB Bodenschlag and MMB Gebruell consume stamina and still hit enemies.
+3. Serpent: RMB Bissstoss and MMB Schwanzfeger consume stamina; low stamina must block cleanly.
+4. Werewolf: Blood Hunt behavior remains unchanged.
+5. Confirm E interactions, food/mead, direct form switching and necklace exit still work.
+6. Watch Player.log for exceptions while repeatedly using AoE abilities around many creatures.

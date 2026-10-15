@@ -1,0 +1,5 @@
+v0.7.12 - Symbiosis build-mode release
+- Entering any symbiosis now exits vanilla Player placement/build mode before equipment input is locked.
+- If the currently equipped item exposes SharedData.m_buildPieces (Hammer/Hoe/Cultivator or compatible modded build tool), only that build tool is unequipped on entry.
+- Ordinary weapons are left untouched; food/mead consumption during symbiosis remains enabled.
+- Prevents a pre-existing Hammer build menu/placement ghost from remaining permanently active while transformed.

@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v0.1.50
+
+- Backward flight no longer rotates the Drake 180 degrees; S now produces true reverse movement while the body keeps facing the aim direction.
+- Flight steering moved from MonsterAI.UpdateAI to FixedUpdate so player-controlled turning is no longer tied to throttled AI cadence.
+- Body rotation and movement now share the same smoothed flight axis, producing curved turns instead of visible sideways sliding/snap corrections.
+- Turn rate is bounded and movement acceleration is slightly calmer for a rounder visual flight path.
+- Logs the Drake controller's available Fly/Hover/Soar/Back/Reverse/Turn clips once per symbiosis so an actual backward clip can be identified without guessing a state name.
+- v0.1.48 camera/wingbeat fixes, v0.1.49 Character-owned facing, combat, health forwarding, No-AI and persistence remain intact.

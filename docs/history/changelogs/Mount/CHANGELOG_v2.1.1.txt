@@ -1,0 +1,7 @@
+Valheim Symbiosis Mount v2.1.1 - Animated Eye Skull Lock
+
+- Ego camera position now follows the live animated anatomical eye/head anchor every frame.
+- Uses LeftEye/RightEye midpoint when available, then Character.m_eye, then Head fallback.
+- Camera rotation remains player-owned, preventing attack/head animation from whipping view direction.
+- Faster positional filter preserves natural creature movement while suppressing sub-frame jitter.
+- Third person and Troll1/Troll2 body-swap logic unchanged.

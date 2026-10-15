@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v3.0.8 - Drake Native Flight Speed Assist
+
+- Keeps Hatchling m_flySlowSpeed/m_flyFastSpeed completely prefab-native, preserving the good FlyForward/upward wing-flap animation from v3.0.7.
+- Adds speed only after native physics by scaling the displacement Valheim actually produced.
+- Normal Drake flight: about +35% world travel.
+- Shift+W Sturzflug: about +50% world travel.
+- No change to head pose, camera yaw follow, steering, stamina, attacks or the other forms.
+- Teleport/network correction jumps are ignored and the assist is clamped per frame.

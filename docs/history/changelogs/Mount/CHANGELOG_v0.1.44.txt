@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v0.1.44
+
+- Symbiosis camera start now mirrors the human player's CURRENT perspective first.
+  Valheim Ego state/transition target is authoritative; the persisted Mount camera mode is only a fallback.
+  This prevents an old saved Third-Person value from forcing every new game/session to start the Drake in Third Person.
+- Player.UseHotbarItem is frozen while symbiosis is active after DrakeForm gets first chance to consume the bound-necklace toggle.
+- Humanoid.UseItem is frozen for the hidden local player while transformed, covering inventory right-click/item-use paths in addition to EquipItem.
+- Existing flight, camera movement, AI suppression, combat and temporary-avatar logic are unchanged.

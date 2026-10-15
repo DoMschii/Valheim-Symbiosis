@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v2.4.0
+
+- Werewolf MMB native jump attack now performs a deterministic aimed pounce.
+- Pounce follows the current mouse/camera attack direction with a short 18 m/s horizontal burst.
+- Mouse pitch contributes conservatively to leap height; extreme pitch is clamped.
+- Pounce authority lasts only 0.22 s, then normal Valheim gravity/collision/landing and possession movement resume.
+- Blood Hunt, claw attacks, stamina sprint, Ego head/camera tuning, Serpent pitch swim, Troll1/Troll2, and Drake wingbeat propulsion are preserved.

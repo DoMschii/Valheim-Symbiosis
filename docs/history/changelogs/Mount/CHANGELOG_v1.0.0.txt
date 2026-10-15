@@ -1,0 +1,9 @@
+Valheim_Workers_Mount v1.0.0 - Form identity combat update
+
+- Troll: RMB ground slam, 6m AoE blunt/knockback, cooldown.
+- Troll: MMB shock roar, 9m high push/stagger crowd control, cooldown.
+- Sea Serpent: RMB targeted bite burst for a nearby aimed hostile.
+- Sea Serpent: MMB 360-degree tail sweep around the body.
+- LMB remains the creature native attack.
+- Drake v0.9.0 frost fallback combat, Serpent swim wave, Vanilla-style Third Person, Werewolf Blood Hunt/night rules, consumables and build-mode release remain unchanged.
+- Ability scans run only on activation, not continuously.

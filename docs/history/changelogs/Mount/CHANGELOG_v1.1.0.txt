@@ -1,0 +1,9 @@
+Valheim_Workers_Mount v1.1.0 - Unified form combat HUD
+
+- Adds the compact 3-slot cooldown HUD to every symbiosis form, not only Werewolf.
+- Drake: LMB Frost, RMB Eisbolzen, MMB Eisfaecher.
+- Troll: LMB Schlag, RMB Bodenschlag, MMB Gebruell.
+- Sea Serpent: LMB Biss, RMB Bissstoss, MMB Schwanzfeger.
+- Werewolf keeps Klaue, Sprung-Angriff and Blutjagd with active combo progress.
+- HUD reads existing runtime cooldown timers only; no world scans, Physics queries or additional AI polling.
+- All v1.0.0 controls, combat, camera, darkness, consumables and build-mode fixes are preserved.

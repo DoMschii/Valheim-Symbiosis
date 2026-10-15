@@ -1,0 +1,7 @@
+v2.8.0 quick test
+
+1. Transform into Werewolf at night/in a valid interior.
+2. Put 3-5 enemies in one visible group and trigger RMB+LMB Blood Hunt on one of them. Expected: chain stays in the visible cluster up to five targets.
+3. Put another enemy within ~7m but behind a solid wall/large rock. Expected: Blood Hunt must not hop through the obstacle.
+4. Confirm stamina/cooldown and return to the original position still work.
+5. Smoke-test Drake/Troll/Serpent forms for unchanged controls.

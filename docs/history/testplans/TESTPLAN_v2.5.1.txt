@@ -1,0 +1,9 @@
+v2.5.1 Sea Serpent dive test
+
+1. Enter Sea Serpent symbiosis while swimming.
+2. Hold Ctrl or C: the actual Serpent body/camera must descend below the surface.
+3. Release Ctrl: chosen depth should hold instead of snapping to surface.
+4. Hold Space: ascend back toward surface.
+5. In Ego hold W and look down/up: depth must follow camera pitch.
+6. Verify Shift boost/stamina and stamina regeneration still work.
+7. Verify body pitch/S-wave follow the real climb/dive path.

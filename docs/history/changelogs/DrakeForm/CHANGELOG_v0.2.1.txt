@@ -1,0 +1,7 @@
+Valheim_Workers_DrakeForm v0.2.1 - Necklace Finder Hotfix
+
+- Fixed Drachenhalskette inheriting Wishbone's SE_Finder equip status effect because Wishbone is used as the Jotunn clone source.
+- The necklace remains a utility-slot item, but no longer searches for buried treasure/silver.
+- Also clears any inherited set-status effect from the clone source defensively.
+- Existing bound necklaces remain valid; no Drake recapture is required.
+- Mount remains v0.2.0 and is unchanged.

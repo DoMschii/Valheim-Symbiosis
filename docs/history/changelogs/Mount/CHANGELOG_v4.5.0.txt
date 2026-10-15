@@ -1,0 +1,6 @@
+Valheim_Workers_Mount v4.5.0 - Auto Update / Release Infrastructure
+===================================================================
+- Gameplay unveraendert.
+- Suite integriert einen generischen GitHub-Release-Updater.
+- Neue ReleaseTools koennen nach finalem Test einen Standalone-Installer bauen, SHA256 erzeugen und per GitHub CLI veroeffentlichen.
+- Updater laedt neue Stable-Releases beim Spielstart und installiert sie sicher nach dem Beenden von Valheim.

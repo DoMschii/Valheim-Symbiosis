@@ -1,0 +1,7 @@
+v0.6.8 - Werewolf dichromatic vision
+- Werewolf symbiosis now fades into a canid-inspired dichromatic colour grade during the transformation.
+- Red/green discrimination is compressed through ColorGrading channel mixing while blue/yellow separation remains stronger.
+- Saturation is reduced and contrast is raised slightly; this is intentionally not a pure black/white filter.
+- The effect fades back to normal during transformation exit and is removed on plugin shutdown/world exit.
+- Runtime integration is reflection-based: no hard compile dependency on the PostProcessing assembly. If the stack is unavailable, gameplay continues unchanged and one diagnostic line is logged.
+- Combat, Blood Hunt, HUD, damage scaling and ObjectDB null guard are unchanged.

@@ -1,0 +1,9 @@
+v0.7.4 - Werewolf walking restore + stable reverse hybrid
+
+- Fixes the v0.7.3 regression where the possessed Fenring could no longer walk at all.
+- Root cause: v0.7.3 set Character.moveDir to zero and also disabled the Fenring's native locomotion/root-motion path. Valheim 1.0.17 needs the native Character motor to stay awake even when final movement is Rigidbody-authoritative.
+- Native Character motor now receives VIEW-FORWARD only as a locomotion activation vector whenever WASD is held.
+- Real signed translation remains authoritative in the late Rigidbody pass: W = forward, S = true backwards, A/D = strafe.
+- Because native moveDir is never negative/sideways, Fenring no longer receives the 180-degree turn command that caused the Ego camera/body tug-of-war.
+- Native root-motion setting is preserved instead of being forcibly disabled.
+- Existing v0.7.3 canid dichromacy / low-light adaptation, combat, Blood Hunt, jump, HUD and ObjectDB guard are unchanged.

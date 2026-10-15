@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v0.6.3
+
+- Fixed Fenring_taunt/attack_taunt being selected for Werewolf LMB.
+- Curated Werewolf mapping: LMB real claw, MMB real jump, howl/taunt excluded.
+- Native Werewolf damage source now explicitly resolves the claw entry.
+- Blood Hunt target acquisition now tries a 0.85m crosshair sphere-cast before the fallback cone.
+- Added Blood Hunt chord/target debug lines.
+- Drake/Serpent/Troll behavior unchanged.

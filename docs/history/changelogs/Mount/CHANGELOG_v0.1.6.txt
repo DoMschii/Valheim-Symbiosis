@@ -1,0 +1,10 @@
+Valheim Workers Mount v0.1.6
+
+- Reworked Drake steering to an aim-to-fly model.
+- Mouse yaw/pitch now defines the full 3D flight direction in both ego and third person.
+- W flies forward along the view axis; S flies backward along it.
+- A/D no longer rotate or strafe the Drake, removing the fixed-axis steering conflict.
+- Looking up/down while holding W now climbs/dives naturally.
+- Third-person camera orbits using mouse aim rather than trailing a separate body-yaw axis.
+- Drake body smoothly turns toward the same mouse-defined flight direction.
+- Space/Ctrl/C remain optional direct altitude correction controls.

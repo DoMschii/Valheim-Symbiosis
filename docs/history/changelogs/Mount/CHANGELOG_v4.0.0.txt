@@ -1,0 +1,8 @@
+Valheim Workers Mount v4.0.0 - Core Performance & Stability Block
+
+- IsMountUiBlocking caches UI reflection metadata once and evaluates only once per rendered frame.
+- Mounted ZNetView is cached for ownership checks; mounted/rider Rigidbody caches are kept coherent across Troll1/Troll2 swaps.
+- Drake native travel assist and Werewolf authoritative movement/jump paths reuse the mounted Rigidbody cache.
+- Third-person chase-camera collision uses SphereCastNonAlloc instead of allocating RaycastHit[] every render frame.
+- Werewolf Blood Hunt aim, line-of-sight and blink-ground probes use reusable NonAlloc buffers.
+- No movement speeds, stamina costs, cooldowns, camera offsets, attack damage or form rules changed.

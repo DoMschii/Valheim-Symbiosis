@@ -1,0 +1,4 @@
+v2.6.5 - Sea Serpent higher surface lock
+
+- Raises the Sea Serpent animated eye/head surface clearance from 1.50 m to 2.35 m.
+- Keeps the head-axis fix from v2.6.4, surface-only swimming, slow reverse, and all Drake/Troll/Werewolf behavior unchanged.

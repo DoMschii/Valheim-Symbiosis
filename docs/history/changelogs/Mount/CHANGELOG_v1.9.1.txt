@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v1.9.1
+
+- Fix: Sea Serpent symbiosis now regenerates player stamina normally while in water.
+- Cause: the hidden authoritative Player body follows the Serpent underwater, so vanilla IsSwimming() suppressed stamina regeneration.
+- Fix strategy: only during active local Serpent symbiosis, the hidden Player reports IsSwimming=false; the visible Serpent water motor remains unchanged.
+- The Serpent can still only be activated while the player is actually swimming because the activation check runs before symbiosis becomes active.
+- Vanilla food/rested/status-effect stamina regeneration remains authoritative instead of adding a custom flat regeneration rate.

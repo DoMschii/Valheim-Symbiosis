@@ -1,0 +1,8 @@
+v2.1.5 Ego FineTune Vertical
+
+1. Enter any symbiosis form and enable Ego.
+2. Shift+Left/Right: move sideways.
+3. Shift+Up/Down: move forward/back.
+4. Shift+PageUp/PageDown: move camera up/down.
+5. Optional: Ctrl+Shift+Up/Down or Alt+Shift+Up/Down should do the same vertical adjustment.
+6. Verify the status/log prints X/Y/Z and values persist after restart.

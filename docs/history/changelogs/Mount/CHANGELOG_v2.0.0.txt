@@ -1,0 +1,11 @@
+Valheim_Workers_Mount v2.0.0
+
+- Troll symbiosis now always starts visually unarmed; native/random log weapon renderers are suppressed on entry.
+- While unarmed, a fallen Valheim TreeLog within 4.5 m shows "[E] Baumstamm aufnehmen".
+- Pressing E consumes the fallen world log and equips the Troll's native log visual.
+- Held log has 12 swings of durability.
+- Native Troll LMB hits while holding the log gain x1.35 blunt damage plus +35 chop damage.
+- When durability reaches zero the log breaks and the Troll returns to unarmed combat.
+- Leaving Troll symbiosis normally while an intact log is held drops the original log prefab back into the world.
+- Log lookup uses a small local physics query only while Troll form is active and unarmed; no global or idle world scan was added.
+- v1.9.1 Serpent stamina regeneration fix and all previous form systems remain preserved.

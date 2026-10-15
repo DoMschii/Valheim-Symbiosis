@@ -1,0 +1,8 @@
+Valheim Workers Mount v0.1.10
+
+- Ego camera no longer follows animated Drake eye/head bones every frame.
+- Eye/head position is sampled once when symbiosis starts and stored as a stable Drake-root local offset.
+- Camera remains at the anatomical head/eye location but follows only the stable Drake root transform.
+- Removes the double-follow/animation jitter visible in v0.1.9.
+- Third-person camera behavior is unchanged.
+- Menu camera lock and full mount pause remain unchanged.

@@ -1,0 +1,5 @@
+Valheim_Workers_Mount v3.0.6 - Drake Vanilla Flight Speed
+
+- Keeps the v3.0.4 real flight-speed field fix using m_flySlowSpeed / m_flyFastSpeed.
+- Restores the Drake to the original 18 cruise / 32 Sturzflug baseline.
+- Flight feel, head/camera controls, wingbeat propulsion and other forms are unchanged.

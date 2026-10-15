@@ -1,0 +1,6 @@
+v0.6.3 test
+1. Daytime outdoors: Werewolf necklace use must be blocked.
+2. Daytime inside a normal house: still blocked.
+3. Daytime inside Troll Cave / Burial Chamber / Crypt / Frost Cave: allowed.
+4. Night outdoors: allowed.
+5. Exit from active Werewolf remains allowed at any time.

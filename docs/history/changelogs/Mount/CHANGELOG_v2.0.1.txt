@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v2.0.1
+
+- Troll log pickup now prefers the TreeLog directly under the camera/crosshair up to 8 m away.
+- Nearby fallback radius increased to 6 m so the Troll's large body no longer makes valid logs easy to miss.
+- Fallen-log recognition expanded for common Valheim log naming/layout variants and parent/child Rigidbody/Destructible placement.
+- Pickup probe interval reduced to 0.10 s for a much more responsive [E] prompt.
+- Existing v2.0.0 durability, visible log weapon, world-drop-on-exit and combat behavior preserved.

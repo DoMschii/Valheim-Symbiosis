@@ -1,0 +1,12 @@
+Valheim_Workers_Mount v0.5.0
+
+BIG BLOCK: Land-form framework + Troll symbiosis
+
+- Adds Troll as the first grounded creature form.
+- Land possession keeps native gravity/grounding instead of Drake hover locking.
+- Troll body always faces camera yaw; S is real backwards walking and A/D are strafing, with no 180-degree body flip.
+- Shift uses native run state; LMB/RMB/MMB use only native attacks discovered from the Troll prefab.
+- No synthetic Troll attack or fake dodge animation is added.
+- Third-person chase distance is calibrated for the larger Troll body; F6 keeps Ego/Third switching.
+- Drake flight and Sea Serpent water controls stay functionally unchanged.
+- Multi-form API revision raised to 4.

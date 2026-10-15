@@ -1,0 +1,7 @@
+v3.0.3 - Drake Extreme Speed
+
+- Drake cruise baseline increased by another +200%: 27 -> 81.
+- Drake Sturzflug baseline increased by another +200%: 48 -> 144.
+- This is 3x the v3.0.2 speed, matching the requested "+200% drauf" interpretation.
+- Existing Drake camera yaw follow, head pose, wingbeat propulsion and Sturzflug controls are unchanged.
+- Serpent, Troll, Werewolf and Ego persistence are unchanged.

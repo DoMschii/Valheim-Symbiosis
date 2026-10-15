@@ -1,0 +1,8 @@
+Valheim_Workers_DrakeForm v0.5.0
+
+- Adds Trollhalskette as the first land-form necklace.
+- Recipe: 6 Bronze + 8 TrollHide + 4 BoneFragments, Forge 1.
+- Wild Troll can be bound at <=30% health; the binding hit is consumed just like Sea Serpent capture.
+- Stores Troll prefab, level/stars, owner and generic form metadata using the same binding contract.
+- Wishbone finder/set effects are stripped from the cloned necklace.
+- Existing Drake and Sea Serpent necklaces remain compatible.

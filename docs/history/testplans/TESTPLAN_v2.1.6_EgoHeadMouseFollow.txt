@@ -1,0 +1,9 @@
+v2.1.6 Ego Head Mouse Follow
+
+1. Enter each form in Ego.
+2. Look fully down/up and left/right without moving.
+3. Confirm the creature head follows the mouse while the camera remains skull-locked.
+4. Confirm body/arms/claws or Troll log remain visible when looking down.
+5. Attack while looking down/up; head should remain aligned and attack animation should stay natural.
+6. Toggle Third Person and confirm no head-forcing behavior is visible there.
+7. For Troll, repeat in Troll1 and Troll2/log state.

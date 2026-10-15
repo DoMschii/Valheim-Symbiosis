@@ -1,0 +1,8 @@
+Valheim Workers Mount v0.1.14
+
+- Stable v0.1.13 camera ownership retained unchanged.
+- Added controlled first-person wingbeat motion only.
+- Small vertical bob plus tiny fore/aft pulse and subtle pitch/roll during flight.
+- Hover bob is deliberately weaker than active-flight bob.
+- Wingbeat motion is synthetic/deterministic and never reads animated eye/head bones per frame, so the old camera jitter path stays disabled.
+- Third-person camera remains unchanged.

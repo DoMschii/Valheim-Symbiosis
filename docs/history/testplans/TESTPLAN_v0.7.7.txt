@@ -1,0 +1,7 @@
+v0.7.7 quick test
+
+1. Third Person Werewolf: hold A/D/S with camera fixed. Body must turn into movement direction and run forward.
+2. Move camera without movement: body must not be forced to camera yaw.
+3. Third Person Sea Serpent: same rule in water.
+4. Ego Werewolf/Serpent: previous reverse/strafe control remains.
+5. Drake and Troll unchanged.

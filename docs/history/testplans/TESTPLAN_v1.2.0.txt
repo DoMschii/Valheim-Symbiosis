@@ -1,0 +1,8 @@
+v1.2.0 quick test
+
+1. Enter Drake, then use a bound Troll necklace without manually reverting first.
+2. Drake should dissolve normally, then Troll should connect automatically after the exit transition.
+3. Repeat Troll -> Serpent -> Drake.
+4. At night/in a dungeon, switch directly into Werewolf; during daytime outside, Werewolf switch must stay blocked.
+5. Use the necklace matching the currently active form: it should only revert to the player, not re-enter.
+6. Confirm HUD, combat, movement, camera and consumables remain unchanged.

@@ -1,0 +1,7 @@
+v4.2.0 - Release readiness / edge-case block
+
+- Adds a 4 s transformation watchdog so an interrupted enter/exit hand-off cannot leave the player trapped between creature/human bodies or cameras.
+- Adds a low-frequency active-session integrity check that safely releases invalid rider/body state instead of allowing corrupted possession to linger.
+- Symbiosis entry now preflights local-player/body alive state before taking camera/input ownership.
+- Blocking UI screens now clear queued edge-input and pause delayed Troll custom impacts until gameplay resumes, preventing actions from firing behind inventory/map/settings screens.
+- All v4.1.0 emergency recovery, v4.0 performance work, current movement/combat/camera balance and global Ego/Third persistence are preserved.

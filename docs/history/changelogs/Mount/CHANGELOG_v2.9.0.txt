@@ -1,0 +1,8 @@
+v2.9.0 - Troll log combat feedback
+
+- Troll HUD header now exposes the current Troll1/Troll2 log state without any extra world scan.
+- Troll1 shows "E: STAMM" as the pickup reminder.
+- Troll2 shows live remaining durability as "STAMM X/12".
+- At 3 swings or fewer, the HUD adds a visible low-durability warning marker.
+- LMB is labelled "STAMMSCHLAG" while Troll2 is active.
+- No changes to Troll body swapping, damage, attack timing, camera, Drake, Werewolf or Sea Serpent.

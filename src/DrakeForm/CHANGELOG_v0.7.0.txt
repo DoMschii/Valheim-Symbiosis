@@ -1,0 +1,5 @@
+Valheim_Workers_DrakeForm v0.7.0 - Release Candidate Installer Alignment
+
+- Gameplay and necklace behavior unchanged from v0.6.9.
+- Versioning and setup script are aligned.
+- Setup now builds once and installs into every Thunderstore profile that contains Valheim_Workers Core.

@@ -1,0 +1,8 @@
+Valheim Symbiosis v1.3.0 quick test
+
+1. Enter any form by using its bound necklace.
+2. Press E on a door/chest/world interaction: it should behave like normal Valheim and must NOT end symbiosis.
+3. Eat/drink from hotbar while transformed: still works.
+4. Use the same bound necklace again: form exits cleanly.
+5. Use a different bound necklace while transformed: direct form switch still works.
+6. Verify Drake, Serpent, Troll and Werewolf movement/combat unchanged.

@@ -1,0 +1,5 @@
+1. Enter Sea Serpent symbiosis in Ego.
+2. Look straight ahead: head/snout should be level, not hanging downward.
+3. Look up/down: head should follow mouse pitch naturally.
+4. Verify Surface-Lock still keeps Serpent at the water surface.
+5. Verify Drake, Troll and Werewolf Ego head behavior is unchanged.

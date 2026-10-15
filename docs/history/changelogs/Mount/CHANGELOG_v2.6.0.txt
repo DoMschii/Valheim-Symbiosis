@@ -1,0 +1,9 @@
+v2.6.0 - Directional Serpent + Drake Sturzflug
+
+- Sea Serpent W now swims toward the camera/look direction in both Ego and Third Person, including dive/climb pitch.
+- Sea Serpent reverse is intentionally limited to 16% speed; efficient retreat requires turning the body around. Lateral correction is also reduced.
+- Sea Serpent forward mobility baseline raised to 18 while the real-depth motor remains authoritative.
+- Drake normal cruise baseline raised to 18.
+- Drake Shift is no longer generic sprint: Shift+W becomes a committed stamina-paid Sturzflug with forced downward nose and run-speed baseline 32.
+- Space/up-input cannot cancel the dive while Shift dive is active.
+- Wingbeat propulsion, Ego tuning/head fixes, Troll1/Troll2 and Werewolf behavior are preserved.

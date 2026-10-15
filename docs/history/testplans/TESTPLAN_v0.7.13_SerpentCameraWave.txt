@@ -1,0 +1,9 @@
+v0.7.13 Serpent camera + swimming wave test
+
+1. Enter Sea Serpent symbiosis in water.
+2. Third person: verify camera follows near head/neck rather than body center.
+3. Swim straight and turn: body should show a travelling left/right S-wave, stronger toward tail.
+4. Stop moving: wave should calm down rather than keep thrashing.
+5. Verify controls/heading/collider feel unchanged from v0.7.12.
+6. Switch to Ego and back; camera and movement must remain stable.
+7. Exit symbiosis; no permanent bone rotation should remain.

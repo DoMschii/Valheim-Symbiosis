@@ -1,0 +1,6 @@
+Valheim_Workers_Mount v0.1.49
+
+- Regression fix for v0.1.48 smooth flight: the possessed Drake now visibly turns toward the established flight/aim direction again.
+- Keeps v0.1.48 movement smoothing, Rigidbody interpolation, wingbeat camera fix and camera filtering unchanged.
+- Replaces Rigidbody.MoveRotation for possessed Drake facing with the proven Character transform rotation path, still exponentially smoothed.
+- No changes to symbiosis AI, attacks, health, persistence, camera modes or DrakeForm binding.

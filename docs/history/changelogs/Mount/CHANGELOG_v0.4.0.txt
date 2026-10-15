@@ -1,0 +1,12 @@
+Valheim_Workers_Mount v0.4.0
+
+BIG BLOCK: Runtime hardening + idle-performance cleanup
+
+- Keeps Drake flight and Sea Serpent movement/attacks from v0.3.0 functionally unchanged.
+- Remote-player symbiosis visibility no longer allocates fresh List objects on every refresh; scratch lists are reused.
+- Idle multiplayer body-handoff probing is reduced from 1 s to 2 s, while an actually active remote form still refreshes at 0.20 s.
+- Tagged temporary-avatar safety scans run every 10 s while human/inactive instead of every 2 s; active symbiosis keeps the fast 2 s safety cadence and respawn/start still force immediate cleanup.
+- Legacy personal-Drake mount compatibility no longer performs permanent background character scans when the user has no old assignment. It probes every 15 s for at most 60 s, migrates a discovered old ZDO assignment into the local selection token, then stops scanning for the session.
+- Sea Serpent dismount now returns the Player to the captured water surface exactly rather than inheriting a temporarily elevated Serpent root position.
+- Multiplayer/debug wording is generic to all symbiosis forms instead of referring to every remote form as a Drake.
+- No WingGuard/Barrel-Roll experiment code is present.

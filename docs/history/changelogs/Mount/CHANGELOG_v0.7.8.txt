@@ -1,0 +1,7 @@
+v0.7.8 - Sea Serpent Vanilla Third-Person Facing
+
+- Werewolf v0.7.7 Third-Person controls kept unchanged.
+- Sea Serpent Third Person now uses camera-relative vanilla W/A/S/D input.
+- Serpent body and look yaw snap directly to the requested movement direction before SetMoveDir.
+- Removes the slow RotateTowards steering lag that made the Serpent keep looking toward the old/camera direction.
+- Ego controls unchanged.

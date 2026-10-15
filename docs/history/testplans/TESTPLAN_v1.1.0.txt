@@ -1,0 +1,8 @@
+v1.1.0 quick test
+
+1. Transform into Drake/Troll/Serpent/Werewolf.
+2. Verify a 3-slot HUD appears for each form near the food/health cluster.
+3. Trigger RMB/MMB abilities and confirm the countdown reaches BEREIT.
+4. Werewolf Blood Hunt should still show active target progress.
+5. Open inventory/menu: HUD should hide while UI blocks symbiosis input.
+6. Confirm movement/camera/attacks still behave exactly as in v1.0.0.

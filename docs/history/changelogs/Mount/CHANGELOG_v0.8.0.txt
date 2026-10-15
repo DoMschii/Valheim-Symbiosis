@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v0.8.0 - Large control/combat polish pass
+
+- Troll Third Person now follows normal Valheim land controls: camera-relative WASD, body turns into movement direction, no crab-walk/backwards creature pose.
+- Troll Ego preserves direct W/S reverse + A/D strafe controls.
+- Drake gets render-only banking while strafing/turning; physics, collider and authoritative root remain untouched.
+- Native attack slots now respect Valheim's rebound Attack/Block bindings; MMB remains slot 3.
+- Sea Serpent articulated S-wave is stronger, slightly faster at speed and receives a steering boost while A/D is held.
+- Existing Werewolf Third/Ego split, darkness gate, consumables, build-mode release, use-item activation and Serpent head-anchored camera are preserved.

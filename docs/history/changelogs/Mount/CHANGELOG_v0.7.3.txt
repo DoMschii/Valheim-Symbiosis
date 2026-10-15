@@ -1,0 +1,11 @@
+v0.7.3 - stable reverse locomotion + stronger canid vision
+
+- Fixes the remaining Ego reverse oscillation at its source: Werewolf controls no longer pass reverse/strafe vectors into Character.SetMoveDir.
+- Fenring native m_moveDir stays zero, so the native motor has no reason to rotate 180 degrees while S is held. Rigidbody velocity is the sole translation authority.
+- Removes the per-frame Visual-root snap that was fighting the head-mounted Ego camera.
+- Disables Animator root motion on the temporary Fenring and drives only late locomotion blend floats (forward_speed/sideway_speed/turn_speed) so reverse pose can animate without rotating the body.
+- Logs available Fenring float parameters once for follow-up tuning if the controller uses different names.
+- Reworks Werewolf vision away from a pale desaturation look: less global desaturation, stronger red/green collapse, blue/yellow preservation.
+- Adds dynamic low-light adaptation: mild daytime exposure lift and a stronger night/cave lift, with modest contrast increase. This is not thermal/night vision.
+- Keeps 11 walk / 24 sprint, SPACE jump, Blood Hunt, native LMB/MMB, skill HUD and ObjectDB guard unchanged.
+- Workers core 0.5.436 and Valheim Ego remain unchanged.

@@ -1,0 +1,8 @@
+v3.2.0 - Werewolf core movement/combat pass
+
+- Ego Shift sprint is now forward-only. Reverse and strafe stay controlled movement and do not consume sprint stamina.
+- Third Person keeps full camera-relative sprint because the Fenring turns its whole body into the requested movement direction.
+- MMB aimed pounce now costs 18 stamina.
+- Pounce stamina is checked before the native attack starts, so insufficient stamina does not consume the native attack interval/cooldown.
+- LMB claw remains the free basic attack. Blood Hunt remains 35 stamina / 18s cooldown.
+- No per-frame scans were added. Drake, Troll and Sea Serpent behavior is unchanged.

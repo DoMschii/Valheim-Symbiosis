@@ -1,0 +1,7 @@
+v2.0.2 - Troll held-log visual fix
+
+- Fix: v2.0.1 could detect and consume fallen logs but show no club because the active vanilla Troll prefab contains no inactive native log renderer (diagnostic: hidden native log renderers=0).
+- When E picks up a fallen log, the mod now clones the picked log's actual mesh/material into a cosmetic right-hand weapon before destroying the world log.
+- Existing native log renderers are still preferred when a prefab provides them.
+- Held clone has no collider, Rigidbody, ZNetView or gameplay components; it is visual only.
+- Breaking/dropping/exiting cleans up the cloned visual safely.

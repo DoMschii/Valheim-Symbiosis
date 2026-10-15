@@ -1,0 +1,14 @@
+Valheim Symbiosis v4.4.0 - Short Release Test
+
+1. Start human in Ego, enter each of Drake/Troll/Werewolf/Serpent, leave each form, confirm Ego persists.
+2. Repeat once in Third Person.
+3. Drake: normal flight, climb, dive, momentum climb, LMB/RMB/MMB.
+4. Troll: Troll1 LMB/RMB/MMB, pick up log, Troll2 attacks, exhaust log back to Troll1.
+5. Werewolf: sprint, pounce, Blood Hunt, leave/re-enter form.
+6. Serpent: forward/reverse surface movement and all 3 attacks.
+7. Directly switch between two different necklaces.
+8. Die once in a form and respawn; remain human until explicitly transforming again.
+9. Log out in a form, reload the world, verify no stale creature/avatar remains.
+10. Close/restart game in Ego and Third Person once each; perspective should persist.
+
+Feature freeze rule: only genuine bugs/regressions after this point; no new mechanics before release.

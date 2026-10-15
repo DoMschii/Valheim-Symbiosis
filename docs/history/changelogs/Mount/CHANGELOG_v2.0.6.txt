@@ -1,0 +1,9 @@
+v2.0.6 - Deterministic Troll1/Troll2 native loadout switch
+
+- Fixes the remaining Troll log mode issue shown by the runtime log: pickup succeeded, but native log weapon candidate was none, so the body never entered the real weapon loadout.
+- Troll1 remains forced unarmed on every symbiosis entry.
+- The runtime now inspects the Troll Humanoid/MonsterAI random/default weapon prefab fields before the random spawn loadout is discarded.
+- On E pickup, Troll2 materializes the native random weapon prefab through Humanoid.GiveDefaultItem when available and equips it, so VisEquipment and the native Troll weapon attack set switch together.
+- If the game build changes that private path, an inventory-clone fallback is used; only if no native weapon prefab can be resolved does the held-world-log mesh fallback remain active.
+- Added explicit diagnostics for random/default weapon prefab discovery and Troll2 materialization.
+- Existing stamina, cooldown, Serpent regen, star scaling, interaction and lifecycle fixes are preserved.

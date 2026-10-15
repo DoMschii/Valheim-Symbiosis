@@ -1,0 +1,9 @@
+v2.2.0 Drake Wingbeat Propulsion test
+
+1. Enter Drake symbiosis in Third Person.
+2. Hold W at normal speed. Translation should have a subtle rhythmic push matching the visible wingbeat, without stopping between beats.
+3. Hold Shift+W. The pulse may feel slightly stronger, while stamina drains exactly as before.
+4. Test A/D, reverse and vertical controls; steering must remain stable.
+5. Switch to Ego. Camera/head behavior and saved fine-tune offsets must remain unchanged.
+6. Switch to Troll/Werewolf/Serpent; their movement must be unchanged.
+7. Release all movement keys: Drake must settle into the same deterministic hover as before.

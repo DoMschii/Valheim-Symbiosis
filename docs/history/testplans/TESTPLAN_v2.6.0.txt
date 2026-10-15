@@ -1,0 +1,13 @@
+v2.6.0 locomotion test
+
+SERPENT
+1. Enter Serpent; hold W and aim up/down: body must turn and swim along look direction.
+2. Hold S: reverse must be possible but very slow (~16% forward speed).
+3. Turn camera 180 degrees then W: Serpent should turn and travel quickly in the new direction.
+4. Verify real depth hold still works after releasing controls.
+
+DRAKE
+1. W without Shift: cruise should be clearly faster than v2.5.1.
+2. Shift+W: Drake must pitch downward and accelerate into a fast dive.
+3. Shift+W+Space: dive remains downward; Space must not turn it into an upward sprint.
+4. Release Shift: normal aim-led flight resumes.

@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v4.4.0 - Feature Freeze / Release Candidate Finalization
+
+- No new gameplay mechanics or balance changes.
+- Plugin teardown now executes the same world-exit safety path before runtime shutdown.
+- Inactive stale-avatar safety sweeps are reduced to every 20 seconds; active-form safety remains at 2 seconds.
+- Tagged-avatar cleanup caches the local player id once per sweep instead of re-reading it per candidate.
+- Release package/installers are aligned for all Thunderstore profiles containing the Workers Core.
+- DrakeForm and Ego installer behavior is made consistent with Mount multi-profile installation.

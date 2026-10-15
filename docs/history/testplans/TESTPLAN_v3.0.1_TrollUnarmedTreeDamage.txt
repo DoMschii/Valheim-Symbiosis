@@ -1,0 +1,7 @@
+Valheim Symbiosis v3.0.1 test plan
+
+1. Enter Troll1 without a log.
+2. Stand directly in front of a tree and press LMB repeatedly.
+3. Confirm the tree takes damage again from the bare Troll punch.
+4. Confirm nearby player-built walls/floors are not damaged by the extra breacher pulse.
+5. Pick up a log and confirm Troll2 behavior/durability is unchanged.

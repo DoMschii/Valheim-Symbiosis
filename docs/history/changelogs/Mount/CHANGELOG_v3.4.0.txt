@@ -1,0 +1,7 @@
+Valheim Workers Mount v3.4.0
+
+- Sea Serpent core combat pass: RMB Bissstoss now visibly lunges the whole Serpent toward the selected target for a short 0.28s surface-only burst instead of feeling like a ranged instant melee hit.
+- The lunge preserves Valheim Rigidbody collision and the existing surface lock; no vertical force is added, so diving cannot return through this attack.
+- Existing 16 stamina cost, 3.8s cooldown, star scaling, damage, poison and target validation remain unchanged.
+- Serpent transition help text now matches the finalized surface-only controls (no obsolete diving instructions).
+- Drake, Troll, Werewolf, Ego camera and all previously confirmed movement behavior are unchanged.

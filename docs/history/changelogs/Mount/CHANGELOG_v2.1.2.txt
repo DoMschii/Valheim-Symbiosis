@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v2.1.2
+
+- True-eye skull lock: first-person camera now uses the animated eye/head anchor directly each render frame.
+- Removed per-form guessed 10-24 cm forward camera offsets; only a 2 cm shell escape remains.
+- Removed positional low-pass lag that made the animated body slide under the camera during attacks/movement.
+- Unified 0.025 m near clip keeps the immediate face shell clipped while body/limbs/weapons remain visible.
+- Third person and Troll1/Troll2 body swap unchanged.

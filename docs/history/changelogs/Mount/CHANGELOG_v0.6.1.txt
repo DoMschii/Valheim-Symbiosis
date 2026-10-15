@@ -1,0 +1,10 @@
+Valheim_Workers_Mount v0.6.1
+
+HOTFIX: Werewolf combat + Blood Hunt input/target reliability
+
+- Werewolf LMB now has a deterministic player-driven claw fallback when Fenring natural AI weapon data is not exposed to Humanoid.StartAttack during full possession.
+- Fallback claw uses native Fenring item damage when discoverable, otherwise 70 slash before the existing star multiplier: 0*=x1.5, 1*=x1.75, 2*=x2.5.
+- Block+Attack reads Valheim ZInput bindings via reflection, with raw RMB+LMB as fallback.
+- Blood Hunt first-target acquisition widened from the old narrow aim cone to a forgiving crosshair cone while preserving LOS and 15m range.
+- Ordinary claw and Blood Hunt now share the same damage-building path.
+- Drake / Serpent / Troll mechanics unchanged.

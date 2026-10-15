@@ -1,0 +1,8 @@
+v3.8.2 - Global F6 perspective persistence
+
+- F6 is now one global Ego/Third choice shared by the human player and every symbiosis form.
+- Valheim Ego no longer mistakes its temporary suspended FirstPersonEnabled=false state during symbiosis for a real switch to Third Person.
+- Toggling F6 inside any symbiosis writes the same per-player perspective preference used by Valheim Ego.
+- Leaving symbiosis restores the human player into the perspective currently selected in the creature, instead of restoring a stale pre-possession value.
+- Full game restarts therefore preserve Ego reliably.
+- No movement/combat/camera-position tuning changed.

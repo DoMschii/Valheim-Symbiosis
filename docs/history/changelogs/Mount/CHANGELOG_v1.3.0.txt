@@ -1,0 +1,7 @@
+v1.3.0 - Interaction-first symbiosis QoL
+
+- E is no longer used to leave symbiosis.
+- Using the active bound necklace again is now the canonical way to return to human form.
+- Frees Valheim's normal E interaction key while transformed for doors, containers, pickups and hold-E interactions.
+- Direct form switching from v1.2.0 remains unchanged.
+- Combat, movement, cameras, food/mead support, build-mode release and lifecycle safety remain unchanged.

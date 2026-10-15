@@ -1,0 +1,9 @@
+Valheim_Workers_DrakeForm v0.1.6
+
+- Drake necklace no longer implements a second/new flight controller.
+- Bound necklace hotkey now starts/stops Valheim_Workers_Mount's existing DrakeMountRuntime symbiosis.
+- Reuses the proven Mount transformation, temporary Drake body, WASD flight, A/D strafing, mouse pitch/yaw,
+  third/ego camera behavior, wingbeat camera motion, idle hold and existing Mount attacks.
+- Removed DrakeForm FixedUpdate movement path and its duplicate avatar activation from the runtime.
+- Valheim_Workers_Mount is now a hard runtime dependency for DrakeForm.
+- Keeps the corrected visible hotbar 1..8 -> inventory 0..7 mapping from v0.1.5.

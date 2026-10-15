@@ -1,0 +1,7 @@
+v3.0.2 - persistent player perspective / symbiosis inheritance
+
+- Valheim Ego updated to v1.6.47.
+- Saves the effective F6 Ego/Third-Person choice per Valheim player in PlayerPrefs.
+- Restores that perspective automatically after a full game restart.
+- Entering any symbiosis continues to mirror the human player's current perspective, so Ego -> symbiosis starts in Ego and Third -> symbiosis starts in Third Person.
+- Existing creature cameras, movement, combat and per-form Ego offsets are unchanged.

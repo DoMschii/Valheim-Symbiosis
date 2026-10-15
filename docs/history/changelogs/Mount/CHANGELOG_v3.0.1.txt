@@ -1,0 +1,6 @@
+v3.0.1 - Troll unarmed tree damage restore
+
+- Restores natural-object damage for Troll1 LMB while unarmed.
+- A successful native unarmed LMB now also applies a short forward breacher hit to natural destructibles only.
+- Trees/logs/natural blockers can again be damaged with the bare Troll punch; player-built Pieces and Characters are excluded from this extra world hit.
+- Troll2 log attacks, STAMM-SLAM, log durability, cameras and all other forms are unchanged.

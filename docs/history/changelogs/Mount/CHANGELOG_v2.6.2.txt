@@ -1,0 +1,6 @@
+v2.6.2 - Sea Serpent head-above-water lock
+
+- Raises the Sea Serpent surface eye clearance from 0.40 m to 1.50 m.
+- The surface motor now deliberately keeps the visible head well above the captured waterline.
+- Diving stays disabled; this is a pure surface-swimming profile for Valheim compatibility.
+- Drake +50% speed/Sturzflug, Troll, Werewolf and all Ego fine-tune settings are unchanged.

@@ -1,0 +1,6 @@
+v2.6.1 quick test
+1. Serpent: enter in water; confirm head/camera remain clearly above water while W/S/A/D moving. Space/Ctrl/C must no longer change depth.
+2. Serpent: W is fast; S is visibly much slower.
+3. Drake: W cruise should be about 50% faster than v2.6.0.
+4. Drake: Shift+W Sturzflug should be about 50% faster and still force altitude loss.
+5. Verify Troll/Werewolf/Ego fine-tune unchanged.

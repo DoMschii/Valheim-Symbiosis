@@ -1,0 +1,12 @@
+v4.1.0 RELEASE HARDENING TEST
+
+1. Enter and exit Drake, Troll, Serpent and Werewolf once.
+2. Switch F6 Ego/Third in human and one creature; verify the shared perspective persists.
+3. Troll: pick up a log, attack, exhaust/drop it, verify Troll1/Troll2 still works.
+4. Drake: normal flight, climb, dive, momentum climb.
+5. Serpent: surface movement + all 3 attacks.
+6. Werewolf: sprint, pounce, Blood Hunt.
+7. Logout/reload once while human and once after leaving a form.
+8. Confirm BepInEx log is no longer spammed by every status/combat message with DebugLogging=false.
+
+Minor animation/contact timing polish is intentionally not part of this release-hardening block.

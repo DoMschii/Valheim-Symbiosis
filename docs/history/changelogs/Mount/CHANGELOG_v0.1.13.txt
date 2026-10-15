@@ -1,0 +1,8 @@
+Valheim Workers Mount v0.1.13
+
+- Based on v0.1.12.
+- Third-person camera behavior is unchanged.
+- During active Drake symbiosis vanilla GameCamera.UpdateCamera is skipped via Harmony.
+- This gives the Mount runtime exclusive ownership of Camera.main and prevents the vanilla camera from jumping to its own pose before the Mount corrects it.
+- Intended fix: remaining first-person flicker / motion-vector jitter while preserving the stable third-person camera.
+- Valheim Ego suspension from v0.1.12 remains active.

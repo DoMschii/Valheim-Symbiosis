@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v0.1.39
+
+- Necklace symbiosis now uses the real player's health pool instead of the temporary Drake avatar's HP.
+- Incoming Character.Damage hits on the temporary Drake avatar are forwarded to the local Player.
+- Player armour, resistances, food/max HP and normal player death handling remain authoritative.
+- The hidden human body stays protected from duplicate melee/AoE hits while the forwarded hit is explicitly allowed through.
+- Accidental self-hits from the controlled Drake avatar are ignored.
+- Existing flight, camera, wingbeat, movement and attack mechanics are unchanged.

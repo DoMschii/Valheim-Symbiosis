@@ -1,0 +1,6 @@
+Valheim Workers Mount v2.6.7
+
+- Drake body now follows camera yaw even while hovering with no movement input.
+- Horizontal camera turns rotate the whole Drake instead of leaving the body on its previous heading.
+- Stationary camera pitch does not tilt the whole creature; normal forward-flight pitch and Sturzflug behavior remain unchanged.
+- Drake neutral head pose from v2.6.6, Serpent surface lock, Troll and Werewolf behavior are preserved.

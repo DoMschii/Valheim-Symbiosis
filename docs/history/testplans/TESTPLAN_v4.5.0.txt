@@ -1,0 +1,8 @@
+Valheim Symbiosis v4.5.0 - Release/Updater Smoke Test
+====================================================
+1. Root Setup.ps1 ausfuehren: Mount, DrakeForm, Ego und Updater muessen bauen/installieren.
+2. Ohne Valheim_Symbiosis_Update.json: Spiel muss normal starten; Updater bleibt inaktiv.
+3. ReleaseTools\\Setup-GitHub.bat einmalig ausfuehren und Repository konfigurieren.
+4. ReleaseTools\\Publish-Final.bat erst nach finalem Test starten und mit JA bestaetigen.
+5. GitHub Release muss Installer-ZIP + .sha256 enthalten.
+6. Auf einem installierten Client mit aelterer Suite: Valheim starten, Release erkennen lassen, Spiel beenden, erneut starten -> neue DLLs muessen aktiv sein.

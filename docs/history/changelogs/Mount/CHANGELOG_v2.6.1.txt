@@ -1,0 +1,8 @@
+v2.6.1 - Surface Serpent + faster Drake
+
+- Sea Serpent diving/depth controls removed; surface-swim only for Valheim compatibility.
+- Surface lock follows the animated eye/head point and keeps it about 0.40 m above the captured water surface.
+- Serpent W remains fast and aim-led in yaw; S remains a slow 16% reverse crawl.
+- Drake cruise baseline raised 50% from 18 to 27.
+- Drake Sturzflug/run baseline raised 50% from 32 to 48.
+- Troll, Werewolf, Ego tuning, combat, cooldowns and lifecycle behavior are preserved.

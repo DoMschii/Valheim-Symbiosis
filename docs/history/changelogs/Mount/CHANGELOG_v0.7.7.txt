@@ -1,0 +1,8 @@
+v0.7.7 - Vanilla Third Person controls for Werewolf + Sea Serpent
+
+- Third Person W/A/S/D is camera-relative like the normal Valheim player.
+- Werewolf and Sea Serpent body/look yaw follows actual movement direction.
+- S turns the creature around and moves forward in that direction; A/D turn left/right instead of strafing.
+- Free Third Person camera no longer forces creature facing.
+- Ego keeps the existing reverse/strafe behaviour.
+- Drake/Troll behaviour is unchanged.

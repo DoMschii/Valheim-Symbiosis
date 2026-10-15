@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v2.1.3 - Anatomical Face Offset
+
+- Keeps the v2.1.2 animated true-eye/head skull lock.
+- Moves the camera forward from the centered head pivot toward the visible face using a small scale-aware per-form offset.
+- Forward displacement now follows the animated eye-anchor/head orientation, never the player's look rotation, so mouse look cannot slide the camera sideways through the skull.
+- Troll uses the largest offset; Werewolf/Drake/Serpent use smaller offsets appropriate to their head size.
+- Near clip remains 0.025 m; body, limbs, attacks and Troll log stay visible.

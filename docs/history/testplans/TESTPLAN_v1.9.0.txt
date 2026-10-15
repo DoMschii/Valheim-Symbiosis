@@ -1,0 +1,7 @@
+v1.9.0 quick test
+1. Drake: take frost damage at 0/1/2 stars and verify decreasing damage.
+2. Drake: non-frost damage must remain unchanged.
+3. Serpent: take poison damage at 0/1/2 stars and verify decreasing damage.
+4. Serpent: non-poison damage must remain unchanged.
+5. Troll physical mitigation and Werewolf combat/mobility must behave exactly as before.
+6. Leave/re-enter forms and verify normal Player damage returns after symbiosis.

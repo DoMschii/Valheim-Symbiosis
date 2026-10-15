@@ -1,0 +1,5 @@
+Valheim_Workers_DrakeForm v0.1.5
+
+- Fix: Hotbar activation now maps Player.UseHotbarItem numbers 1-8 to inventory grid positions 0-7.
+- Previously the patch read the next hotbar cell. A bound/equipped Drachenhalskette was therefore not intercepted and Valheim's native item-use logic unequipped it instead of transforming the player.
+- Bound necklace hotkey is now consumed by DrakeForm and calls ToggleFromHotbar as intended.

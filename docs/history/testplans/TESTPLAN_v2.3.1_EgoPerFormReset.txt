@@ -1,0 +1,7 @@
+v2.3.1 Ego per-form reset test
+
+1. Open F8 > Ego.
+2. Confirm rows for Drache, Troll, Werwolf, Seeschlange show current X/Y/Z values.
+3. Adjust Serpent with Shift+arrows/PageUp/PageDown, then press only Seeschlange > Zuruecksetzen.
+4. Confirm Serpent immediately returns to X/Y/Z = 0 while Drake/Troll/Werewolf values are unchanged.
+5. Restart and confirm reset persists.

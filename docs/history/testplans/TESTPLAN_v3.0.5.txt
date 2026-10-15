@@ -1,0 +1,6 @@
+v3.0.5 test
+
+1. Enter Drake symbiosis and fly normally with W.
+2. Confirm cruise speed is clearly faster than original but much slower than v3.0.4.
+3. Test Shift+W Sturzflug and confirm it remains faster than cruise without becoming uncontrollable.
+4. Confirm camera yaw follow, head pose and wingbeat feel are unchanged.

@@ -1,0 +1,6 @@
+Valheim Workers Mount v0.1.45
+
+- Symbiosis now blocks Humanoid.StartAttack on the hidden local player.
+- Player.UpdateAttack is skipped while symbiosis is active, preventing human weapon input/reload/release from running in parallel.
+- Any already-active human attack is cancelled when entering symbiosis; a defensive current-attack clear prevents delayed crossbow bolts.
+- Drake flight/camera/AI/attack mechanics are otherwise unchanged.

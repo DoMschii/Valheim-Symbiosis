@@ -1,0 +1,24 @@
+Valheim_Workers_Mount v0.2.0 - Symbiosis Release
+
+- Keeps the v0.1.50 rounded/smoothed Drake flight as the movement baseline.
+- Native Drake attack discovery is now data-driven and also probes private attack/weapon fields safely.
+  LMB = primary, RMB = real secondary if available, MMB = genuinely additional native attacks.
+  The proven frost salvo remains only as LMB fallback when no native attack can be resolved.
+- Multiplayer body handoff: the real Player publishes a small ZDO symbiosis flag; modded clients hide
+  that remote human body while the networked temporary Drake is active, preventing human+Drake overlap.
+  Hidden local/remote human colliders are disabled too, so collision/hit tests use the Drake body only.
+- Temporary Drake ZDO now carries form/prefab/level metadata for remote/debug consistency and remains non-persistent.
+- Added API revision 2 for the DrakeForm bridge.
+- Added unclean-shutdown recovery anchor. If the game crashes while transformed, the next local Player load
+  can recover to the pre-symbiosis position instead of trusting an autosave made in mid-air. Recovery retries
+  during early player initialization so a temporarily unavailable PlayerID/ZNetView cannot skip the safeguard.
+- Safe dismount no longer raycasts/teleports the player all the way to a deep sea floor; very distant ground
+  is rejected. Clean world exit can fall back to the pre-symbiosis anchor.
+- Rigidbody interpolation remains enabled during flight and collision detection is temporarily upgraded to
+  continuous mode to reduce tunnelling/jumps against thin roofs/rocks at flight speed.
+- Legacy personal-mount worker-menu assignment is no longer exposed for new use. Existing legacy assignment
+  runtime remains present only for save compatibility.
+- Valheim Ego settings integration now waits quietly for the optional mod to load instead of emitting an
+  expected HarmonyX TypeByName warning during startup.
+- Death, respawn, ownership loss, portal teleport, world exit, camera restoration, equipment/input lock and
+  stale temporary-avatar cleanup remain protected from previous releases.

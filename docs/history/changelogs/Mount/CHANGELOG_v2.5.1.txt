@@ -1,0 +1,8 @@
+v2.5.1 - Sea Serpent actual diving
+
+- Fixes the possessed Sea Serpent being visually pitched for diving while its real body stayed at the water surface.
+- Adds an authoritative Y-only physics motor at FixedUpdate cadence; native X/Z swimming remains untouched.
+- Space ascends, Ctrl/C dives, and Ego W/S camera pitch now drive real submerged world position.
+- Releasing input holds the selected depth instead of vanilla Serpent buoyancy immediately returning to the surface.
+- Maximum controlled depth increased to 18m.
+- v2.5.0 body pitch/S-wave, stamina regeneration fix, Drake/Troll/Werewolf behavior and Ego tuning remain preserved.

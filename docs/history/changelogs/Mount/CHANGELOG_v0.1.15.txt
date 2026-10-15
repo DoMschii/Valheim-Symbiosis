@@ -1,0 +1,7 @@
+Valheim Workers Mount v0.1.15
+
+- Reworked first-person wingbeat feel after v0.1.14 proved far too aggressive.
+- Removed synthetic pitch, roll and fore/aft camera pulses entirely.
+- Ego now uses only a tiny slow vertical bob on top of the stable v0.1.13 camera path.
+- Active-flight bob: ~1.10 Hz / 0.014 m. Hover bob: ~0.85 Hz / 0.006 m.
+- Third-person camera and flight controls are unchanged.

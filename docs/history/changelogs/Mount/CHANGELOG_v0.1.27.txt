@@ -1,0 +1,10 @@
+Valheim_Workers_Mount v0.1.27
+
+- Added a smooth symbiosis transformation instead of an instant body/camera swap.
+- Entering symbiosis now eases Camera.main from the current human view into the Drake eye position over ~1.05 s.
+- The human body remains visible during the first half of the transition, then hands off to the Drake.
+- Remote temporary Drake avatars grow smoothly from a small visual scale to full size during the hand-off.
+- Flight input/F6/E are locked until the transformation completes, preventing movement during the camera/body switch.
+- Returning from symbiosis runs the transition in reverse: camera eases back to the remembered human camera rig, the human reappears, and a temporary Drake shrinks before it is removed.
+- Emergency exits (portal travel, lost ownership, shutdown) still bypass the animation for safety.
+- No Workers core changes required; remains compatible with core v0.5.118.

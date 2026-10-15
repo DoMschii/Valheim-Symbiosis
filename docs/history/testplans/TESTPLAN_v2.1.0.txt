@@ -1,0 +1,7 @@
+Valheim Symbiosis v2.1.1 test
+
+1. Enter each form from Third Person, press F6 to Ego. Body/limbs should remain visible.
+2. Attack in Ego and confirm claws/hands/body animation remain visible without camera being fully inside the face.
+3. Troll: enter Troll1 Ego, pick up a fallen log with E, confirm Troll2 swap keeps Ego camera and log/body visible.
+4. Break the log after 12 swings and confirm Troll1 return keeps camera stable.
+5. Toggle back to Third Person and confirm no renderer remains hidden.

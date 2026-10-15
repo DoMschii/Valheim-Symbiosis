@@ -1,0 +1,6 @@
+v2.0.4 - PowerShell strict-mode installer fix
+
+- Resolve-BepInExTargets now always materializes pipeline results as an array.
+- BepInEx target function output is wrapped again at the caller, so a single matching Thunderstore profile cannot become a scalar string.
+- Fixes PropertyNotFoundStrict on $targets.Count.
+- Keeps the v2.0.3 multi-profile target selection and Troll log visual changes unchanged.

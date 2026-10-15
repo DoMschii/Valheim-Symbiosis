@@ -1,0 +1,4 @@
+v0.6.7 - Direct switch perspective preservation
+
+- Queued form switching preserves the active symbiosis Ego/Third camera mode across the safe exit/re-entry handoff.
+- Same-form necklace use remains normal toggle-off.

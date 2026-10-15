@@ -1,0 +1,9 @@
+Valheim_Workers_Mount v0.1.42
+
+- Drake symbiosis camera mode is now persisted per player via PlayerPrefs. F6 changes are saved and restored after a full game restart.
+- Temporary necklace-symbiosis Hatchlings are marked with a dedicated ZDO flag and SetPersistent(false), so they are not written into the world as real hostile Drakes.
+- Tagged stale temporary avatars are cleaned automatically. A one-time conservative cleanup also removes a legacy pre-v0.1.42 non-worker Drake within 3 m of the player, covering already-saved v0.1.41 leftovers.
+- Game/plugin shutdown now closes symbiosis immediately, places the real player at a safe ground exit, and removes the temporary avatar before normal shutdown/save where possible.
+- Humanoid.EquipItem is blocked for the local player while symbiosis is active, so weapons/tools/armor cannot be switched on the hidden human body.
+- Character.StartAttack is blocked for the hidden local player while transformed; only the existing Mount Drake attacks remain active.
+- Existing flight mechanics, MonsterAI suppression, camera flight controls and Player-health forwarding are otherwise unchanged.

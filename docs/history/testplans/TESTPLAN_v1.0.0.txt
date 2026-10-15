@@ -1,0 +1,14 @@
+v1.0.0 quick test
+
+TROLL
+1. LMB: native Troll attack still works.
+2. RMB: ground slam damages/pushes nearby enemies.
+3. MMB: shock roar pushes/staggers enemies in a larger radius.
+
+SERPENT
+1. LMB: native bite still works.
+2. RMB while aiming at a nearby enemy: bite burst hits it.
+3. MMB near several enemies: tail sweep hits/pushes around the body.
+
+REGRESSION
+- Drake movement/attacks, Werewolf controls/Blood Hunt, food/mead, darkness gate, build-mode release.

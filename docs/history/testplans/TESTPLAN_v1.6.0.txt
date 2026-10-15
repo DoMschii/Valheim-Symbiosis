@@ -1,0 +1,7 @@
+Valheim Symbiosis v1.6.0
+
+1. Drake: W+Shift drains stamina; at 0 stamina flight continues at normal speed.
+2. Serpent: W+Shift drains stamina; at 0 stamina swimming continues at normal speed.
+3. Release Shift and verify vanilla stamina regeneration.
+4. Troll/Werewolf sprint behavior should be unchanged.
+5. Quick regression: direct form switch, food/mead, active-necklace exit.

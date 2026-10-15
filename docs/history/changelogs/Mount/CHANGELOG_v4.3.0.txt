@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v4.3.0 - Release Candidate cleanup block
+
+- Purges stale tagged temporary symbiosis bodies before a new form is created.
+- Clears one-shot combat/movement residue before entering a fresh form.
+- World exit now cleans temporary/network/camera state even when Active already became false.
+- Local Player replacement while inactive resets transient camera/input residue through one idempotent cleanup path.
+- No movement, damage, cooldown, stamina, camera-position or balance values changed.

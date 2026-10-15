@@ -1,0 +1,9 @@
+Valheim Symbiosis v3.2.0 - Werewolf core test
+
+1. Enter Werewolf in Third Person. Hold Shift+W/A/S/D: body should turn into travel direction and sprint; stamina drains only while sprinting.
+2. Enter Werewolf Ego. Shift+W should sprint and drain stamina. Shift+S and Shift+A/D should NOT trigger sprint or drain sprint stamina.
+3. Use MMB pounce with >=18 stamina: native leap/aimed motion should start and cost 18 stamina.
+4. Drop below 18 stamina and press MMB: no leap, no native cooldown consumption; status reports the stamina requirement.
+5. LMB claw still works without the new pounce stamina cost.
+6. RMB+LMB Blood Hunt remains unchanged.
+7. Sanity-check Drake/Troll/Serpent movement and attacks.

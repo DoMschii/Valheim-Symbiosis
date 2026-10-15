@@ -1,0 +1,8 @@
+Valheim Symbiosis v3.0.0 test plan
+
+1. Enter Troll form without a log. Confirm HUD shows RMB BODENSCHLAG and behavior is unchanged.
+2. Pick up a fallen log with E. Confirm HUD shows STAMM 12/12 and RMB STAMM-SLAM.
+3. Use RMB once. Confirm log durability drops from 12 to 10.
+4. Compare the armed slam against the unarmed slam: wider hit radius, stronger push/damage and stronger natural-object damage should be visible.
+5. Use log slams until durability reaches zero. Confirm Troll2 swaps back to Troll1 and HUD returns to E: STAMM / BODENSCHLAG.
+6. Sanity-check Drake, Werewolf and Sea Serpent: no movement/camera/combat changes expected.

@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v0.1.20
+
+- Neuer Mount-Tab im Shift+E-Menue des Drake-Landeplatzes.
+- Ein Drake kann dort als persoenlicher Mount festgelegt oder wieder geloest werden.
+- Die Drake-Pfeife ist jetzt nur noch Hotkey fuer Symbiose/Zurueckverwandlung.
+- Kein Recall, keine Reichweite und keine Pfeifen-spezifische Bindung mehr im normalen Ablauf.
+- Wenn der persoenliche Mount nicht geladen ist, meldet die Pfeife das nur; sie ruft ihn nicht herbei.

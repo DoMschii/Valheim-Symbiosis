@@ -1,0 +1,7 @@
+Valheim_Workers_DrakeForm v0.6.1 - Use Necklace, Do Not Equip
+
+- Bound symbiosis necklaces are now activation items rather than equipment.
+- Right-click/Use in inventory activates or exits the saved creature form directly.
+- Hotbar activation remains supported and no longer requires the utility slot to be occupied.
+- Active symbiosis now validates that the matching bound necklace is still somewhere in the player inventory, not that it is equipped.
+- Unbound-necklace capture behavior is unchanged.

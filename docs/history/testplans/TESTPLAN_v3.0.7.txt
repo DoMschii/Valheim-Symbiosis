@@ -1,0 +1,8 @@
+v3.0.7 test
+
+1. Enter Drake symbiosis in Ego and Third Person.
+2. Hover with no input: wing-flap/IdleHover should still animate.
+3. Hold W on level flight: Drake should again show the familiar active flight/flapping behaviour from before v3.0.4.
+4. Hold W while looking upward: upward flight should continue flapping rather than becoming a static/gliding pose.
+5. Hold Shift+W: Sturzflug remains functional using native fast-flight speed/state.
+6. Verify head pose, camera yaw follow and wingbeat camera feel are unchanged.

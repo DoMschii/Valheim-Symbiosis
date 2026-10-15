@@ -1,0 +1,9 @@
+Valheim_Workers_Mount v0.6.0
+- Added curated Werewolf/Fenring land form.
+- High-speed grounded movement with view-facing W/S/A/D; S is true backward movement.
+- Star-scaled outgoing damage: level1/0*=x1.5, level2/1*=x1.75, level3+/2*=x2.5.
+- Blood Hunt (RMB hold + LMB): 15m initial target, 7m chain, max 5 targets, returns to exact origin, 35 stamina, 18s cooldown.
+- Blood Hunt uses native Fenring weapon damage when discoverable and a 70 slash compatibility fallback only if weapon data is unavailable.
+- Short combo-only stale-hit immunity prevents hits on old blink positions; no persistent defence bonus.
+- Multiplayer remote-body whitelist now includes Troll and Werewolf.
+- API revision 5.

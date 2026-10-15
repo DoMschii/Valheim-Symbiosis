@@ -1,0 +1,5 @@
+v3.3.0 quick test
+1. Enter any form in Ego, then use a different bound necklace. Target form must start in Ego.
+2. Repeat in Third Person. Target form must start in Third Person.
+3. Same-form necklace use must still exit normally.
+4. Restart persistence from v3.0.2 remains unchanged.

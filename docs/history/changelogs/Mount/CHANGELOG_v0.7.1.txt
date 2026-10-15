@@ -1,0 +1,9 @@
+v0.7.1 - Werewolf Ego reverse + authoritative locomotion
+
+- Fixes first-person/Ego S movement: Werewolf now physically moves backwards while body yaw stays locked to view direction.
+- Adds Character.FixedUpdate postfix authority so native Fenring locomotion cannot rotate the creature 180 degrees after input.
+- Direct Rigidbody horizontal velocity makes the Werewolf speed independent of Fenring AI locomotion quirks.
+- Normal movement 11 m/s, sprint 24 m/s.
+- SPACE movement jump raised to 10 m/s.
+- Ground check now falls back to a physical foot probe when the possessed Fenring reports native IsOnGround=false.
+- MMB jump attack, LMB claw, Blood Hunt, HUD, vision experiments and ObjectDB guard remain unchanged.

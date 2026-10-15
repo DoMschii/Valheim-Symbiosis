@@ -1,0 +1,6 @@
+Valheim_Workers_Mount v0.1.24
+
+- Fixed Harmony patch startup error on Humanoid.UseItem.
+- Humanoid.UseItem returns void in the current Valheim build, so the prefix no longer declares or writes __result.
+- The prefix still returns bool only to skip vanilla item handling when the Drake whistle is intercepted.
+- No other mount/symbiosis behavior changed.

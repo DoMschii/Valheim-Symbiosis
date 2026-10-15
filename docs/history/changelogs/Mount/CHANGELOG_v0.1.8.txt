@@ -1,0 +1,6 @@
+Valheim Workers Mount v0.1.8
+
+- Ego camera keeps the real Drake eye/head anchor as its target.
+- Added per-frame positional stabilization for Drake head/eye animation bobbing.
+- Mouse yaw/pitch remains immediate; only positional animation chatter is filtered.
+- Third-person camera behavior from v0.1.7 is unchanged.

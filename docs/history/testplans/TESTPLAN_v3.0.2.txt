@@ -1,0 +1,5 @@
+1. Normal player: switch to Ego, quit Valheim completely, restart -> should return to Ego.
+2. Normal player: switch to Third Person, quit/restart -> should return to Third Person.
+3. Start in Ego -> use any symbiosis necklace -> creature must start in Ego.
+4. Start in Third -> use any symbiosis necklace -> creature must start in Third Person.
+5. Toggle F6 while in symbiosis, exit form -> external Ego state should restore exactly as before.

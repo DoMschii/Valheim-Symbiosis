@@ -1,0 +1,7 @@
+v0.7.9 - Sea Serpent camera + swim motion
+
+- Keeps the v0.7.8 controls unchanged.
+- Third-person Serpent camera pivot is moved forward toward the head/neck instead of the renderer center.
+- Chase distance/height are tightened for a more normal Valheim third-person framing while swimming.
+- Adds a render-only left/right swim wave to the Serpent visual root. Gameplay heading/collider remain stable.
+- Wave amplitude/frequency scale with swimming activity and reset cleanly on leaving symbiosis.

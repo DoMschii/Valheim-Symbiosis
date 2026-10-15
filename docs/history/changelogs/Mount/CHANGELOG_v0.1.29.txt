@@ -1,0 +1,6 @@
+Valheim_Workers_Mount v0.1.29
+
+- Fixed build compatibility with Workers cores that still expose the legacy 4-argument WorkerExternalControlBridge.Register method.
+- Bridge registration is now resolved reflectively at runtime: the add-on uses the 6-argument v0.5.118+ bridge when present and falls back to the 4-argument legacy bridge otherwise.
+- The Drake Mount worker-menu tab remains available with Workers core v0.5.118+; older cores continue to support mount/symbiosis without failing the Mount build.
+- Transformation FX from v0.1.28 are otherwise unchanged.

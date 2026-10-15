@@ -1,0 +1,15 @@
+Valheim_Workers_DrakeForm v0.3.0
+
+BIG BLOCK: Creature-specific necklace framework + Sea Serpent
+
+- Existing plugin GUID/name are retained so old installs and dependencies do not break.
+- Adds the second creature-specific necklace: Seeschlangenhalskette.
+- Recipe: 8 Silver + 5 Chitin + 2 SerpentScale at Forge level 2.
+- Like the Drake necklace it is cloned from Wishbone only for a valid utility-slot setup; SE_Finder/set effects are stripped.
+- Uses a vanilla Serpent trophy/scale icon when available; no placeholder generated art is embedded.
+- Binding rule: equip an empty Seeschlangenhalskette, weaken a vanilla Serpent to <=30% HP, then land another hit.
+- Hits above 30% still deal normal damage so the Serpent can be weakened.
+- Binding saves owner, form, source ZDO, exact prefab, level and species in ItemData custom data.
+- Hotbar activation is now form-generic and routes Drake or Serpent to Mount API revision 3.
+- Old bound Drake necklaces continue to migrate/repair automatically and need no recapture.
+- One active form at a time; unequipping/removing the active bound necklace ends symbiosis.

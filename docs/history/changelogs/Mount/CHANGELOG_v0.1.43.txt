@@ -1,0 +1,9 @@
+Valheim_Workers_Mount v0.1.43
+
+- Fixes legacy hostile Symbiosis Drake cleanup after world reload.
+- v0.1.42 could mark cleanup complete before the stale network character had streamed in.
+- Cleanup now captures the local Player startup position and retries every 1.5 seconds for 45 seconds.
+- Only non-Worker, untagged Drake/Hatchling characters within 6 m of that startup anchor are eligible.
+- Cleanup success is persisted only after a stale avatar was actually found and destroyed; otherwise the next game session retries.
+- Tagged v0.1.42+ temporary avatars continue to be cleaned independently every 2 seconds.
+- Flight, camera, combat, full-possession AI suppression and equip lock are unchanged.

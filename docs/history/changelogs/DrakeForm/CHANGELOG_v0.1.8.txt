@@ -1,0 +1,5 @@
+Valheim_Workers_DrakeForm v0.1.8
+
+- Dedicated dragon-medallion inventory/hotbar icon added.
+- Icon is cropped from the approved dragon necklace artwork and embedded directly in Valheim_Workers_DrakeForm.dll.
+- Replaces the inherited Wishbone icon only; capture, transformation, Mount symbiosis flight, camera and combat logic are unchanged.

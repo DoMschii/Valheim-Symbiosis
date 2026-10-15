@@ -1,0 +1,6 @@
+Valheim_Workers_Mount v3.1.0 - Drake Momentum HUD
+
+- Drake combat HUD now shows STURZFLUG while Shift dive is active.
+- After a qualifying dive, HUD shows SCHWUNG with the remaining free-climb time (2.0s -> 0.0s).
+- HUD reads existing local flight state only; no world or physics scans were added.
+- v3.0.9 dive momentum stamina behavior, native flap locomotion, travel assist, head/camera controls and all other forms remain unchanged.

@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v0.1.54
+
+- Adds a bound-creature profile entry point for DrakeForm necklaces.
+- The temporary symbiosis body now prefers the exact prefab name stored when the Drake was captured, with Hatchling/Drake fallback for compatibility.
+- Restores the captured Drake level on the temporary body through Character.SetLevel(int) when available.
+- Keeps Player HP/food/equipment authoritative; Drake level affects only the possessed creature profile/presentation and native creature behaviour.
+- Existing TryMountRemoteAvatar API remains available for older DrakeForm builds.
+- v0.1.53 combat/flight/camera/No-AI/death safety remain unchanged.

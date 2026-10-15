@@ -1,0 +1,4 @@
+1. Enter Drake symbiosis in Ego and verify the head orientation matches the original pre-v2.2.1 behavior.
+2. Look up/down/left/right; confirm no 180-degree Drake head twist is applied.
+3. Verify Troll Ego remains correct, including Troll1 and Troll2/log state.
+4. Verify Drake wingbeat propulsion still works.

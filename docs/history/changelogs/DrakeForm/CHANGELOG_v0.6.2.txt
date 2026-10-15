@@ -1,0 +1,6 @@
+v0.6.2 - Nocturnal Werewolf activation
+
+- Bound Werewolf necklace can start symbiosis only while Valheim reports night.
+- Daytime use shows a center-screen message and leaves the player unchanged.
+- Existing active-form exit by using the necklace remains available at any time.
+- Drake, Sea Serpent and Troll activation are unchanged.

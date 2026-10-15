@@ -1,0 +1,10 @@
+v2.0.0 Troll improvised log weapon
+
+1. Transform into Troll several times. Troll must always appear without the random native log.
+2. Punch/fell a tree until a physical fallen log exists.
+3. Walk within roughly 4.5 m. Expected status: [E] Baumstamm aufnehmen.
+4. Press E. Fallen world log should disappear and the Troll should visibly hold its log weapon.
+5. Use LMB repeatedly. Durability should count down from 12; attacks should receive the held-log blunt/chop bonus.
+6. On the 12th swing the log should break and the Troll should become unarmed.
+7. Pick up a second log, then leave Troll form before it breaks. An intact log should be spawned back into the world near the exit position.
+8. Confirm Troll RMB/MMB abilities, stamina, camera, direct form switching, food/mead and other forms still behave as before.

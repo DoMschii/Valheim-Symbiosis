@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyName>Valheim_Symbiosis_Updater</AssemblyName>
+    <RootNamespace>Valheim_Symbiosis_Updater</RootNamespace>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Version>4.5.1</Version>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <BepInExPath Condition="'$(BepInExPath)' == ''">$(VALHEIM_BEPINEX)</BepInExPath>
+    <ValheimManagedPath Condition="'$(ValheimManagedPath)' == ''">$(VALHEIM_MANAGED)</ValheimManagedPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>$(BepInExPath)\core\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <Target Name="ValidateReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(BepInExPath)\core\BepInEx.dll')" Text="BepInEx.dll not found." />
+    <Error Condition="!Exists('$(ValheimManagedPath)\UnityEngine.UnityWebRequestModule.dll')" Text="UnityWebRequest module not found." />
+  </Target>
+</Project>

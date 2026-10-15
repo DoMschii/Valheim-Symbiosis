@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v3.0.7 - Drake Native Wing-Flap Restore
+
+- Fixes the regression introduced by changing Hatchling m_flySlowSpeed/m_flyFastSpeed directly.
+- Those native flight-envelope fields are no longer overwritten by Symbiosis.
+- Restores the pre-v3.0.4 animation behaviour: normal forward/upward flight can use the original flapping locomotion instead of looking like a glide while only IdleHover flaps.
+- Drake speed is now the prefab's true vanilla flight speed; Shift still selects the native fast-flight/Sturzflug state.
+- Keeps v2.6.6 head pose, v2.6.7 camera-yaw body follow, v2.7.0 flight steering, wingbeat camera feel and all other forms unchanged.

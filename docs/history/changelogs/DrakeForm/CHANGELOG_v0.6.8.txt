@@ -1,0 +1,5 @@
+v0.6.8 - Release readiness controller cleanup
+
+- Bound-necklace metadata normalization is no longer polled every 2 seconds forever; it runs quickly after load/respawn and then only as a low-frequency recovery sweep.
+- Queued direct form switches are cancelled immediately if the local player dies before the hand-off completes.
+- Existing direct-switch perspective preservation and Werewolf darkness rules remain unchanged.

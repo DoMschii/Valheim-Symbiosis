@@ -1,0 +1,10 @@
+Valheim_Workers_Mount v1.4.0 - Stamina + combat allocation pass
+
+- Drake fallback frost attacks now use the real player stamina pool: Frostsalve 20, Eisbolzen 18, Eisfaecher 28.
+- Troll special abilities now cost stamina: Bodenschlag 24, Schockgebruell 18.
+- Sea Serpent special abilities now cost stamina: Bissstoss 16, Schwanzfeger 22.
+- Abilities fail cleanly with a short status message when stamina is too low; cooldowns are not consumed on failed stamina checks.
+- Ability stamina is consumed only when the action actually fires.
+- Activation-only hostile scans now use Character.GetAllCharacters() instead of scene-wide FindObjectsOfType<Character>() allocations.
+- Werewolf Blood Hunt target/chain scans use the same allocation-reduced Character registry path.
+- v1.3.0 interaction QoL, direct form switching, movement, cameras and lifecycle safety are preserved.

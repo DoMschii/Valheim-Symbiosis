@@ -1,0 +1,9 @@
+Valheim Workers Mount v4.0.1 - Troll Attack Impact Timing
+
+- Troll custom damage is no longer applied on the mouse-down frame.
+- Unarmed LMB keeps Valheim's native character-hit timing; only the extra tree/natural-object breacher hit is delayed to the fist impact (~0.38s).
+- RMB Bodenschlag/Stamm-Slam starts animation immediately but applies enemy/world damage at the visible ground impact (~0.58s).
+- MMB Schockgebruell applies its damage/push/stagger at the roar impact (~0.42s), not at click time.
+- Stamina and cooldowns are still committed on activation, so input/cooldown behavior remains deterministic.
+- Pending Troll impacts are cancelled safely on body/form reset so no delayed ghost hit can land after a Troll1/Troll2 swap or dismount.
+- No movement, camera, damage values, radii, star scaling, log durability totals, or other forms were changed.

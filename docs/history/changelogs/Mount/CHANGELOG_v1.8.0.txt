@@ -1,0 +1,10 @@
+Valheim_Workers_Mount v1.8.0 - Bound-star progression
+
+- Custom Drake, Troll and Sea Serpent abilities scale from the creature level stored in the bound necklace: 0 stars = x1.00, 1 star = x1.25, 2 stars = x1.60.
+- Native creature attacks are not multiplied again, avoiding double-scaling with Valheim's own level system.
+- Werewolf keeps its dedicated stronger claw/Blood-Hunt curve: 0*=x1.50, 1*=x1.75, 2*=x2.50.
+- Troll Bodenschlag combat damage and natural-object breaching scale with stars.
+- Serpent Bissstoss (pierce/blunt/poison) and Schwanzfeger scale with stars.
+- Drake fallback Frostsalve/Eisbolzen/Eisfaecher scale with stars.
+- Unified form HUD shows the bound star count beside the form name.
+- No extra world scans or per-frame gameplay polling added.

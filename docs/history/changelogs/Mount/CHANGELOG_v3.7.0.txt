@@ -1,0 +1,6 @@
+Valheim_Workers_Mount v3.7.0 - Save/Load/Respawn lifecycle hardening
+
+- Adds optional runtime-discovered hooks for Game.Logout and Game.Shutdown so an active symbiosis is safely closed before a world/profile exit when those Valheim methods are available.
+- Adds an optional runtime-discovered Player.OnDeath hook so the temporary creature body/camera/input ownership is released immediately on local-player death instead of waiting for the next polling tick.
+- The hooks are installed dynamically after normal PatchAll; a missing/renamed Valheim method is skipped safely and cannot abort the rest of the mod patches.
+- Existing portal safety, crash-recovery anchor, stale-avatar cleanup, perspective persistence, form combat and movement remain unchanged.

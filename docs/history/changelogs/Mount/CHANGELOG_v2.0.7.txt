@@ -1,0 +1,10 @@
+v2.0.7 - Deterministic Troll1/Troll2 body swap
+
+- Removes GiveDefaultItem/native item materialization from the active Troll pickup path.
+- Builds two runtime Troll prefab templates from vanilla Troll.m_randomSets:
+  Troll1 keeps only non-log attack sets; Troll2 keeps only the native troll_log_swing set.
+- Troll symbiosis always starts from Troll1.
+- E on a fallen log swaps the active temporary body Troll1 -> Troll2 at the exact same transform while keeping bound level, rider/player authority and camera.
+- The world log is consumed only after the Troll2 body was created successfully.
+- After 12 swings the body swaps Troll2 -> Troll1.
+- Existing stamina, star scaling, cooldowns, Serpent stamina fix and lifecycle safety remain preserved.

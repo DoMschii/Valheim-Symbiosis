@@ -1,0 +1,6 @@
+Valheim_Workers_DrakeForm v0.1.7
+
+- Fixed build error caused by obsolete DrakeFormController.GetAim calls.
+- Disabled the legacy DrakeForm combat runtime entirely.
+- Flight, camera, aim and Drake attacks are now exclusively owned by the existing Valheim_Workers_Mount DrakeMountRuntime.
+- No new flight or attack mechanics were introduced.

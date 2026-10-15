@@ -1,0 +1,6 @@
+v3.0.4 test
+1. Enter Drake symbiosis.
+2. Hold W: cruise speed should now be dramatically faster than v3.0.3.
+3. Hold Shift+W from altitude: Sturzflug should be extremely fast while retaining the same steering feel.
+4. Check BepInEx log for: Drake real flight speeds captured ... fields=m_flySlowSpeed/m_flyFastSpeed.
+5. Verify Drake head/camera and other forms are unchanged.

@@ -1,0 +1,5 @@
+Valheim_Workers_DrakeForm v0.6.0
+- Added Werwolfhalskette and Fenring binding at <=30% HP.
+- Recipe: 8 Silver, 6 WolfPelt, 4 WolfFang at Forge 2.
+- Binding persists exact prefab + level/stars and routes Werewolf form into Mount API revision 5.
+- Wishbone gameplay effects remain stripped.

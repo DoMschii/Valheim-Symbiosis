@@ -1,0 +1,8 @@
+v2.2.2 Drake Ego axis test
+
+1. Enter Drake symbiosis in Third Person.
+2. Press F6: Ego should look outward from the face, not into the forehead.
+3. Look up/down/left/right: head should follow naturally.
+4. Fly with W and Shift+W: movement should remain camera-relative.
+5. Press F6 back to Third Person: yaw should not be reversed.
+6. Existing Shift+Arrow/PageUp/PageDown fine tune must remain unchanged.

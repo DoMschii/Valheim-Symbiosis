@@ -1,0 +1,6 @@
+v3.8.1 - Troll1/Troll2 camera continuity
+
+- Troll1 -> Troll2 and Troll2 -> Troll1 still use the deterministic runtime body-state swap.
+- The active symbiosis camera yaw/pitch, Ego/Third mode and Third-person chase yaw are now preserved across the body handoff.
+- Removes the visible camera recenter/snap during log pickup or log break.
+- Position, rotation, velocity, attacks, log durability and all other forms are unchanged.

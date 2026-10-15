@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v1.9.0 - Form passive identity
+
+- Drake symbiosis now has innate frost resistance while transformed.
+- Sea Serpent symbiosis now has innate poison resistance while transformed.
+- Resistance scales with the bound creature level: 0 stars = 50% damage remains, 1 star = 35%, 2 stars = 20%.
+- Mitigation is applied only to the matching elemental HitData component before the real Player resolves armour/resistances, then the original HitData is restored.
+- Troll keeps its physical tank mitigation. Werewolf keeps mobility/Blood Hunt identity without a new passive defence bonus.
+- No world scans or per-frame polling added.

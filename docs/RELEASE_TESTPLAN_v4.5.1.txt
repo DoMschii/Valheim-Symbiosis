@@ -1,0 +1,6 @@
+Valheim Symbiosis v4.5.1 - Repository/Release Tooling Test
+1. Setup.ps1 builds/installs Mount, DrakeForm, Ego and Updater from src/.
+2. release/Build-Standalone-Release.bat creates Valheim_Symbiosis_v4.5.1_Standalone_Installer.zip.
+3. release/Prepare-Repository.bat creates/updates a clean local clone and commits only the cleaned repository structure.
+4. release/Publish-Final.bat still detects v4.5.1 automatically and uploads installer ZIP + SHA256.
+5. No gameplay behavior differs from v4.5.0.

@@ -1,0 +1,6 @@
+Valheim_Workers_DrakeForm v0.4.0
+
+- Synced release for the v0.4 runtime-hardening block.
+- Drake + Sea Serpent binding format, recipes and capture behavior remain unchanged from v0.3.0.
+- Wishbone finder effects remain stripped from both transformation necklaces.
+- Mount continues to own possession, movement, camera, combat and multiplayer body handoff.

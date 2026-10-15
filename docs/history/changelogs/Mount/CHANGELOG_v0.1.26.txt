@@ -1,0 +1,6 @@
+Valheim_Workers_Mount v0.1.26
+
+- Fixed remote Drake avatar prefab lookup.
+- Vanilla Valheim uses the network prefab name `Hatchling`; Workers only normalizes that species to `Drake`.
+- Remote symbiosis now resolves `Hatchling` first and keeps `Drake` only as a compatibility fallback.
+- Added deterministic prefab-resolution logging.

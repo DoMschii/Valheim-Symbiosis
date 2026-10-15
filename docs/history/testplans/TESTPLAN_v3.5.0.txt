@@ -1,0 +1,7 @@
+v3.5.0 TESTPLAN
+1. Enter Troll symbiosis with full stamina.
+2. Put 2-4 hostile creatures inside ~9m and press MMB.
+3. Verify targets take a small blunt hit, are strongly staggered/pushed, and 18 stamina is spent.
+4. Verify MMB cannot be reused until the 9s cooldown ends.
+5. Repeat with insufficient stamina and verify no cooldown is consumed.
+6. Smoke-test Troll log pickup/slam plus Drake/Werewolf/Serpent unchanged.

@@ -1,0 +1,10 @@
+Valheim_Workers_Mount v0.1.51
+
+- Replaced the handcrafted-only combat entry point with dynamic native Hatchling attack discovery.
+- Reads the possessed Drake Humanoid's real weapon inventory after spawn/equipment initialization and exposes only attacks that actually exist.
+- LMB uses native attack slot 1; RMB uses slot 2; MMB uses slot 3. Missing slots remain empty rather than duplicating one attack.
+- Native attacks keep their own animation, attack interval/cooldown and weapon/projectile behaviour.
+- The possessed Drake's look vector is kept aligned to the symbiosis camera so delayed native projectile animation events still aim where the player is looking.
+- Existing v0.1.33 three-shot frost salvo remains as a strict LMB fallback if no usable native Hatchling weapon attack is available at runtime.
+- Logs the discovered mapping once per transformation as: Drake native attacks: LMB=...; RMB=...; MMB=...
+- v0.1.50 rounded/reverse flight, No-AI possession, health forwarding, camera smoothing and persistence remain unchanged.

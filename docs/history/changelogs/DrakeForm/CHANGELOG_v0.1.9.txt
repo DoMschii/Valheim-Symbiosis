@@ -1,0 +1,5 @@
+Valheim_Workers_DrakeForm v0.1.9
+
+- Replaced the previous medallion icon with the full dragon-necklace artwork.
+- Icon is stored as a 512x512 RGBA PNG with a fully transparent background.
+- No changes to Mount symbiosis, flight, camera, controls, or combat.

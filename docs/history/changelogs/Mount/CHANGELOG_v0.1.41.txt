@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v0.1.41
+
+- Full-possession fix: a Drake under symbiosis no longer runs vanilla MonsterAI at all.
+- The existing Mount flight controller now runs in place of MonsterAI.UpdateAI while possessed.
+- Removes autonomous target acquisition, chasing, wandering, fleeing and AI-triggered attacks during symbiosis.
+- Blocks SetAlerted(true) for the possessed Drake, preventing enemy proximity from re-entering the native alert/roar state.
+- SetAlerted(false) is still allowed so takeover can clear an alert state that existed before transformation.
+- Manual Mount controls, camera, wingbeat, frost-salvo attack, player-health forwarding and death safety remain unchanged.

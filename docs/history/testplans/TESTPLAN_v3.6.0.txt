@@ -1,0 +1,7 @@
+v3.6.0 TEST
+1. Enter Drake symbiosis.
+2. LMB: native frost attack/Frostsalve fallback still works.
+3. RMB: always fires single Eisbolzen and costs 18 stamina.
+4. MMB: always fires 5-shot Eisfaecher and costs 28 stamina.
+5. Verify cooldown failure and low-stamina failure do not consume extra cooldown.
+6. Confirm Drake flight/head/camera and all other forms are unchanged.

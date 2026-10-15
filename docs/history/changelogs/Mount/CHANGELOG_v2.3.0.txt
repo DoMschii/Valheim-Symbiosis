@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v2.3.0
+
+- Serpent Ego natural pitch swimming: while moving with W/S, looking up or down now changes swim depth.
+- Space and Ctrl/C remain explicit rise/dive controls and override mouse-pitch depth while held.
+- Third-person Serpent controls are unchanged.
+- Existing Serpent stamina regeneration, boost stamina, swim wave, combat and camera fine-tune remain preserved.
+- Drake/Troll/Werewolf behavior unchanged from v2.2.5.

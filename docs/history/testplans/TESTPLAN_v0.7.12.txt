@@ -1,0 +1,7 @@
+Valheim Symbiosis v0.7.12 quick test
+1. Equip Hammer and enter normal build mode so the piece menu/ghost is visible.
+2. Use any bound symbiosis necklace.
+3. Expected: build mode closes immediately before transformation; no placement ghost/menu remains during symbiosis.
+4. Verify LMB/RMB/MMB creature controls still work.
+5. Eat food or drink mead from hotbar while transformed.
+6. Exit symbiosis and verify normal equipment can be used again.

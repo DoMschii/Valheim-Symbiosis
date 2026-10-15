@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v3.8.0 - Performance pass 1
+
+- Troll log targeting uses RaycastNonAlloc / OverlapSphereNonAlloc scratch buffers instead of allocating arrays during the 10 Hz pickup probe.
+- Possessed creature + hidden rider Rigidbody components are cached and self-refresh across Troll body swaps/form changes.
+- Fully inactive lifecycle housekeeping is throttled to 4 Hz after the local player recovery handshake, while Player-object changes still bypass the throttle immediately.
+- Werewolf vision skips reflection-backed post-processing work entirely once its blend weight is fully zero.
+- No combat, movement, camera, speed, stamina, save/load or form-balance values changed.

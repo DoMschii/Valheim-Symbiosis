@@ -1,0 +1,6 @@
+v2.0.3 - installer target integrity fix
+
+- Fixes the real cause seen in the user log: after installing v2.0.2 the game still loaded Valheim_Workers_Mount 2.0.1.
+- Setup now installs the freshly built Mount DLL into every Thunderstore profile that contains Valheim_Workers Core instead of silently preferring Default.
+- Each copied DLL is version-checked after installation.
+- Troll log pickup/visual behavior from v2.0.2 is unchanged.

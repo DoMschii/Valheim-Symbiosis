@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v0.1.32
+
+- Assigned personal Drake mounts are forced to Valheim's Players faction while in companion/mount mode.
+- The original Drake faction is stored and restored when the mount assignment is released.
+- Temporary remote-symbiosis Drake avatars are also marked friendly immediately.
+- Existing same-owner Worker/guard targets that still point at the assigned mount are cleared during companion enforcement.
+- Goal: player-owned guards must not shoot the personal Drake when symbiosis starts.

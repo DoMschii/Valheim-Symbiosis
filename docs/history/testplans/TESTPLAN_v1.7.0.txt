@@ -1,0 +1,7 @@
+Valheim Symbiosis v1.7.0
+
+1. Troll: use Bodenschlag beside a natural tree/rock. Natural objects should take heavy chop/pickaxe/blunt damage.
+2. Repeat beside a player-built wall/floor: the Piece should NOT be damaged by the new world-breacher pulse.
+3. Troll slam should still damage/push hostile creatures normally.
+4. Serpent: use Bissstoss on a valid enemy and verify the normal burst plus poison DOT.
+5. Regression: Drake/Werewolf controls, direct form switching, food/mead and Shift stamina remain unchanged.

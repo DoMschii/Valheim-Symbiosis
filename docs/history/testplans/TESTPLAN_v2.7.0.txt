@@ -1,0 +1,7 @@
+v2.7.0 quick test
+1. Drake Ego: W + look left/right -> body follows camera smoothly.
+2. W + look moderately up/down -> Drake follows pitch.
+3. Look almost straight up/down + W -> flight stays inside a natural cone, no vertical rocket movement.
+4. From altitude hold Shift+W -> clear fast Sturzflug and height loss; Space must not cancel it.
+5. Release Shift -> normal camera-directed flight resumes.
+6. Confirm head pose, attacks, wingbeat propulsion, Serpent/Troll/Werewolf unchanged.

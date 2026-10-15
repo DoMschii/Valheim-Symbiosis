@@ -1,0 +1,7 @@
+v3.8.1 test plan
+
+1. Enter Troll symbiosis in Ego, look clearly left/up, then pick up a fallen log with E. View direction must not snap/recenter.
+2. Use/break the log until Troll2 returns to Troll1. View direction must remain continuous.
+3. Repeat both transitions in Third person while orbiting/turning camera.
+4. Confirm log durability, native log attacks and unarmed tree damage are unchanged.
+5. Smoke-test Drake, Werewolf and Sea Serpent once; gameplay must be unchanged.

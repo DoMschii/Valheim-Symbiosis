@@ -1,0 +1,11 @@
+Valheim Workers Mount v0.1.1
+
+- Symbiosis exit safety: resolve ground below Drake before restoring player.
+- Clear player rigidbody velocity and reset fall-altitude state on exit.
+- 5 second local-player damage grace window after dismount.
+- Ego camera moved forward/up to avoid sitting inside Drake skull/neck.
+- Third-person camera moved farther back/up and smoothed per rendered frame.
+- F6 camera-mode switch resets chase smoothing.
+- Drake whistle test recipe reduced to 1 Wood, no station required.
+- Drake whistle clones stable Hammer prefab instead of Wood and retries Jotunn registration every 2 seconds until successful.
+- Workers core recall API left unchanged to keep Mount branch isolated.

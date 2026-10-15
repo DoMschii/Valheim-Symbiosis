@@ -1,0 +1,6 @@
+Valheim_Workers_Mount v0.1.25
+
+- Hardened Drake whistle detection across Jotunn/ObjectDB rebuilds: detects both prefab identity and shared item name.
+- Player.UseHotbarItem now tolerates both 0-based and 1-based hotbar indices.
+- Harmony arguments are bound explicitly by position.
+- Added deterministic logs for whistle recognition, persistent mount assignment, loaded Drake lookup and remote fallback.

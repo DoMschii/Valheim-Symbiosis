@@ -1,0 +1,8 @@
+Valheim_Workers_DrakeForm v0.1.10
+
+- Bound Drake identity is now explicitly persisted in the necklace ItemData custom-data profile.
+- Capture stores binding owner, form id, original prefab identity, creature level, source ZDO uid and a binding schema version before the world Drake is removed.
+- On game load/respawn the local inventory is periodically validated and legacy bound necklaces are repaired without overwriting a valid different-player owner.
+- Missing legacy form/prefab/level/version fields are restored to Drake/Hatchling/level 1 defaults so old necklaces continue to work.
+- The profile lives on the necklace item itself, so it survives normal inventory saves, tombstones and full game restarts without requiring the captured world creature to exist.
+- Mount remains the sole owner of transformation, flight, camera and combat.

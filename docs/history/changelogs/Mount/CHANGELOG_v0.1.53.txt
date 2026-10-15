@@ -1,0 +1,10 @@
+Valheim_Workers_Mount v0.1.53
+
+Rollback / cleanup after experimental v0.1.52 WingGuard + dodge.
+
+- Removed experimental RMB wing-block pose and damage reduction.
+- Removed RMB+Space barrel-roll / dodge movement and invulnerability window.
+- Removed the associated forced wing-bone posing code.
+- Restored v0.1.51 native Drake attack input behavior.
+- Keeps v0.1.50 rounded flight, reverse-flight behavior, camera smoothing and wingbeat fixes unchanged.
+- DrakeForm remains v0.1.10.

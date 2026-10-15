@@ -1,0 +1,6 @@
+Valheim Workers Mount v0.1.4
+
+Fix
+- Buildfehler CS0136 in DrakeMountRuntime behoben.
+- Lokale Ego-Kamera-Variable bodyYaw in egoBodyYaw umbenannt.
+- Keine funktionale Aenderung gegenueber v0.1.3 an Kamera, Symbiose oder Rezept.

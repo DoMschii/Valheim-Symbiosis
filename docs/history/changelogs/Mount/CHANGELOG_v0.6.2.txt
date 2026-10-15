@@ -1,0 +1,10 @@
+Valheim_Workers_Mount v0.6.2
+
+HOTFIX: Werewolf native animation + exact mouse mapping
+
+- LMB: deterministic claw hit plus native Fenring primary attack animation trigger.
+- MMB: dedicated native jump/leap/pounce attack selection; no cycling through multiple extra attacks.
+- RMB+LMB: Blood Hunt raw-mouse-first input path, with ZInput fallback.
+- Blood Hunt blink hits trigger the same native claw animation.
+- Existing werewolf damage/star scaling unchanged.
+- Drake / Serpent / Troll unchanged.

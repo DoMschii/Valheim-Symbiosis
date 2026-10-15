@@ -1,0 +1,8 @@
+v0.6.9 - Werewolf camera-bound dichromatic vision
+
+- Replaces the detached v0.6.8 PostProcessVolume path with a Camera.main-bound runtime path inspired by Valheim Ego's proven final-pose camera handling.
+- Rebinds on the real Camera.main and re-asserts immediately before rendering via Camera.onPreCull.
+- Uses PostProcessManager.QuickVolume when available so Valheim's own PostProcessing manager registers the effect; manual volume remains only as fallback.
+- Logs the actual camera, PostProcessLayer volume mask and selected layer for deterministic diagnosis.
+- Stronger initial dichromatic grade so successful activation is visually unmistakable; values can be softened after confirmation.
+- v0.6.7 ObjectDB null guard, v0.6.6 HUD and all Werewolf combat/Blood Hunt behavior remain intact.

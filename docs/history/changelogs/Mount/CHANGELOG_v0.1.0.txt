@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v0.1.0
+- Mount/Symbiosis extracted from Valheim_Workers core into its own BepInEx plugin DLL.
+- Contains DrakeMountRuntime, DrakeWhistleRuntime and DrakeSymbiosisSafetyPatches only.
+- Keeps the latest Mount branch behavior: entering Drake symbiosis starts in Drake first-person view; third-person remains an explicit toggle.
+- Registers through the stable Workers external-control bridge so Worker AI/navigation pause exactly while the Drake is controlled.
+- Hard-depends on Valheim_Workers core v0.5.115 or newer.
+- Installer replaces only Valheim_Workers_Mount.dll and never overwrites Valheim_Workers.dll.

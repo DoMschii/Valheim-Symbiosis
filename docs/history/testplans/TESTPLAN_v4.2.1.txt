@@ -1,0 +1,4 @@
+1. Drake Ego: stand/hover and rotate mouse left/right; whole Drake yaw should follow.
+2. Drake Ego: fly with W while turning; body heading should follow camera yaw without losing climb/dive control.
+3. Sea Serpent: verify head/body sits ~30 cm higher relative to water than v4.2.0.
+4. Quick regression: F6 perspective persistence, Troll1/Troll2, Werewolf, Serpent surface lock.

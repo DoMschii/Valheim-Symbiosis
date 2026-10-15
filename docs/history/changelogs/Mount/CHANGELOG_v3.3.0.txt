@@ -1,0 +1,6 @@
+v3.3.0 - Direct form switch camera handoff
+
+- Direct necklace-to-necklace form switching now snapshots the active symbiosis camera mode before the exit transition.
+- After the queued target form is created, the exact previous Ego/Third mode is re-applied immediately.
+- Prevents a direct form switch from inheriting the temporary human camera state used during the safe exit handoff.
+- No movement, combat, speed, head-pose or form-balance values changed.

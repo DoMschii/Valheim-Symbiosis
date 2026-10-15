@@ -1,0 +1,8 @@
+Valheim Workers Mount v0.1.17
+
+- Wingbeat camera motion now follows the real Drake Animator blend tree.
+- IdleHover and FlyForward are treated separately even though they share the same Animator state hash.
+- Uses the current AnimatorClipInfo weights so transitions/blends between hover and forward flight remain continuous.
+- IdleHover uses a very small 0.6 cm vertical heave; FlyForward uses 1.4 cm.
+- No synthetic Time-based timer, pitch, roll, or fore/aft camera shake.
+- Stable v0.1.13 camera ownership and third-person camera are unchanged.

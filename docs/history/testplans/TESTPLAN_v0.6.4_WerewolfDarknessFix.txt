@@ -1,0 +1,6 @@
+Werewolf darkness detection fix
+1. Daytime outdoors: Werewolf use must remain blocked.
+2. Around dusk/night outdoors: Werewolf use must activate.
+3. Daytime inside an instanced cave/dungeon: Werewolf use must activate.
+4. Normal roofed house during daytime: still blocked.
+5. Log should contain '[Symbiosis] Werewolf darkness via ... -> True/False'.

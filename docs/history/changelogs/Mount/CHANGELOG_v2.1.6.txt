@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v2.1.6
+
+- Ego creature head now follows the exact mouse-owned camera yaw/pitch each render frame.
+- The correction is applied to the animated head bone before the skull-locked eye anchor is sampled.
+- The authored animation rotation is restored after rendering, so attack/locomotion animation remains the base pose instead of accumulating rotation.
+- Looking down now carries the head/eye anchor with the view, exposing chest/arms/claws/Troll log naturally.
+- Third person is unchanged.
+- v2.1.5 live per-form XYZ camera fine tuning is preserved.

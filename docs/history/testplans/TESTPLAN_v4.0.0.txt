@@ -1,0 +1,9 @@
+v4.0.0 Core Performance/Stability test
+
+1. Drake: fly in Third Person for 1-2 minutes near trees/rocks; camera collision must still pull in and recover smoothly.
+2. Drake: Ego/Third F6, normal flight, climb, dive and momentum must behave exactly as v3.8.2.
+3. Troll: Troll1 -> pick up log -> Troll2 -> consume/break log -> Troll1; no camera snap/regression and attacks unchanged.
+4. Werewolf: W/Shift+W, S/A/D, jump, MMB pounce and Blood Hunt against several enemies; target selection and wall blocking unchanged.
+5. Serpent: surface lock, fast W/slow S and all three attacks unchanged.
+6. Open/close inventory, map/menu and plugin UI while transformed; controls/camera must pause/resume correctly.
+7. Exit/re-enter world once in Ego and once in Third; global perspective persistence remains correct.

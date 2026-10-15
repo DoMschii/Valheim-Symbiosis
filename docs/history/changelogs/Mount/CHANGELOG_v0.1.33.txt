@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v0.1.33
+
+- Added player-controlled Drake combat during symbiosis.
+- Left mouse button fires the vanilla-style Drake frost salvo: three hatchling_cold_projectile shots along the camera aim direction.
+- Frost salvo uses 15 m/s projectile speed, 90 frost damage per projectile and a 6 second cooldown.
+- The centre projectile follows exact aim; side projectiles use mirrored spread for predictable player control.
+- Attacks are disabled while menus or the transformation sequence are active.
+- Right mouse button remains free for a future secondary/special Drake ability.

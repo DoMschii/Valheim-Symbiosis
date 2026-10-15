@@ -1,0 +1,5 @@
+v3.0.5 - Drake 150 Percent Base Speed
+
+- Keeps the v3.0.4 real-flight-speed field fix (m_flySlowSpeed / m_flyFastSpeed).
+- Drake speed is recalibrated to 150% of the original 18/32 baseline: 27 cruise / 48 Sturzflug.
+- Flight feel, wingbeat propulsion, camera yaw follow, head pose, Sturzflug steering and all other forms remain unchanged.

@@ -1,0 +1,6 @@
+Valheim_Workers_Mount v2.2.1
+- Fixes Drake/Hatchling Ego head orientation without changing the already tuned Troll/Werewolf/Serpent camera rigs.
+- Calibrates the Drake's real facial forward axis from the animated Head -> authored Eye vector.
+- Mouse-driven head pitch/yaw now aligns that anatomical face axis to the view instead of assuming Head.forward is facial forward.
+- Drake Ego forward/fine-tune Z offset uses the same anatomical axis, so saved Shift+Arrow/PageUp/PageDown values remain meaningful.
+- v2.2.0 wingbeat propulsion and all v2.1.x Ego tuning remain preserved.

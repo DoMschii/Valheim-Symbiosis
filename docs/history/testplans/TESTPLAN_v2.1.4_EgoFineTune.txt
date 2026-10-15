@@ -1,0 +1,9 @@
+v2.1.4 Ego FineTune
+1. Enter a form and switch to Ego.
+2. Hold Shift and tap Up/Down to move camera forward/backward by 0.01 m.
+3. Shift+Left/Right moves laterally.
+4. Ctrl+Shift+Up/Down moves vertically.
+5. Confirm status/log prints exact X/Y/Z.
+6. Exit/re-enter form: values must persist.
+7. Restart game: values must persist from config.
+8. Repeat per form; values are independent.

@@ -1,0 +1,23 @@
+# Build output
+**/bin/
+**/obj/
+*.dll
+*.pdb
+
+# Local release output / packages
+*.zip
+*.sha256
+release/tools/
+
+# IDE / OS
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+
+# Local configs / secrets
+.github-release.local.json
+config.local.json

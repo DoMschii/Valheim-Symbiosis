@@ -1,0 +1,8 @@
+Troll timing regression test
+
+1. Troll1 LMB against enemy: native enemy damage should land with the punch animation, not on mouse click.
+2. Troll1 LMB against tree: extra natural-object damage should appear when the fist reaches the impact point (~0.38s after click).
+3. Troll1 RMB Bodenschlag: enemy/world damage should occur at the visible slam impact (~0.58s after click).
+4. Troll2 RMB Stamm-Slam: same impact timing; durability cost still applies once per successful slam.
+5. MMB Schockgebruell: damage/push/stagger should occur during the roar, not immediately on click.
+6. Trigger attack then immediately leave/swap form: no delayed ghost hit should occur afterward.

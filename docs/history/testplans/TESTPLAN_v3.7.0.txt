@@ -1,0 +1,8 @@
+v3.7.0 Save/Load/Respawn test
+
+1. Enter any symbiosis in Ego, then use Valheim's normal Logout/quit-to-menu path. Re-enter the world: player must be human, camera usable, no duplicate temporary creature remains.
+2. Repeat in Third Person.
+3. While transformed, die normally. Respawn must be human with normal controls/camera; re-entering symbiosis must still work.
+4. While transformed, use a portal. Symbiosis should end before portal travel and the portal should complete normally.
+5. Close the game while transformed, then load again. Existing crash recovery should return the player safely with no temporary avatar left behind.
+6. Verify Drake/Troll/Werewolf/Serpent movement and attacks are unchanged.

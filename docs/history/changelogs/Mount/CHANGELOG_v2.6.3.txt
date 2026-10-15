@@ -1,0 +1,6 @@
+v2.6.3 - Sea Serpent anatomical head-axis fix
+
+- Sea Serpent Ego mouse-head follow now derives the real visible face direction from animated Head -> Eye instead of assuming Head +Z.
+- Sea Serpent Ego camera forward placement uses the same Head -> Eye anatomical axis.
+- Surface-only swimming and the 1.50 m eye clearance from v2.6.2 remain unchanged.
+- Drake, Troll and Werewolf head/camera logic are unchanged.

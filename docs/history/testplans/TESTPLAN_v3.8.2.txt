@@ -1,0 +1,6 @@
+v3.8.2 perspective test
+1. Human player -> Ego with F6 -> quit game completely -> restart world: must load in Ego.
+2. Human Ego -> enter Drake/Troll/Serpent/Werewolf: form must start in Ego.
+3. While in any form press F6 to Third -> exit form: human must also be Third.
+4. While in any form press F6 back to Ego -> exit form: human must also be Ego.
+5. Quit while human is Ego, restart, then enter each form: all must inherit Ego.

@@ -1,0 +1,10 @@
+v2.3.0 Serpent Natural Pitch Swim test
+
+1. Enter Serpent symbiosis and switch to Ego.
+2. Hold W while looking level: depth should remain approximately stable.
+3. Hold W and look down: Serpent should smoothly dive.
+4. Hold W and look up: Serpent should smoothly rise toward the surface.
+5. Hold Space while looking down: explicit surface control must win.
+6. Hold Ctrl or C while looking up: explicit dive control must win.
+7. Switch to Third Person: old camera-relative horizontal swim behavior must remain unchanged.
+8. Verify stamina regenerates while not boosting and Shift boost still consumes stamina normally.

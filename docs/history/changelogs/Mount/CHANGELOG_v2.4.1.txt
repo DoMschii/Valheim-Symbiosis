@@ -1,0 +1,6 @@
+Valheim_Workers_Mount v2.4.1
+
+- Werewolf/Fenring Ego head pose fix: mouse-driven head follow now derives the real facial direction from the animated Head -> Eye anchor instead of assuming the Head bone's +Z axis is the muzzle direction.
+- Werewolf Ego camera forward placement now uses the same Head -> Eye facial axis, so camera and head remain aligned.
+- Drake, Troll and Serpent camera/head behavior is unchanged.
+- All saved per-form Ego fine-tune XYZ values remain preserved.

@@ -1,0 +1,9 @@
+Valheim Symbiosis v3.4.0 test
+
+1. Enter Sea Serpent symbiosis at the water surface.
+2. LMB: native bite remains unchanged.
+3. Aim at a hostile within RMB range and press RMB: Serpent should visibly surge forward toward the target while staying surface-locked.
+4. Verify RMB consumes 16 stamina only when the ability starts and keeps the 3.8s cooldown.
+5. Verify MMB tail sweep remains unchanged.
+6. Verify the Serpent does not dive during or after the lunge.
+7. Quick regression: Drake flight, Troll tree punch/log state, Werewolf sprint/pounce, Ego/Third perspective switching.

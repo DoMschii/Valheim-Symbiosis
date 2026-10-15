@@ -1,0 +1,10 @@
+Valheim Workers Mount v0.1.2
+
+- Ego render no longer shows Drake horns/skull: Drake renderers are hidden only for the main-camera ego render and restored immediately after.
+- Ego camera uses the animated head/eye anchor without needing to push far through skull geometry.
+- Third-person chase camera now trails the Drake's actual body yaw instead of snapping to mouse target yaw.
+- Added damped body-yaw follow for smoother turns.
+- Third-person pitch range reduced and chase pitch softened.
+- Chase camera cannot be pulled below the Drake focus point during low flight, preventing underwater camera dips.
+- Chase camera moved slightly farther back/up and smoothing retuned.
+- Keeps v0.1.1 safe dismount, 5s post-exit damage grace, and 1-Wood test whistle recipe.

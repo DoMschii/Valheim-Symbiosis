@@ -1,0 +1,8 @@
+Valheim Workers Mount v0.1.5
+
+- Full possession hard-stop: a mounted Drake may no longer wander/fly from native MonsterAI while no movement key is held.
+- Native follow/combat targets and alerted state are cleared during symbiosis.
+- Zero-input state hard-holds position/rotation and clears Rigidbody velocity; only WASD/Space/Ctrl/C release the hold.
+- Ego camera now follows the animated eye/head anchor for position only, matching Valheim Ego's skull-lock principle.
+- Drake head-bone animation rotation no longer drives the camera, removing unwanted autonomous camera whipping/roll.
+- Existing safe dismount, 5 s player damage grace, third-person chase camera and 1 Wood test whistle remain unchanged.

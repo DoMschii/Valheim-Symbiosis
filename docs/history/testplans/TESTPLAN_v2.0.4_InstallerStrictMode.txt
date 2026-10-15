@@ -1,0 +1,7 @@
+v2.0.4 installer verification
+
+1. Run root Setup.ps1 with PowerShell -ExecutionPolicy Bypass.
+2. With exactly one Thunderstore profile containing Valheim_Workers.dll, Mount Setup must not fail on .Count.
+3. Installer must print the profile target and installed Mount version 2.0.4.
+4. Start Valheim and verify BepInEx logs Loading [Valheim_Workers_Mount 2.0.4].
+5. Then retest Troll log pickup.

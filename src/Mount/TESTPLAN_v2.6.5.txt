@@ -1,0 +1,5 @@
+1. Enter Sea Serpent symbiosis in open water.
+2. Verify the mouth/head stays clearly above the waterline during idle and forward movement.
+3. Verify W remains fast and S remains deliberately slow.
+4. Verify head pitch follows look direction without the permanent downward tilt.
+5. Confirm Drake, Troll and Werewolf behavior is unchanged.

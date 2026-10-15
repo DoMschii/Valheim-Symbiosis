@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v0.6.6
+
+- Added compact Werewolf skill HUD beside the vanilla life/food cluster.
+- Shows LMB claw, MMB jump and RMB+LMB Blood Hunt.
+- Displays cooldown countdowns and READY state.
+- Blood Hunt shows active chain progress.
+- HUD is render-only and performs no world scans.
+- v0.6.5 fast Blood Hunt timing and v0.6.4 native Fenring attack path preserved.

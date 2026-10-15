@@ -1,0 +1,5 @@
+v4.2.1 - Drake Ego yaw + higher Serpent surface
+
+- Drake Ego: the whole Drake body now follows camera yaw while flight pitch remains independent for climb/dive.
+- Sea Serpent surface eye clearance raised from 2.35 m to 2.65 m (+30 cm).
+- Existing v4.2.0 release-readiness, combat, stamina, speed, camera fine-tune and global Ego/Third persistence are preserved.

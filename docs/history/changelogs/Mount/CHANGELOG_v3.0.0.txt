@@ -1,0 +1,8 @@
+v3.0.0 - Troll log heavy slam
+
+- Troll2 RMB is now labelled STAMM-SLAM in the existing form HUD.
+- While a log is held, ground slam gains +45% enemy damage, +20% radius, +25% push and +50% damage to natural destructibles.
+- A log-powered slam consumes 2 of the existing 12 log durability.
+- Troll1/unarmed RMB remains the existing normal Bodenschlag with unchanged balance.
+- Log depletion still deterministically swaps Troll2 back to Troll1.
+- No changes to Drake, Werewolf, Sea Serpent, cameras or movement.

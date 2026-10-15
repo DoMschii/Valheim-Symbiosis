@@ -1,0 +1,8 @@
+1. Start Valheim and verify log: Loading [Valheim_Workers_Mount 2.0.6].
+2. Enter Troll symbiosis 5 times: every entry must be Troll1/unarmed.
+3. Inspect startup diagnostic: random/default weapon prefab should ideally name the Troll native weapon even when native log weapon candidate=none.
+4. Fell a tree and press E on the fallen log.
+5. Expect diagnostic: Troll2 native weapon materialized... followed by Troll2/native-log state equipped...
+6. Confirm visible trunk weapon AND native weapon attack/animation state.
+7. Spend 12 swings: weapon breaks and returns to Troll1/unarmed.
+8. Exit with intact log: world log is restored.

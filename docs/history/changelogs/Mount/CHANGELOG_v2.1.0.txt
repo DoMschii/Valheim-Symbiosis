@@ -1,0 +1,7 @@
+v2.1.1 - Symbiosis Ego body visibility
+
+- Removed the old first-person full-renderer hide pass for possessed symbiosis avatars.
+- Drake, Werewolf, Sea Serpent, Troll1 and Troll2 now keep their visible body in Ego.
+- Added small per-form anatomical eye forward offsets and near-clip values to reduce face/interior clipping without hiding limbs/chest/weapons.
+- Troll1 -> Troll2 body swaps keep the existing Mount-owned camera path; the new body remains visible immediately.
+- Third Person, combat, stamina, Troll log durability and all v2.0.7 behavior remain unchanged.

@@ -1,0 +1,5 @@
+v3.6.0 - Drake Core Combat
+- Drake RMB is now always Eisbolzen and MMB always Eisfaecher.
+- Extra native prefab attack slots can no longer silently replace these curated abilities.
+- LMB still prefers the native Drake attack and falls back to Frostsalve if unavailable.
+- Existing stamina, cooldown, star scaling, movement, camera and flight behavior are unchanged.

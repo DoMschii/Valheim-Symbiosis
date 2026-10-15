@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v2.1.5
+
+- Added a direct vertical Ego fine-tune binding: Shift + PageUp/PageDown moves the camera up/down in 1 cm steps.
+- Ctrl + Shift + Up/Down remains supported for vertical tuning.
+- Alt + Shift + Up/Down is now accepted as an additional vertical shortcut.
+- Shift + arrows remain unchanged for forward/back and left/right.
+- Per-form offsets are saved immediately and survive restarts.

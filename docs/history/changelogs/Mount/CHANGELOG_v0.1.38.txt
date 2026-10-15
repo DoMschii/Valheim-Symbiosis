@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v0.1.38
+
+- Removed the legacy Drake whistle item and its embedded icon.
+- Removed whistle hotbar/UseItem interception patches and whistle runtime ticking.
+- Symbiosis activation is now exclusively triggered by the bound Drake necklace in Valheim_Workers_DrakeForm.
+- Existing DrakeMountRuntime flight, camera, wingbeat, movement, attacks and companion/mount assignment remain unchanged.
+- Updated Mount UI/hover text from whistle instructions to necklace instructions.

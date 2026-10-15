@@ -1,0 +1,7 @@
+Valheim Workers Mount v0.1.37
+
+- Symbiose inherits the player's current camera mode when it starts.
+- Player in Valheim Ego -> Drake symbiosis starts in Ego.
+- Player in Third Person -> Drake symbiosis starts in Third Person.
+- If Valheim Ego is mid-transition, the transition target is inherited.
+- Existing in-symbiosis camera toggle and restoration behavior remain unchanged.

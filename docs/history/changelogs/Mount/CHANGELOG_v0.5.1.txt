@@ -1,0 +1,12 @@
+Valheim_Workers_Mount v0.5.1
+
+TROLL TANK / BREACHER IDENTITY
+- Troll is no longer just a large grounded skin.
+- While Troll symbiosis is active, incoming blunt/slash/pierce/chop/pickaxe damage is multiplied by 0.65 before the real Player resolves armour/resistances.
+- Troll forwarded hits use only 35% of their original stagger multiplier and 25% of their original push force.
+- Fire, frost, lightning, poison, spirit and generic/raw damage are deliberately not reduced by the Troll form.
+- The real Player remains the only HP pool. No separate Troll HP, armour or death system was added.
+- HitData is restored immediately after Player.Damage so Troll mitigation cannot leak into another target.
+- Troll sprint now consumes player stamina (16 stamina/second); when stamina is insufficient the form falls back to walking.
+- Drake and Sea Serpent movement/combat values are unchanged.
+- Symbiosis API revision remains 4 because this is internal form behavior, not a bridge contract change.

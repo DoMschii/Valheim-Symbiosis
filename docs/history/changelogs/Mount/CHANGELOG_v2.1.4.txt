@@ -1,0 +1,10 @@
+Valheim_Workers_Mount v2.1.4
+
+- Added live per-form Ego camera fine tuning without restarting Valheim.
+- Shift+Up/Down: forward/backward in 1 cm steps.
+- Shift+Left/Right: left/right in 1 cm steps.
+- Ctrl+Shift+Up/Down: up/down in 1 cm steps.
+- Values are saved immediately in BepInEx config under [Ego FineTune] for Drake, Troll, Werewolf and Serpent separately.
+- Every change is shown in status and logged as exact X/Y/Z metres so tested values can later be baked into defaults.
+- Fine tuning is applied in the animated anatomical eye/head coordinate system, preserving natural head/attack movement.
+- v2.1.3 anatomical face offset and all Troll1/Troll2 behavior preserved.

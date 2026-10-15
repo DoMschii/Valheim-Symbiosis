@@ -1,0 +1,12 @@
+Valheim_Workers_DrakeForm v0.2.0 - Necklace Binding v2
+
+- Binding metadata schema bumped to v2 and now explicitly stores species in addition to owner, source ZDO,
+  form id, exact runtime prefab and captured creature level.
+- Legacy bound necklaces are repaired in place; no Drake needs to be captured again.
+- Binding refuses a Worker Drake while it still carries persistent Worker cargo, preventing cargo loss when
+  the physical Worker ZDO is consumed by the necklace.
+- Mount bridge reads API revision 2 and keeps backward compatibility with older profile-capable Mount builds.
+- The bound prefab/level remain authoritative for creating the temporary Drake body; player HP/food/equipment
+  remain authoritative for the transformed character state.
+- Removed the obsolete standalone DrakeForm avatar/combat source classes. DrakeForm now only owns the necklace,
+  capture/binding metadata and activation bridge; Mount is the single implementation of transformation/flight/combat.

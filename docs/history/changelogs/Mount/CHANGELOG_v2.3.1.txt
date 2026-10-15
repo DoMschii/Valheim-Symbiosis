@@ -1,0 +1,8 @@
+v2.3.1 - Per-form Ego fine-tune reset controls
+
+- SmartCore F8 > Ego now shows the saved XYZ Ego fine-tune values for Drake, Troll, Werewolf and Sea Serpent.
+- Each creature has its own "Zuruecksetzen" button.
+- Reset only clears that creature's persisted XYZ fine-tune to (0,0,0); the other forms are untouched.
+- Changes apply immediately and are saved to BepInEx config.
+- Drake and Troll positions remain exactly as calibrated unless their own reset button is pressed.
+- All v2.3.0 Serpent pitch-swim behavior and v2.2.5 accelerated live tuning are preserved.

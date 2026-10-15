@@ -1,0 +1,9 @@
+v4.3.0 release-candidate smoke test
+
+1. Enter and exit Drake, Troll, Werewolf and Serpent once.
+2. Direct-switch between two different forms; confirm only one temporary creature body exists.
+3. Exit world while human, reload, and confirm normal camera/input.
+4. Exit world while transformed, reload, and confirm human form with no stale creature body.
+5. Die/respawn once after using a form, then activate another form.
+6. Verify F6 Ego/Third global perspective persistence still works.
+7. Verify Troll1/Troll2, Drake flight, Serpent surface lock, Werewolf pounce still behave as before.

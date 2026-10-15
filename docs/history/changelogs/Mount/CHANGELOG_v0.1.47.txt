@@ -1,0 +1,8 @@
+Valheim_Workers_Mount v0.1.47
+
+- Hardened death/respawn lifecycle for necklace symbiosis.
+- Detects when Valheim replaces the local Player object during respawn/world transitions and immediately clears any stale Drake possession reference.
+- Respawn always returns in normal human form; Drake symbiosis is never auto-restored and requires an explicit necklace hotkey press.
+- Re-applies camera/Ego restoration after an interrupted death/scene transition and clears temporary damage-immunity/input residue.
+- Removes any tagged temporary symbiosis avatar again when the new local Player becomes available.
+- Existing flight, camera controls, player-health forwarding, full-possession No-AI and human attack/equip locks are unchanged.

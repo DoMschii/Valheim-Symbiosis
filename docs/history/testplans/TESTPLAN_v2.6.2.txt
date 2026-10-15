@@ -1,0 +1,5 @@
+1. Enter Sea Serpent symbiosis while swimming.
+2. Swim forward in open water.
+3. Confirm the head/eyes stay clearly above the water surface instead of being submerged.
+4. Confirm W remains fast, S remains slow reverse, and no diving controls are active.
+5. Confirm Drake/Troll/Werewolf behavior is unchanged.

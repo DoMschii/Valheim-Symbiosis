@@ -1,0 +1,9 @@
+v0.7.2 - Harmony startup fix + late Werewolf reverse authority
+
+- Fixes the v0.7.1 startup exception on Valheim 1.0.17: Character.FixedUpdate is not an exposed Harmony target in this build.
+- Removes the invalid Character.FixedUpdate postfix so Mount PatchAll can complete again.
+- Adds WerewolfLocomotionAuthority directly to the temporary Fenring body with DefaultExecutionOrder(32000).
+- The authority re-applies camera-facing yaw and horizontal Rigidbody velocity in late FixedUpdate/LateUpdate, so S can move backwards without turning the body 180 degrees.
+- Because MountPlugin.Awake now completes, normal Update/OnGUI processing also resumes; this restores WerewolfVisionRuntime ticking and the skill HUD path that were skipped when v0.7.1 Awake aborted.
+- Keeps v0.7.1 movement envelope: walk 11, sprint 24, SPACE jump 10 m/s.
+- No changes to Workers core 0.5.436, Blood Hunt damage, native LMB/MMB attacks, Drake/Serpent/Troll mechanics or Valheim Ego itself.

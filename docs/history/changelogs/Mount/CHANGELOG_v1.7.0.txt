@@ -1,0 +1,7 @@
+Valheim_Workers_Mount v1.7.0 - Form identity / world interaction
+
+- Troll ground slam now also damages nearby natural destructibles (trees, logs, rocks and mineable natural blockers).
+- Player-built Piece objects are explicitly excluded, so the slam does not casually erase the player base.
+- World-breaker damage is activation-only: no new polling loop or background Physics scan.
+- Sea Serpent Bissstoss now adds poison damage on top of the existing pierce/blunt burst.
+- All v1.6.0 movement stamina, cooldown integrity, direct switching, food/mead support, build-mode release and camera/combat behavior remain preserved.

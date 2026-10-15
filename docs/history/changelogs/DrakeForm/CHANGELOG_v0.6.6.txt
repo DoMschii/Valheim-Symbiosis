@@ -1,0 +1,5 @@
+v0.6.6 - Item-use wording / interaction QoL
+
+- Necklace descriptions now match the use-item activation system.
+- Returning from a form is described as using the active necklace again instead of pressing E.
+- Capture notification no longer instructs the player to equip the necklace.

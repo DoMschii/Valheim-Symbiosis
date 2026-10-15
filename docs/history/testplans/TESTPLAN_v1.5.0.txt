@@ -1,0 +1,10 @@
+v1.5.0 TESTPLAN
+
+1. Troll -> RMB Bodenschlag -> immediately switch to Serpent -> switch back to Troll.
+   EXPECTED: Bodenschlag still shows the remaining cooldown instead of READY.
+2. Serpent -> MMB Schwanzfeger -> return to human -> re-enter Serpent before 5.2s.
+   EXPECTED: remaining cooldown is preserved.
+3. Wait until the timer expires while in another form/human, then re-enter.
+   EXPECTED: ability is READY.
+4. Verify Drake/Werewolf cooldown behaviour is unchanged.
+5. Verify direct form switching, consumables, build-mode release and E interactions still work.

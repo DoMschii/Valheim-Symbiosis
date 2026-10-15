@@ -1,0 +1,8 @@
+v4.1.0 - Release hardening block
+
+- Runtime Update/FixedUpdate/LateUpdate are guarded so an unexpected form/camera/physics exception cannot trap the player in a broken possession state.
+- Active symbiosis now has a last-resort EmergencyRelease path that clears delayed Troll impacts, pounce residue and temporary-avatar state before returning control to the human player.
+- Werewolf vision and worker-assignment helper loops are fault-isolated from the core possession loop.
+- Normal gameplay logging is quiet by default; verbose status/debug logs are available through General.DebugLogging.
+- OnGUI overlays are isolated so a cosmetic HUD failure cannot break gameplay.
+- v4.0.0 cached/non-alloc performance work and all current movement/combat/camera balance remain unchanged.

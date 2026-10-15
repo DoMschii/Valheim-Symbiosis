@@ -1,0 +1,7 @@
+v3.0.4 - Drake Real Flight Speed Fix
+
+- Fixes the reason the +200% Drake speed pass barely changed the actual flight feel.
+- Hatchling flight uses Character.m_flySlowSpeed / m_flyFastSpeed, not primarily m_walkSpeed / m_runSpeed.
+- Wingbeat propulsion now raises and pulses the real flight-speed fields to 81 cruise / 144 Sturzflug.
+- walk/run remain compatibility fallbacks only.
+- Existing flight feel, camera yaw follow, head pose, Sturzflug steering and all other forms are unchanged.

@@ -1,0 +1,10 @@
+Valheim_Workers_Mount v0.1.31
+
+- A Drake selected as the personal mount is now a companion instead of a Workzone worker.
+- Selecting a mount immediately clears its persistent Workzone and work target.
+- While selected as a mount, new WorkerZdo.AssignWorkArea calls are blocked for that Drake, so Workzone/background logic cannot pull it back to an outpost.
+- The physical loaded Drake is kept in WorkerState.Follow and follows its assigned player through Valheim's native MonsterAI follow target.
+- Companion Drake combat posture is Aggressive while selected, allowing normal hostile-target acquisition while following the player.
+- The previous combat stance is saved on selection and restored when the mount assignment is released.
+- Replacing the personal mount releases the old Drake's companion state cleanly.
+- Remote symbiosis behavior is unchanged: when the real Drake is not loaded, the temporary symbiosis avatar is still used and no duplicate real Worker is created.

@@ -1,0 +1,6 @@
+v2.2.1 Drake Ego face-axis test
+1. Enter Drake symbiosis in Third Person, then switch to Ego.
+2. Look level, fully down, fully up, left and right. The camera should stay at/just in front of the eyes and the face should not rotate into the view.
+3. Use Shift+arrows / Shift+PageUp/PageDown: existing Drake fine-tune remains live and persistent.
+4. Fly with W and Shift+W: v2.2.0 wingbeat propulsion remains intact.
+5. Verify Troll/Werewolf/Serpent Ego positions are unchanged.

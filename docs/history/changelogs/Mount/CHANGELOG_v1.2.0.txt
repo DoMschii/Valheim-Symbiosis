@@ -1,0 +1,6 @@
+Valheim_Workers_Mount v1.2.0 - Safe direct form handoff support
+
+- Bundled with DrakeForm v0.6.5 direct necklace-to-necklace form switching.
+- Mount remains authoritative for each exit/enter transition; no overlapping symbiosis bodies or camera owners are introduced.
+- Same-form necklace use continues to toggle off.
+- v1.1.0 unified HUD, v1.0.0 form combat identities and established movement/camera behavior are unchanged.

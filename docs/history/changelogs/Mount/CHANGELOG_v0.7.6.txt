@@ -1,0 +1,8 @@
+v0.7.6 - Werewolf native locomotion rollback
+
+- Restores the known-good v0.6.6-style horizontal controller.
+- W/S/A/D all use the native Character.SetMoveDir path again.
+- Disables active use of the late Rigidbody/MovePosition/body-facing authority introduced in v0.7.2-v0.7.5.
+- Keeps the faster 11/24 movement envelope.
+- Keeps SPACE jump as a vertical-only addition.
+- Keeps Blood Hunt, LMB/MMB attacks, HUD, canid vision and ObjectDB guard.

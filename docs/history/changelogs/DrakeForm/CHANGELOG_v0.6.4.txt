@@ -1,0 +1,6 @@
+v0.6.4 - Werewolf darkness detection fix
+- Fixes night detection on Valheim 1.0.x where EnvMan.IsNight may not be exposed in the expected form.
+- Darkness resolution now tries IsNight, GetDayFraction, !IsDay, then EnvMan cycle fields.
+- Dusk/night window accepts day fraction <= 0.22 or >= 0.78.
+- Instanced cave/dungeon detection remains unchanged.
+- Adds debug logging showing which darkness path was used.

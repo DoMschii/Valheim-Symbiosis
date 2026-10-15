@@ -1,0 +1,9 @@
+Valheim_Workers_Mount v1.6.0 - Unified movement stamina
+
+- Drake Shift flight boost now costs 10 player stamina per second while moving.
+- Sea Serpent Shift swim boost now costs 8 player stamina per second while swimming directionally.
+- Exhausted boost falls back to normal movement; it never stops or locks the form.
+- Base movement and vertical controls remain free.
+- Troll (16/s) and Werewolf (12/s) sprint stamina stay unchanged, so all four forms now use one consistent movement-resource model.
+- No new scene scans, Physics polling or per-frame allocations.
+- v1.5.0 cooldown integrity and all prior switching/interaction/consumable safeguards remain preserved.

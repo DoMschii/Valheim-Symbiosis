@@ -1,0 +1,10 @@
+Valheim Workers Mount v4.0.2 - Troll Native Impact Sync
+
+- Native Troll LMB Character.Damage is no longer allowed to resolve on mouse-down.
+- Troll1 fist hits are replayed at ~0.56 s, aligned with visible fist contact.
+- Troll2 log hits are replayed at ~0.70 s, aligned with the heavy log swing contact.
+- Natural-object fist damage uses the same impact timestamp as the native character hit.
+- Bodenschlag/Stamm-Slam and Schockgebruell impact timing was moved later to match their visible contact better.
+- Custom delayed Troll abilities bypass the native-hit deferral so they never get delayed twice.
+- Pending hits are cleared on body/form transitions to prevent ghost damage.
+- No balance, camera, movement or other-form gameplay changes.

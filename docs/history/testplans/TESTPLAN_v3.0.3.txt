@@ -1,0 +1,7 @@
+v3.0.3 quick test
+
+1. Enter Drake symbiosis.
+2. Hold W and verify cruise is dramatically faster than v3.0.2.
+3. From altitude, hold Shift+W and verify Sturzflug is dramatically faster and still loses altitude.
+4. Verify camera yaw still turns the Drake body.
+5. Verify Drake head pose remains as in v2.6.7/v3.0.2.
