@@ -43,13 +43,37 @@ try {
 
   git add -A
   $changes=git status --porcelain
-  if(-not $changes){ Write-Host 'Keine Aenderungen zum Committen.' -ForegroundColor Yellow; exit 0 }
-  git commit -m 'Clean repository structure for release workflow'
-  if($LASTEXITCODE -ne 0){ throw 'Git Commit fehlgeschlagen.' }
-  $answer=Read-Host 'Bereinigtes Repository jetzt zu GitHub pushen? (JA)'
-  if($answer -eq 'JA'){
+  $createdCommit=$false
+  if($changes){
+    git commit -m 'Clean repository structure for release workflow'
+    if($LASTEXITCODE -ne 0){ throw 'Git Commit fehlgeschlagen.' }
+    $createdCommit=$true
+  } else {
+    Write-Host 'Keine neuen Aenderungen zum Committen.' -ForegroundColor Yellow
+  }
+
+  # Wenn bereits beim vorherigen Lauf committed, aber nicht gepusht wurde,
+  # darf ein zweiter Lauf nicht einfach abbrechen. Ahead/Upstream pruefen.
+  git fetch origin 2>$null | Out-Null
+  $upstream = (git rev-parse --abbrev-ref --symbolic-full-name '@{u}' 2>$null)
+  $ahead=0
+  if($LASTEXITCODE -eq 0 -and $upstream){
+    $aheadText=(git rev-list --count "$upstream..HEAD" 2>$null | Select-Object -First 1)
+    [void][int]::TryParse(($aheadText -as [string]), [ref]$ahead)
+  } else {
+    # Noch kein Upstream gesetzt: bei vorhandenem HEAD bieten wir Push ebenfalls an.
+    $ahead=1
+  }
+
+  if($ahead -le 0 -and -not $createdCommit){
+    Write-Host "Repository ist bereits aktuell auf GitHub." -ForegroundColor Green
+    exit 0
+  }
+
+  $answer=(Read-Host 'Repository jetzt zu GitHub pushen? (J/JA)').Trim().ToUpperInvariant()
+  if($answer -in @('J','JA','Y','YES')){
     git push -u origin HEAD
     if($LASTEXITCODE -ne 0){ throw 'Git Push fehlgeschlagen.' }
     Write-Host "`nFERTIG: Repository wurde bereinigt und gepusht." -ForegroundColor Green
-  } else { Write-Host 'Commit erstellt, Push abgebrochen.' -ForegroundColor Yellow }
+  } else { Write-Host 'Push abgebrochen. Der lokale Commit bleibt erhalten.' -ForegroundColor Yellow }
 } finally { Pop-Location }
