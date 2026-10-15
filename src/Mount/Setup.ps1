@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 
-$Version = '4.5.1'
+$Version = '4.5.2'
 $SourceRoot = $PSScriptRoot
 $ProjectFile = Join-Path $SourceRoot 'Valheim_Workers_Mount.csproj'
 $ProjectTarget = 'C:\App Dev\Projekte\Valheim_Workers_Mount'
@@ -75,7 +75,7 @@ foreach ($targetBepInEx in $BepInExTargets) {
     if (Test-Path $MountDll) { Remove-Item $MountDll -Force }
     Copy-Item $BuiltDll $MountDll -Force
     $installedVersion = [System.Reflection.AssemblyName]::GetAssemblyName($MountDll).Version
-    if ($installedVersion -lt [Version]'4.5.1') { throw "Installierte Mount-DLL ist unerwartet alt: $MountDll => $installedVersion" }
+    if ($installedVersion -lt [Version]'4.5.2') { throw "Installierte Mount-DLL ist unerwartet alt: $MountDll => $installedVersion" }
     $InstalledMounts += $MountDll
     Write-Host "Installiert in Profil: $targetBepInEx => Mount $installedVersion" -ForegroundColor Green
 }

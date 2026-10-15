@@ -1,0 +1,24 @@
+﻿Valheim Workers - Final Audit RC1 (v0.5.462)
+
+CURRENT STATE
+- Major feature work is frozen for this stabilization cycle.
+- Fifteen performance/stability passes plus this final cleanup have removed the main
+  recurring global scans, synchronized polling, per-frame idle callbacks and GC hotpaths.
+- Navigator v5 is intentionally unchanged.
+
+REMAINING GLOBAL DISCOVERY IS INTENTIONAL
+- WorkerSpawnerIndexRuntime: one bootstrap of SpawnArea/CreatureSpawner, then lifecycle indexed.
+- WorkerDoorRuntime: one door bootstrap, then lifecycle indexed.
+- WorkerWorldIndex: bootstrap/repair safety paths.
+- Lumberjack/Stonemason option discovery: one-time UI cache build.
+- SmartStorage integration: startup/compatibility prefab discovery.
+- Livestock bird-view / locate-camera: explicit manual UI/debug tools.
+- AirFreight/manual interaction raycasts and nearby-container interaction scans: user-triggered, not simulation polling.
+
+RELEASE GATE
+1. Setup.ps1 compiles v0.5.462.
+2. Existing large save loads without repeating BepInEx exceptions.
+3. Run the base for 10-15 minutes and watch for periodic frame freezes.
+4. Smoke test Garden, Sorter/Hauler/FieldDepot, one production Worker, rest station,
+   Fuling recruitment/diplomacy and save/reload.
+5. If clean, promote this codebase to a stable release and publish the GitHub repository/release.

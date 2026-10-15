@@ -4,13 +4,13 @@ using System.Reflection;
 using HarmonyLib;
 using UnityEngine;
 
-// Valheim Ego v1.6.48
+// Valheim Ego v1.6.50
 //
 // Ego:
 //   Native first-person controls stay unchanged. Body follows view yaw so
 //   W=forward, S=backwards and A/D=strafe.
 //
-// v1.6.48 persists the current Ego/Third-Person choice per player across full game restarts.
+// v1.6.50 preserves perspective persistence and adds a late backpedal stabilizer.
 // It deliberately does NOT patch Werewolf/Serpent Third Person.
 // Workers Mount owns symbiosis movement/facing so the free camera and body
 // cannot fight each other.
@@ -125,7 +125,7 @@ internal static class ValheimEgoFacingLockPatch
         if (!_reportedTargets)
         {
             _reportedTargets = true;
-            Debug.Log("[Valheim Ego] Facing-rule v1.6.48 bound: Ego/Third perspective persists across restart; Symbiosis inherits the current perspective.");
+            Debug.Log("[Valheim Ego] Facing-rule v1.6.50 bound: Ego/Third perspective persists across restart; Symbiosis inherits the current perspective.");
         }
     }
 
@@ -261,3 +261,111 @@ internal static class ValheimEgoFacingLockPatch
         return null;
     }
 }
+
+// v1.6.50 - Backpedal stabilizer
+//
+// Valheim can temporarily consume/remap the named Backward action while attacking,
+// blocking or placing build pieces.  The physical S key can still be held during
+// those frames.  Older Ego builds only sampled ZInput and briefly released the
+// exact camera-facing lock, letting vanilla locomotion attempt a 180-degree turn.
+// That produced the very fast forward/backward facing flicker seen in combat/build.
+//
+// Keep a short-lived backward intent latch from BOTH ZInput and raw keyboard input
+// and re-assert camera-yaw facing after the relevant player/camera update passes.
+// W cancels the latch immediately.  This is Ego-only and never touches Symbiosis
+// Third Person, where Workers Mount remains the sole movement/facing authority.
+[HarmonyPatch]
+internal static class ValheimEgoBackpedalStabilizerPatch
+{
+    private const float BackwardIntentGrace = 0.18f;
+    private static float _backwardIntentUntil = -999f;
+    private static bool _reported;
+
+    private static IEnumerable<MethodBase> TargetMethods()
+    {
+        var yielded = new HashSet<MethodBase>();
+
+        foreach (string name in new[] { "Update", "FixedUpdate", "LateUpdate" })
+        {
+            MethodInfo method = AccessTools.DeclaredMethod(typeof(Player), name, Type.EmptyTypes);
+            if (method != null && yielded.Add(method))
+                yield return method;
+        }
+
+        MethodInfo cameraUpdate = AccessTools.DeclaredMethod(typeof(GameCamera), "UpdateCamera");
+        if (cameraUpdate != null && yielded.Add(cameraUpdate))
+            yield return cameraUpdate;
+    }
+
+    [HarmonyPostfix]
+    [HarmonyPriority(Priority.Last)]
+    private static void Postfix()
+    {
+        try
+        {
+            Player player = Player.m_localPlayer;
+            if (player == null || !ValheimEgoFacingLockPatch.IsSkullLockedFirstPerson(player))
+            {
+                _backwardIntentUntil = -999f;
+                return;
+            }
+
+            bool backward = false;
+            bool forward = false;
+
+            // ZInput covers remapping/gamepad. Raw keyboard is sampled as well because
+            // combat/build input routing can suppress the named action for a frame.
+            try
+            {
+                backward = ZInput.GetButton("Backward");
+                forward = ZInput.GetButton("Forward");
+
+                float stickY = ZInput.GetJoyLeftStickY();
+                if (stickY > 0.25f) backward = true;
+                else if (stickY < -0.25f) forward = true;
+            }
+            catch { }
+
+            try
+            {
+                backward |= Input.GetKey(KeyCode.S);
+                forward |= Input.GetKey(KeyCode.W);
+            }
+            catch { }
+
+            if (forward)
+            {
+                _backwardIntentUntil = -999f;
+                return;
+            }
+
+            if (backward)
+                _backwardIntentUntil = Time.unscaledTime + BackwardIntentGrace;
+
+            if (Time.unscaledTime > _backwardIntentUntil)
+                return;
+
+            Camera cam = Camera.main;
+            if (cam == null)
+                return;
+
+            Vector3 facing = cam.transform.forward;
+            facing.y = 0f;
+            if (facing.sqrMagnitude <= 0.0001f)
+                return;
+
+            player.transform.rotation = Quaternion.LookRotation(facing.normalized, Vector3.up);
+
+            if (!_reported)
+            {
+                _reported = true;
+                Debug.Log("[Valheim Ego] Backpedal stabilizer v1.6.50 active: S/raw input + ZInput latch prevents combat/build 180-degree facing flicker.");
+            }
+        }
+        catch
+        {
+            // Never let a transient input/camera state break Player/GameCamera updates.
+        }
+    }
+}
+

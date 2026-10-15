@@ -1,0 +1,27 @@
+﻿Valheim Workers v0.5.462 - Final Cleanup RC1
+
+1) Setup.ps1
+EXPECTED: clean compile/install.
+
+2) Existing large base, 10-15 minutes
+EXPECTED: no repeating exceptions and no periodic multi-second freezes.
+
+3) Logistics
+EXPECTED: Sorter -> Export -> Ground Hauler -> Outpost FieldDepot -> Provisioner still conserves inventory.
+
+4) Garden
+EXPECTED: harvest/replant/ghost planning/WildGrowth supply unchanged.
+
+5) Production + sustenance
+EXPECTED: production roles and Worker food stocks unchanged.
+
+6) Rest + boat
+EXPECTED: stable rest pose and passenger lock.
+
+7) Fuling village/recruitment
+EXPECTED: diplomacy, gifts and recruitment unchanged.
+
+8) Save/reload + F12
+EXPECTED: assignments, caches and indexes rebuild correctly.
+
+If all eight pass, promote to the stable GitHub release.

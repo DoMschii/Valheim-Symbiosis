@@ -1,15 +1,34 @@
 # Valheim Symbiosis
 
-Gameplay repository for Valheim Symbiosis.
+Gameplay repository for **Valheim Workers / Symbiosis**.
 
-This repository intentionally contains **only the Valheim gameplay modules**. The automatic updater and GitHub/release automation are maintained separately so their versions and lifecycles do not have to follow gameplay releases.
+The repository intentionally contains gameplay source only. The automatic preloader
+updater and the developer-only GitHub release tooling use separate projects and
+independent versioning.
+
+## Current release candidate
+
+**Workers Core v0.6.0 RC1** is published under the GitHub tag `v0.6.0-rc1`.
+
+The Workers DLL reports numeric version `0.6.0`; `rc1` is a GitHub release-channel
+label so BepInEx/System.Version compatibility stays clean.
+
+The other gameplay modules retain their own versions:
+
+- Workers Core: **0.6.0**
+- Mount / Symbiosis runtime: **4.5.2**
+- DrakeForm: **0.7.0**
+- Ego integration: **1.6.50**
+- Preloader Updater: separate repository, currently **2.0.0**
 
 ## Repository layout
 
+- `src/WorkersCore` - jobs, workers, logistics, production, background simulation
 - `src/Mount` - symbiosis runtime, movement, combat and cameras
 - `src/DrakeForm` - creature necklaces, capture and form activation
 - `src/Ego` - player first-person integration
 - `docs` - release documentation and archived development notes
+- `update` - release-channel manifests. `stable.json` is intentionally absent during RC1.
 
 ## Development install
 
@@ -17,11 +36,25 @@ This repository intentionally contains **only the Valheim gameplay modules**. Th
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Setup.ps1
 ```
 
-## Separate components
+This builds/installs Workers Core first, followed by Mount, DrakeForm and Ego.
 
-- **Valheim Symbiosis Updater** - separate BepInEx plugin and versioning
-- **Valheim Symbiosis ReleaseTools** - local developer tooling for GitHub publishing and installer creation; not shipped as gameplay source
+## Automatic update model
 
-## Player requirements
+The separate **Valheim Symbiosis Updater** is a BepInEx 5 preloader patcher.
+Its default channel is `stable`. During RC1 no `update/stable.json` is published,
+so normal users are never silently moved to the release candidate.
 
-The final standalone package can bundle our own Workers Core, Mount, DrakeForm, Ego and Updater binaries. External requirements remain BepInEx/Thunderstore and Jotunn.
+`update/beta.json` is generated only when the RC GitHub release is successfully
+published. Developers/testers can opt into it explicitly.
+
+## External requirements
+
+- Valheim
+- BepInEx 5 / Thunderstore or r2modman profile
+- Jotunn
+
+## Release policy
+
+RC releases are used for long-session testing because the mod is large enough that
+some issues only surface after extended play. A stable manifest is published only
+after the RC has passed the long-session smoke test.

@@ -6,7 +6,7 @@
     <AssemblyName>Valheim_Workers_Mount</AssemblyName>
     <RootNamespace>Valheim_Workers</RootNamespace>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-    <Version>4.5.1</Version>
+    <Version>4.5.2</Version>
     <DebugType>portable</DebugType>
   </PropertyGroup>
 

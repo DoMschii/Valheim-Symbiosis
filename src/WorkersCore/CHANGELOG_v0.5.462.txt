@@ -1,0 +1,18 @@
+﻿Valheim Workers v0.5.462 - Final Cleanup RC1
+
+First release-candidate cleanup after Performance Pass 15.
+
+Final cleanup:
+- WorkzoneActivityFlow 10-day Trim() reuses prefab/day removal scratch lists.
+- Background Sorter remote-Base sector bootstrap reuses ZDO query lists and its duplicate-detection set.
+- Jotunn prefab lifecycle no longer copies Pending with ToArray().
+- Jotunn assembly discovery no longer uses LINQ.
+- Jotunn workbench reflection lookup reuses its argument array.
+
+Audit result:
+- recurring gameplay/world scans have been moved to lifecycle indexes, caches,
+  bounded background ticks or NonAlloc physics where it is safe to do so.
+- remaining world/resource discovery calls are intentionally bootstrap, repair,
+  compatibility, manual/debug or one-time UI discovery paths.
+- no feature semantics were intentionally changed.
+- Navigator v5 remains frozen and unchanged.

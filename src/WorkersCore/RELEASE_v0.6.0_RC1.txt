@@ -1,0 +1,11 @@
+Valheim Workers Core v0.6.0 - Release Candidate 1
+
+GitHub release tag: v0.6.0-rc1
+Internal BepInEx/assembly version: 0.6.0
+
+Why the internal version is 0.6.0:
+BepInEx/System.Version metadata is numeric. The RC marker therefore belongs to the
+GitHub release tag and release notes rather than the plugin version string.
+
+This RC is the optimized/final-cleanup code line based on v0.5.462.
+No new gameplay feature was intentionally introduced during promotion to 0.6.0.

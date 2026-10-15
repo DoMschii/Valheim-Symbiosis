@@ -1,0 +1,109 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyName>Valheim_Workers</AssemblyName>
+    <RootNamespace>Valheim_Workers</RootNamespace>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Version>0.6.0</Version>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <BepInExPath Condition="'$(BepInExPath)' == ''">$(VALHEIM_BEPINEX)</BepInExPath>
+    <ValheimManagedPath Condition="'$(ValheimManagedPath)' == ''">$(VALHEIM_MANAGED)</ValheimManagedPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- DrakeForm is a separate BepInEx add-on. SDK projects compile subfolders recursively by default,
+         so explicitly exclude it from Valheim_Workers.dll. Otherwise the DrakeForm plugin/patches end up
+         inside the core assembly and can abort core Awake before container/logistics hooks are installed. -->
+    <Compile Remove="DrakeForm\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>$(BepInExPath)\core\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(BepInExPath)\core\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="assembly_valheim">
+      <HintPath>$(ValheimManagedPath)\assembly_valheim.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="assembly_utils">
+      <HintPath>$(ValheimManagedPath)\assembly_utils.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.TerrainModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.AnimationModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.AudioModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.UI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>$(ValheimManagedPath)\UnityEngine.UIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="ValidateValheimReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(BepInExPath)\core\BepInEx.dll')" Text="BepInEx.dll not found. Run Setup.ps1 or set VALHEIM_BEPINEX." />
+    <Error Condition="!Exists('$(BepInExPath)\core\0Harmony.dll')" Text="0Harmony.dll not found in BepInEx core." />
+    <Error Condition="!Exists('$(ValheimManagedPath)\assembly_valheim.dll')" Text="assembly_valheim.dll not found. Run Setup.ps1 or set VALHEIM_MANAGED." />
+    <Error Condition="!Exists('$(ValheimManagedPath)\UnityEngine.dll')" Text="UnityEngine.dll not found in Valheim Managed folder." />
+    <Error Condition="!Exists('$(ValheimManagedPath)\UnityEngine.CoreModule.dll')" Text="UnityEngine.CoreModule.dll not found in Valheim Managed folder." />
+    <Error Condition="!Exists('$(ValheimManagedPath)\UnityEngine.PhysicsModule.dll')" Text="UnityEngine.PhysicsModule.dll not found in Valheim Managed folder." />
+    <Error Condition="!Exists('$(ValheimManagedPath)\UnityEngine.InputLegacyModule.dll')" Text="UnityEngine.InputLegacyModule.dll not found in Valheim Managed folder." />
+    <Error Condition="!Exists('$(ValheimManagedPath)\UnityEngine.IMGUIModule.dll')" Text="UnityEngine.IMGUIModule.dll not found in Valheim Managed folder." />
+    <Error Condition="!Exists('$(ValheimManagedPath)\UnityEngine.TextRenderingModule.dll')" Text="UnityEngine.TextRenderingModule.dll not found in Valheim Managed folder." />
+    <Error Condition="!Exists('$(ValheimManagedPath)\UnityEngine.TerrainModule.dll')" Text="UnityEngine.TerrainModule.dll not found in Valheim Managed folder." />
+    <Error Condition="!Exists('$(ValheimManagedPath)\UnityEngine.AnimationModule.dll')" Text="UnityEngine.AnimationModule.dll not found in Valheim Managed folder." />
+    <Error Condition="!Exists('$(ValheimManagedPath)\UnityEngine.AudioModule.dll')" Text="UnityEngine.AudioModule.dll not found in Valheim Managed folder." />
+    <Error Condition="!Exists('$(ValheimManagedPath)\UnityEngine.ParticleSystemModule.dll')" Text="UnityEngine.ParticleSystemModule.dll not found in Valheim Managed folder." />
+    <Error Condition="!Exists('$(ValheimManagedPath)\UnityEngine.UI.dll')" Text="UnityEngine.UI.dll not found in Valheim Managed folder." />
+    <Error Condition="!Exists('$(ValheimManagedPath)\UnityEngine.UIModule.dll')" Text="UnityEngine.UIModule.dll not found in Valheim Managed folder." />
+  </Target>
+</Project>

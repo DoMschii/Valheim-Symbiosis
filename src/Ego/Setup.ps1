@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 
-$PatchVersion = '1.6.49'
+$PatchVersion = '1.6.50'
 $Root = $PSScriptRoot
 $PatchFile = Join-Path $Root 'EgoFacingLockPatch.cs'
 $ProjectRoot = 'C:\App Dev\Projekte\Valheim_Ego'
@@ -80,7 +80,7 @@ foreach ($required in @(
 # Build completely outside the user's source tree first.  v1.6.31 failed because
 # the existing csproj's HintPaths did not point at the active Valheim/BepInEx
 # installation.  This staged project supplies explicit, resolved references.
-$Stage = Join-Path $env:TEMP 'Valheim_Ego_v1.6.49_Build'
+$Stage = Join-Path $env:TEMP 'Valheim_Ego_v1.6.50_Build'
 Remove-Item $Stage -Recurse -Force -ErrorAction SilentlyContinue
 New-Item -ItemType Directory -Path $Stage -Force | Out-Null
 
@@ -107,7 +107,7 @@ Copy-Item $PatchFile (Join-Path $Stage 'EgoFacingLockPatch.cs') -Force
 # Version only in staged sources.  User source is changed only after a successful build.
 $stagedPlugin = Get-ChildItem $Stage -Recurse -File -Filter 'FirstPersonPlugin.cs' | Select-Object -First 1
 $src = Get-Content $stagedPlugin.FullName -Raw
-$src = $src -replace '1\.6\.(30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48)', $PatchVersion
+$src = $src -replace '1\.6\.(30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49)', $PatchVersion
 Set-Content -Path $stagedPlugin.FullName -Value $src -Encoding UTF8
 
 # Build against .NET Framework 4.8.  Some optional Ego integrations in the
@@ -227,7 +227,7 @@ $pluginSource = Join-Path $ProjectRoot 'FirstPersonPlugin.cs'
 if (Test-Path $pluginSource) {
     Copy-Item $pluginSource (Join-Path $backupDir ('FirstPersonPlugin_' + (Get-Date -Format 'yyyyMMdd_HHmmss') + '.cs')) -Force
     $projectSrc = Get-Content $pluginSource -Raw
-    $projectSrc = $projectSrc -replace '1\.6\.(30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48)', $PatchVersion
+    $projectSrc = $projectSrc -replace '1\.6\.(30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49)', $PatchVersion
     Set-Content -Path $pluginSource -Value $projectSrc -Encoding UTF8
 }
 
